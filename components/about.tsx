@@ -2,10 +2,13 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="py-20 px-4 md:px-8 flex justify-center items-center">
+    <section
+      id="about"
+      className="py-20 px-4 md:px-8 flex justify-center items-center scroll-mt-[130px]"
+    >
       <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
         {/* Left image circle */}
-        <div className="shrink-0 w-56 h-56 md:w-72 md:h-72 rounded-full bg-[#F4D03F] p-4 flex items-center justify-center">
+        <div className="shrink-0 w-56 h-56 md:w-72 md:h-72 rounded-full bg-[var(--primary)] p-4 flex items-center justify-center">
           <div className="w-full h-full rounded-full overflow-hidden shadow-md">
             <Image
               src="/home-about.webp"
@@ -20,10 +23,15 @@ export default function About() {
 
         {/* Right content */}
         <div className="flex-1 max-w-3xl">
-          <h2 className="font-gochi text-4xl md:text-5xl">About CRY America</h2>
-          <div className="w-24 h-1 mt-2 mb-6 bg-[#FCDA16] rounded-sm" />
+          <h2 id="about-heading" className="font-gochi text-4xl md:text-5xl">
+            About CRY America
+          </h2>
+          <h3 id="approach" className="sr-only">
+            Our Approach
+          </h3>
+          <div className="w-24 h-1 mt-2 mb-6 bg-[var(--primary)] rounded-[var(--radius)]" />
 
-          <div className="space-y-4 text-[16px] leading-relaxed text-[#111827]">
+          <div className="space-y-4 text-[16px] leading-relaxed text-[var(--foreground)]">
             <p>
               CRY America, an NGO in the USA, stands as a powerful advocate for
               underprivileged children, addressing their rights, education,
@@ -46,7 +54,7 @@ export default function About() {
             </p>
 
             <div className="mt-6">
-              <button className="bg-[#FCDA16] hover:bg-[#e3c314] text-black font-bold py-3 px-6 rounded-sm shadow-md uppercase tracking-widest">
+              <button className="bg-[var(--primary)] hover:opacity-90 text-[var(--primary-foreground)] font-bold py-3 px-6 rounded-[var(--radius)] shadow-md uppercase tracking-widest">
                 About us
               </button>
             </div>

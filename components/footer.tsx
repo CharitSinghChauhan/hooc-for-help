@@ -5,7 +5,7 @@ import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#F4D03F] text-black pt-12 pb-8">
+    <footer className="relative bg-[var(--primary)] text-[var(--primary-foreground)] pt-12 pb-8">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
@@ -17,8 +17,8 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  href="/about-us"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   About Us
                 </Link>
@@ -26,7 +26,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Grants
                 </Link>
@@ -34,15 +34,15 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Events
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  href="/volunteer"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Volunteer
                 </Link>
@@ -58,8 +58,8 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  href="/what-we-do"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Child Education
                 </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Health and Nutrition
                 </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Child Labor
                 </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Girl Child Education
                 </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
+                  className="text-sm hover:opacity-80 transition-colors"
                 >
                   Child Marriage
                 </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
                 </p>
                 <Link
                   href="mailto:support@hooc-help.org"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors block"
+                  className="text-sm hover:opacity-80 transition-colors block"
                 >
                   support@hooc-help.org
                 </Link>
@@ -124,13 +124,13 @@ export default function Footer() {
                 </p>
                 <Link
                   href="tel:+16179812288"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors block"
+                  className="text-sm hover:opacity-80 transition-colors block"
                 >
                   617 981 2288
                 </Link>
                 <Link
                   href="tel:+16179591273"
-                  className="text-sm hover:text-[#1a1a1a]/80 transition-colors block"
+                  className="text-sm hover:opacity-80 transition-colors block"
                 >
                   617 959 1273
                 </Link>
@@ -154,35 +154,35 @@ export default function Footer() {
         <div className="flex justify-center items-center gap-4 mb-8">
           <Link
             href="#"
-            className="hover:text-[#1a1a1a]/80 transition-colors"
+            className="hover:opacity-80 transition-colors"
             aria-label="Facebook"
           >
             <Facebook className="w-5 h-5" />
           </Link>
           <Link
             href="#"
-            className="hover:text-[#1a1a1a]/80 transition-colors"
+            className="hover:opacity-80 transition-colors"
             aria-label="Twitter"
           >
             <Twitter className="w-5 h-5" />
           </Link>
           <Link
             href="#"
-            className="hover:text-[#1a1a1a]/80 transition-colors"
+            className="hover:opacity-80 transition-colors"
             aria-label="Instagram"
           >
             <Instagram className="w-5 h-5" />
           </Link>
           <Link
             href="#"
-            className="hover:text-[#1a1a1a]/80 transition-colors"
+            className="hover:opacity-80 transition-colors"
             aria-label="YouTube"
           >
             <Youtube className="w-5 h-5" />
           </Link>
           <Link
             href="#"
-            className="hover:text-[#1a1a1a]/80 transition-colors"
+            className="hover:opacity-80 transition-colors"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
@@ -191,40 +191,22 @@ export default function Footer() {
 
         {/* Bottom Navigation */}
         <div className="flex flex-wrap justify-center gap-6 mb-8">
-          <Link
-            href="#"
-            className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
-          >
+          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
             Blog
           </Link>
-          <Link
-            href="#"
-            className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
-          >
+          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
             Careers
           </Link>
-          <Link
-            href="#"
-            className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
-          >
+          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
             FAQs
           </Link>
-          <Link
-            href="#"
-            className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
-          >
+          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
             Privacy Policy
           </Link>
-          <Link
-            href="#"
-            className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
-          >
+          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
             Contact Us
           </Link>
-          <Link
-            href="#"
-            className="text-sm hover:text-[#1a1a1a]/80 transition-colors"
-          >
+          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
             Sitemap
           </Link>
         </div>
@@ -241,7 +223,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-black/10 my-6" />
+        <div className="border-t border-[var(--primary-foreground)]/10 my-6" />
 
         {/* Copyright */}
         <div className="text-center">

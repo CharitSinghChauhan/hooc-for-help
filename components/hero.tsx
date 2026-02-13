@@ -60,13 +60,17 @@ export default function Hero() {
       <div className="relative z-30 container mx-auto h-full flex items-center px-4 md:px-8">
         <div className="max-w-xl md:max-w-2xl pt-10 md:pt-0">
           <div className="text-xl md:text-4xl leading-tight space-y-2 font-gochi ">
-            <p className="text-black">Childhood was never meant for labor.</p>
-            <p className="text-[#FCDA16]">Be the bridge between</p>
-            <p className="text-black">lost dreams and new beginnings.</p>
+            <p className="text-[var(--foreground)]">
+              Childhood was never meant for labor.
+            </p>
+            <p className="text-[var(--primary)]">Be the bridge between</p>
+            <p className="text-[var(--foreground)]">
+              lost dreams and new beginnings.
+            </p>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <button className="bg-[#FCDA16] hover:bg-[#e3c314] text-black font-bold py-3 px-8 rounded-sm shadow-md transition-colors text-sm tracking-wider flex items-center justify-center gap-2">
+            <button className="bg-[var(--primary)] hover:opacity-90 text-[var(--primary-foreground)] font-bold py-3 px-8 rounded-[var(--radius)] shadow-md transition-colors text-sm tracking-wider flex items-center justify-center gap-2">
               DONATE NOW
             </button>
           </div>
@@ -81,7 +85,7 @@ export default function Hero() {
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all ${
               index === currentSlide
-                ? "bg-[#FCDA16] scale-125"
+                ? "bg-[var(--primary)] scale-125"
                 : "bg-gray-400 hover:bg-white"
             }`}
             aria-label={`Go to slide ${index + 1}`}

@@ -12,12 +12,6 @@ type Award = {
 
 const AWARDS: Award[] = [
   {
-    logoColor: "#0f172a",
-    title: "Top 100 Nonprofits In The World",
-    subtitle: "Recognized By The Elders (Founded by Nelson Mandela)",
-    year: "2018",
-  },
-  {
     logoColor: "#6b7280",
     title: "Recognized With The GuideStar Platinum Seal of Transparency",
     year: "2024",
@@ -26,6 +20,11 @@ const AWARDS: Award[] = [
     logoColor: "#2b9348",
     title: "India Philanthropy Alliance",
     subtitle: "Member since 2020",
+  },
+  {
+    logoColor: "#1a1a1a",
+    title: "New York State Assembly- Honoring Child Rights and You America.",
+    year: "2024",
   },
 ];
 
@@ -52,7 +51,7 @@ export default function Awards() {
   );
 
   return (
-    <section className="w-full bg-white py-20">
+    <section id="awards" className="w-full bg-white py-20 scroll-mt-[130px]">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-gochi mb-2">Awards &amp; Recognitions</h2>
         <div className="mx-auto h-1 w-40 bg-[#FCDA16] rounded-sm mb-12" />

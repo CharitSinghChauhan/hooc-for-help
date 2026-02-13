@@ -29,7 +29,6 @@ export default function Home() {
       <Donate />
       <FAQ />
       <Awards />
-      <Footer />
     </main>
   );
 }

@@ -3,9 +3,10 @@ export default function FAQ() {
     <section className="w-full bg-white py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl text-center font-gochi mb-2">
-          Frequently Asked <span className="text-[#FCDA16]">Questions</span>
+          Frequently Asked{" "}
+          <span className="text-[var(--primary)]">Questions</span>
         </h2>
-        <div className="mx-auto h-1 w-40 bg-[#FCDA16] rounded-sm mb-12" />
+        <div className="mx-auto h-1 w-40 bg-[var(--primary)] rounded-[var(--radius)] mb-12" />
 
         <div className="max-w-4xl mx-auto space-y-10">
           <div>

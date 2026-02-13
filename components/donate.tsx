@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export default function Donate() {
   return (
-    <section className="py-16 px-4 md:px-8 bg-white">
+    <section
+      id="donate"
+      className="py-16 px-4 md:px-8 bg-white scroll-mt-[130px]"
+    >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row gap-12 items-start">
           {/* Left Content */}
