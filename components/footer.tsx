@@ -5,7 +5,7 @@ import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[var(--primary)] text-[var(--primary-foreground)] pt-12 pb-8">
+    <footer className="relative bg-primary text-primary-foreground pt-12 pb-8">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
@@ -223,7 +223,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[var(--primary-foreground)]/10 my-6" />
+        <div className="border-t border-primatext-primary-foreground/10 my-6" />
 
         {/* Copyright */}
         <div className="text-center">

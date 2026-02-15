@@ -52,9 +52,9 @@ export default function Focus() {
   }
 
   return (
-    <section id="focus" className="py-20 scroll-mt-[130px]">
+    <section id="focus" className="py-20 scroll-mt-32.5">
       <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-        <h2 className="font-gochi text-4xl md:text-5xl">Our Focus Areas</h2>
+        <h2 className="text-4xl md:text-5xl">Our Focus Areas</h2>
         <div className="w-24 h-1 bg-primary mx-auto mt-3 mb-8 rounded-md" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -66,10 +66,10 @@ export default function Focus() {
                 onMouseEnter={() => handleEnter(i)}
                 onMouseLeave={() => handleLeave(i)}
                 onClick={() => handleClick(i)}
-                className={`relative cursor-pointer rounded-[var(--radius)] border-2 transition-all duration-200 ease-in-out overflow-hidden flex items-center justify-center h-64 md:h-72 p-6 ${
+                className={`relative cursor-pointer rounded-radius border-2 transition-all duration-200 ease-in-out overflow-hidden flex items-center justify-center h-64 md:h-72 p-6 ${
                   isActive
-                    ? "bg-[var(--primary)] border-[var(--primary)]"
-                    : "bg-white border-[var(--primary)]/50"
+                    ? "bg-primary border-primabg-primary"
+                    : "bg-white border-primabg-primary/50"
                 }`}
               >
                 {/* Inactive view: icon centered, title below */}
@@ -86,7 +86,7 @@ export default function Focus() {
                     <div className="font-bold text-sm md:text-base">
                       {card.title}
                     </div>
-                    <div className="absolute right-3 bottom-3 text-[var(--primary)] font-bold">
+                    <div className="absolute right-3 bottom-3 text-primabg-primary font-bold">
                       ➤
                     </div>
                   </div>
@@ -94,7 +94,7 @@ export default function Focus() {
 
                 {/* Active view: show detailed yellow panel */}
                 {isActive && (
-                  <div className="w-full h-full flex flex-col justify-between text-left p-6 text-[var(--primary-foreground)]">
+                  <div className="w-full h-full flex flex-col justify-between text-left p-6 text-primary-foreground">
                     <div className="flex items-start justify-between">
                       <div className="w-10 h-10 md:w-12 md:h-12 relative">
                         <Image
@@ -108,7 +108,7 @@ export default function Focus() {
                         <h3 className="text-base md:text-lg font-bold leading-tight whitespace-pre-line">
                           {card.title}
                         </h3>
-                        <div className="w-16 h-0.5 bg-[var(--primary-foreground)] mt-2 mb-2" />
+                        <div className="w-16 h-0.5 bg-primatext-primary-foreground mt-2 mb-2" />
                       </div>
                     </div>
 

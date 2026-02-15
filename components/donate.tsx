@@ -4,13 +4,13 @@ export default function Donate() {
   return (
     <section
       id="donate"
-      className="py-16 px-4 md:px-8 bg-white scroll-mt-[130px]"
+      className="py-16 px-4 md:px-8 bg-white scroll-mt-32.5"
     >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row gap-12 items-start">
           {/* Left Content */}
           <div className="w-full md:w-1/3">
-            <h2 className="text-4xl md:text-5xl leading-tight font-gochi mb-6">
+            <h2 className="text-4xl md:text-5xl leading-tight mb-6">
               <span className="text-black">Donate To</span>
               <br />
               <span className="text-[#FCDA16]">Make A Difference</span>

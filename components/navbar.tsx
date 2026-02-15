@@ -19,11 +19,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 w-full font-sans bg-white/60 backdrop-blur-md flex ">
-        {/* Left Logo Section - Spans both top and bottom height */}
-        <div className="flex flex-col items-center justify-center bg-[var(--primary)] w-45 p-4 shrink-0">
+      <nav className="fixed top-0 left-0 right-0 z-50 w-full flex">
+        <Link href={"/"} className="flex flex-col items-center justify-center bg-primary w-45 p-4 shrink-0">
           <div className="bg-black text-white p-2 mb-2 w-full h-20 flex items-center justify-center  ">
-            {/* Placeholder for the distinctive logo in the image */}
             <div className="text-center leading-none">
               <span className="block text-xl font-bold tracking-widest">
                 HOOC HELP
@@ -31,20 +29,17 @@ export default function Navbar() {
               <span className="text-[10px] uppercase">Child Rights</span>
             </div>
           </div>
-          <span className="text-xs font-medium text-[var(--primary-foreground)]/80">
+          <span className="text-xs font-medium text-primary-foreground/80">
             www.hooc-help.org
           </span>
-        </div>
+        </Link>
 
-        {/* Right Content Section */}
         <div className="flex flex-col flex-1">
-          {/* Top Bar - Black Background */}
-          <div className="h-[50px] bg-[#1a1a1a] flex items-center justify-end px-8 gap-6 text-white/80">
-            {/* Search Input */}
+          <div className="h-12.5 bg-foreground flex items-center justify-end px-8 gap-6 text-white/80">
             <div className="relative group">
               <input
                 type="text"
-                className="bg-[#333333] text-sm text-white px-4 py-1.5 rounded-full outline-none focus:ring-1 focus:ring-[var(--primary)] w-[200px] transition-all"
+                className="bg-[#333333] text-sm text-white px-4 py-1.5 rounded-full outline-none focus:ring-1 focus:ring-primabg-primary w-50 transition-all"
               />
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70" />
             </div>
@@ -55,42 +50,42 @@ export default function Navbar() {
             <div className="flex items-center gap-5">
               <Link
                 href="#"
-                className="hover:text-[var(--primary)] transition-colors"
+                className="hover:text-primabg-primary transition-colors"
               >
                 <Facebook className="w-4 h-4 fill-current" />
               </Link>
-              <div className="w-[2px] h-[2px] bg-white/30 rounded-full" />
+              <div className="w-0.5 h-0.5 bg-white/30 rounded-full" />
               <Link
                 href="#"
-                className="hover:text-[var(--primary)] transition-colors"
+                className="hover:text-primabg-primary transition-colors"
               >
                 <Twitter className="w-4 h-4 fill-current" />
               </Link>
-              <div className="w-[2px] h-[2px] bg-white/30 rounded-full" />
+              <div className="w-0.5 h-0.5 bg-white/30 rounded-full" />
               <Link
                 href="#"
-                className="hover:text-[var(--primary)] transition-colors"
+                className="hover:text-primabg-primary transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </Link>
-              <div className="w-[2px] h-[2px] bg-white/30 rounded-full" />
+              <div className="w-0.5 h-0.5 bg-white/30 rounded-full" />
               <Link
                 href="#"
-                className="hover:text-[var(--primary)] transition-colors"
+                className="hover:text-primabg-primary transition-colors"
               >
                 <Youtube className="w-4 h-4" />
               </Link>
-              <div className="w-[2px] h-[2px] bg-white/30 rounded-full" />
+              <div className="w-0.5 h-0.5 bg-white/30 rounded-full" />
               <Link
                 href="#"
-                className="hover:text-[var(--primary)] transition-colors"
+                className="hover:text-primabg-primary transition-colors"
               >
                 <Linkedin className="w-4 h-4 fill-current" />
               </Link>
-              <div className="w-[2px] h-[2px] bg-white/30 rounded-full" />
+              <div className="w-0.5 h-0.5 bg-white/30 rounded-full" />
               <Link
                 href="#"
-                className="hover:text-[var(--primary)] transition-colors"
+                className="hover:text-primabg-primary transition-colors"
               >
                 <Phone className="w-4 h-4" />
               </Link>{" "}
@@ -99,7 +94,7 @@ export default function Navbar() {
           </div>
 
           {/* Main Navigation Bar - White Background */}
-          <div className="h-[80px] bg-white flex items-center justify-between px-10 shadow-sm">
+          <div className="h-20 bg-white flex items-center justify-between px-10 shadow-sm">
             {/* Navigation Links */}
             <ul className="flex items-center gap-8 text-[#1a1a1a] font-semibold text-sm">
               <li
@@ -109,36 +104,33 @@ export default function Navbar() {
               >
                 <button
                   onClick={() => setIsHomeOpen(!isHomeOpen)}
-                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors font-medium text-[15px] cursor-pointer outline-none"
+                  className="flex items-center gap-1 hover:text-primary transition-colors"
                 >
                   Home
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform ${isHomeOpen ? "rotate-180" : ""}`}
                   />
                 </button>
-
-                {/* Dropdown Menu (now on Home) */}
                 <div
-                  className={`absolute left-0 mt-0 w-60 bg-white shadow-2xl rounded-[var(--radius)] transition-all duration-300 transform origin-top ${
+                  className={`absolute left-0 mt-0 w-60 bg-white shadow-2xl rounded-radius transition-all duration-300 transform origin-top ${
                     isHomeOpen
                       ? "opacity-100 scale-y-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 scale-y-0 -translate-y-2 pointer-events-none"
                   }`}
                 >
-                  <ul className="py-8">
+                  <ul className="py-5">
                     {[
                       { label: "About CRY America", href: "#about" },
                       { label: "Our Impact", href: "#impact" },
                       { label: "Our Focus Areas", href: "#focus" },
                       { label: "Donor Voices", href: "#donor-voices" },
                       { label: "Donate To Make A Difference", href: "#donate" },
-                      { label: "Awards & Recognitions", href: "#awards" },
                     ].map((item) => (
                       <li key={item.href}>
                         <Link
                           href={item.href}
                           onClick={() => setIsHomeOpen(false)}
-                          className="block px-10 py-3 text-[14px] text-black hover:text-[var(--primary)] transition-colors whitespace-nowrap text-sm"
+                          className="block px-10 py-3 font-medium hover:text-primary transition-colors whitespace-nowrap text-sm"
                         >
                           {item.label}
                         </Link>
@@ -151,7 +143,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/about-us"
-                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors"
+                  className="flex items-center gap-1 hover:text-primary transition-colors"
                 >
                   About Us <ChevronDown className="w-3.5 h-3.5" />
                 </Link>
@@ -159,7 +151,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="#"
-                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors"
+                  className="flex items-center gap-1 hover:text-primary transition-colors"
                 >
                   Grants <ChevronDown className="w-3.5 h-3.5" />
                 </Link>
@@ -167,7 +159,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="#"
-                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors"
+                  className="flex items-center gap-1 hover:text-primary transition-colors"
                 >
                   Events <ChevronDown className="w-3.5 h-3.5" />
                 </Link>
@@ -175,7 +167,7 @@ export default function Navbar() {
               <li>
                 <Link
                   href="/volunteer"
-                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors"
+                  className="flex items-center gap-1 hover:text-primary transition-colors"
                 >
                   Volunteer <ChevronDown className="w-3.5 h-3.5" />
                 </Link>
@@ -187,7 +179,7 @@ export default function Navbar() {
               >
                 <Link
                   href="/what-we-do"
-                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors"
+                  className="flex items-center gap-1 hover:text-primabg-primary transition-colors"
                 >
                   What We Do{" "}
                   <ChevronDown
@@ -197,7 +189,7 @@ export default function Navbar() {
 
                 {/* Dropdown Menu (What We Do) */}
                 <div
-                  className={`absolute left-0 mt-0 w-60 bg-white shadow-2xl rounded-[var(--radius)] transition-all duration-300 transform origin-top ${
+                  className={`absolute left-0 mt-0 w-60 bg-white shadow-2xl rounded-radius transition-all duration-300 transform origin-top ${
                     isWhatWeDoOpen
                       ? "opacity-100 scale-y-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 scale-y-0 -translate-y-2 pointer-events-none"
@@ -215,7 +207,7 @@ export default function Navbar() {
                         <Link
                           href={item.href}
                           onClick={() => setIsWhatWeDoOpen(false)}
-                          className="block px-8 py-2.5 text-[14px] text-black hover:text-[var(--primary)] transition-colors whitespace-nowrap text-sm"
+                          className="block px-8 py-2.5 text-[14px] text-black hover:text-primabg-primary transition-colors whitespace-nowrap text-sm"
                         >
                           {item.label}
                         </Link>
@@ -229,16 +221,14 @@ export default function Navbar() {
             {/* Donate Button */}
             <Link
               href="/donation"
-              className="bg-[var(--primary)] hover:opacity-90 text-[var(--primary-foreground)] font-bold uppercase tracking-wider px-8 py-3 rounded-[var(--radius)] transition-colors text-sm"
+              className="bg-primary hover:opacity-90 text-primary-foreground font-bold uppercase tracking-wider px-8 py-3 rounded-radius transition-colors text-sm"
             >
               Donate
             </Link>
           </div>
         </div>
       </nav>
-
-      {/* Spacer to prevent content from being hidden under fixed navbar */}
-      <div className="h-[130px]" aria-hidden="true" />
+      <div className="h-32.5" aria-hidden="true" />
     </>
   );
 }

@@ -51,12 +51,11 @@ export default function Awards() {
   );
 
   return (
-    <section id="awards" className="w-full bg-white py-20 scroll-mt-[130px]">
+    <section id="awards" className="w-full bg-white py-20 scroll-mt-32.5">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-gochi mb-2">Awards &amp; Recognitions</h2>
+        <h2 className="text-4xl mb-2">Awards &amp; Recognitions</h2>
         <div className="mx-auto h-1 w-40 bg-[#FCDA16] rounded-sm mb-12" />
 
-        {/* Carousel */}
         <div className="max-w-6xl mx-auto">
           <div className="flex items-start justify-center gap-8 md:gap-12">
             {items.map((it, i) => {
@@ -84,7 +83,7 @@ export default function Awards() {
                     />
                   </div>
 
-                  <div className="max-w-[220px] text-center">
+                  <div className="max-w-55 text-center">
                     <p className="text-sm text-black leading-snug">
                       {it.title}
                     </p>

@@ -1,224 +1,170 @@
 import Image from "next/image";
-import {
-  MapPin,
-  Users,
-  BookOpen,
-  School,
-  GraduationCap,
-} from "lucide-react";
-import Awards from "@/components/awards";
+import { MapPin, Utensils, Heart, Megaphone, Package } from "lucide-react";
 
 const statistics = [
   {
-    value: "46",
-    suffix: "million",
-    description: "children, between 6-18 years of age, do not go to school",
-    source: "Estimated based on Census 2011 projection 2018 and U-DISE 2016-17",
-  },
-  {
-    value: "33",
-    suffix: "million",
-    description: "child labourers go to work instead of school",
-    source: "Census 2011",
-  },
-  {
-    value: "3%",
-    suffix: "",
-    description:
-      "of schools in India provide complete school education from Class 1 to 12",
-    source: "",
-  },
-];
-
-const projects = [
-  {
     id: 1,
-    title: "Project VSS",
-    location: "Madhya Pradesh",
-    goal: "$62,193",
-    raised: "$0",
-    image: "",
+    title: "Food Distribution Drive",
+    location: "Urban & Rural Communities",
+    image: "/food-distribution.jpg",
+    goal: "₹5,00,000",
+    raised: "₹34,000",
   },
   {
     id: 2,
-    title: "Project SWATI",
-    location: "Odisha",
-    goal: "$31,274",
-    raised: "$0",
-    image: "",
+    title: "Clean Streets Initiative",
+    location: "City Public Areas",
+    image: "/street-cleaning.jpg",
+    goal: "₹3,00,000",
+    raised: "₹18,500",
   },
   {
     id: 3,
-    title: "Project SIJIKS",
-    location: "Rajasthan",
-    goal: "$55,852",
-    raised: "$0",
-    image: "",
+    title: "River Restoration Program",
+    location: "Local Rivers & Water Bodies",
+    image: "/river-cleaning.webp",
+    goal: "₹7,50,000",
+    raised: "₹42,000",
   },
 ];
 
 const programs = [
   {
-    title: "Enrolling Children In Schools",
-    icon: <School className="w-10 h-10 text-[var(--primary)]" />,
+    title: "Community Meal Distribution",
+    icon: <Utensils className="w-10 h-10 text-primary" />,
   },
   {
-    title: "Re-Enrolling Out-Of-School Children",
-    icon: <Users className="w-10 h-10 text-[var(--primary)]" />,
+    title: "Nutrition Support For Children",
+    icon: <Heart className="w-10 h-10 text-primary" />,
   },
   {
-    title: "Linking To Government Programs",
-    icon: <BookOpen className="w-10 h-10 text-[var(--primary)]" />,
+    title: "Food Security Awareness Drives",
+    icon: <Megaphone className="w-10 h-10 text-primary" />,
   },
   {
-    title: "Conducting Support Classes",
-    icon: <GraduationCap className="w-10 h-10 text-[var(--primary)]" />,
+    title: "Emergency Relief & Ration Kits",
+    icon: <Package className="w-10 h-10 text-primary" />,
   },
 ];
 
 const impacts = [
-  { value: "342,558", label: "Children 6-18 years in schools" },
-  { value: "212,079", label: "Children mainstreamed into schools" },
+  {
+    value: "342,558",
+    label: "Individuals reached through community programs",
+    bgColor: "bg-[#fdf2f2]",
+    image: "/impact-1.jpg",
+  },
+  {
+    value: "212,079",
+    label: "People supported through education initiatives",
+    bgColor: "bg-[#f1f5f9]",
+    image: "/impact-2.jpg",
+  },
   {
     value: "40,479",
-    label: "Children provided education support (non-formal)",
+    label: "Families benefited from livelihood programs",
+    bgColor: "bg-[#fff1f2]",
+    image: "/impact-3.jpg",
   },
   {
     value: "5,311",
-    label:
-      "Rescued children (labor or trafficked) mainstreamed in formal education",
+    label: "Individuals rehabilitated and reintegrated",
+    bgColor: "bg-[#f0fdfa]",
+    image: "/impact-4.jpg",
   },
-  { value: "50,832", label: "Children in the Children's Collectives" },
+  {
+    value: "50,832",
+    label: "Community members engaged in local collectives",
+    bgColor: "bg-[#fff7ed]",
+    image: "/impact-5.jpg",
+  },
 ];
 
 export default function WhatWeDoPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-12 px-6 overflow-hidden">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Child Education: Unlocking Every <br />
-            <span className="text-[var(--primary)] italic font-medium">
-              Child&apos;s Potential
+      <section className="relative pt-10 px-6 overflow-hidden">
+        <div className="mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-14">
+            Creating Lasting <br />
+            <span className="text-primary font-medium">
+              Change in Communities
             </span>
           </h1>
-          <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
-            Education is a fundamental right that empowers children to reach
-            their full potential. At CRY America, we believe that every child,
-            regardless of background, deserves access to quality education. CRY
-            America&apos;s projects focusing on children&apos;s education work
-            to ensure that children from marginalized communities are enrolled
-            in schools, and complete their education.
+          <p className="text-gray-600 max-w-7xl mx-auto leading-relaxed mb-12">
+            We are a nonprofit organization dedicated to empowering underserved
+            communities through sustainable initiatives in education,
+            healthcare, livelihood development, and social awareness. Our work
+            focuses on creating equal opportunities, strengthening local
+            systems, and ensuring long-term impact. By collaborating with
+            communities and partners, we strive to build a more inclusive and
+            resilient future for all.
           </p>
-
-          <div className="relative w-full aspect-[21/9] rounded-[var(--radius)] overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1481437156560-3205f6a5553a?q=80&w=1200&auto=format&fit=crop"
-              alt="Group of smiling children"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
         </div>
       </section>
+
+      <div className="w-full rounded-radius">
+        <Image
+          src="/home-banner.jpg"
+          alt="Community members smiling together"
+          width={1200}
+          height={600}
+          className="object-cover w-full h-auto"
+        />
+      </div>
 
       {/* Statistics Section */}
-      <section className="py-20 bg-gray-50/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-4">
-            Statistics About{" "}
-            <span className="text-[var(--primary)] italic font-semibold">
-              Child Education
-            </span>{" "}
-            in India
-          </h2>
-          <p className="text-gray-600 text-center max-w-4xl mx-auto mb-16 leading-relaxed">
-            There has been significant progress in facilitating children&apos;s
-            access to education over the last decade, yet the journey is far
-            from what we aim to achieve. The statistics below highlight the need
-            to provide children with education, which requires your urgent
-            support.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {statistics.map((stat, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-10 rounded-[var(--radius)] shadow-sm border border-gray-100 flex flex-col items-center text-center"
-              >
-                <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-5xl font-black text-[#333]">
-                    {stat.value}
-                  </span>
-                  {stat.suffix && (
-                    <span className="text-xl font-bold text-[var(--primary)] uppercase">
-                      {stat.suffix}
-                    </span>
-                  )}
-                </div>
-                <p className="text-gray-700 font-medium mb-4">
-                  {stat.description}
-                </p>
-                {stat.source && (
-                  <p className="text-[10px] text-gray-400 mt-auto leading-tight italic">
-                    {stat.source}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-bold mb-4">
-                Our Projects That Work to Protect <br />
-                <span className="text-[var(--primary)] italic font-semibold">
-                  Children&apos;s Right to Education
+              <h2 className="text-5xl font-bold mb-4">
+                Our Ongoing <br />
+                <span className="text-primary font-semibold">
+                  Community Impact Projects
                 </span>
               </h2>
-              <p className="text-gray-600">
-                Every child deserves the opportunity to learn, grow, and achieve
-                their dreams. CRY America&apos;s projects focus on breaking
-                barriers to education and empowering children with knowledge.
-                With your valuable support, we undertake the following
-                initiatives to safeguard every child&apos;s right to education.
+              <p className="text-gray-600 text-lg">
+                We are committed to building healthier communities through food
+                support programs and environmental initiatives. From feeding
+                families in need to restoring clean streets and rivers, every
+                project is designed to create sustainable impact.
               </p>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {statistics.map((project) => (
               <div
                 key={project.id}
-                className="group overflow-hidden rounded-[var(--radius)] border border-gray-200"
+                className="group overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
+                    priority={project.id === 1}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <div className="p-6 bg-white">
+
+                <div className="p-6">
                   <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+
                   <p className="text-gray-500 text-sm mb-4 flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5" /> {project.location}
+                    <MapPin className="w-4 h-4" />
+                    {project.location}
                   </p>
-                  <div className="flex justify-between items-center mb-6 pt-4 border-t border-gray-100">
+
+                  <div className="flex justify-between items-center mb-6 pt-4 -t -gray-100">
                     <div>
                       <p className="text-[10px] uppercase font-bold text-gray-400">
                         Funding Goal
                       </p>
                       <p className="font-bold">{project.goal}</p>
                     </div>
+
                     <div className="text-right">
                       <p className="text-[10px] uppercase font-bold text-gray-400">
                         Funds Raised
@@ -226,7 +172,8 @@ export default function WhatWeDoPage() {
                       <p className="font-bold">{project.raised}</p>
                     </div>
                   </div>
-                  <button className="w-full bg-[#1a1a1a] text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-[var(--primary)] hover:text-black transition-colors rounded-[var(--radius)]">
+
+                  <button className="w-full bg-black text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-black transition-colors rounded-xl">
                     View Project
                   </button>
                 </div>
@@ -236,30 +183,31 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* Programs Icons */}
-      <section className="py-20 bg-gray-50">
+      {/* //TODO : change the images */}
+      <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Learn More About Our <br />
-            <span className="text-[var(--primary)] italic font-semibold">
-              Child Education Programs
+          <h2 className="text-5xl font-bold mb-4 leading-14">
+            Strengthening Communities Through <br />
+            <span className="text-primary italic font-semibold">
+              Nutrition & Support Programs
             </span>
           </h2>
+
           <p className="text-gray-600 max-w-4xl mx-auto mb-16">
-            CRY America Supported Projects are committed to building a brighter
-            future for children by making education accessible, regardless of
-            their socio-economic background. Our projects drive sustainable
-            change by educating parents, teachers, schools, and communities to
-            address the root causes of educational inequalities.
+            Our community outreach initiatives focus on providing nutritious
+            meals, essential resources, and long-term support to underserved
+            families. We work directly with local communities to address food
+            insecurity, improve well-being, and create sustainable systems that
+            empower people to build healthier futures.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {programs.map((prog, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-[var(--radius)] shadow-sm border border-gray-100 flex flex-col items-center hover:shadow-md transition-shadow"
+                className="bg-white p-8 rounded-radius shadow-sm border border-gray-100 flex flex-col items-center hover:shadow-md transition-shadow"
               >
-                <div className="mb-6 bg-[var(--primary)]/10 p-4 rounded-full">
+                <div className="mb-6 bg-primary/10 p-4 rounded-full">
                   {prog.icon}
                 </div>
                 <h4 className="font-bold text-sm leading-snug">{prog.title}</h4>
@@ -269,56 +217,77 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="py-20">
+      <section className="pb-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">
-            Our Impact in Empowering{" "}
-            <span className="text-[var(--primary)] italic font-semibold">
-              Children Through Education
-            </span>
-          </h2>
+          <div className="text-center mb-16 relative">
+            <h2 className="text-4xl md:text-5xl font-bold inline-block">
+              Our Impact in Empowering{" "}
+              <span className="text-primary italic">
+                Communities Across Sectors
+              </span>
+              <div className="h-1.5 w-full bg-primary/30 rounded-full mt-1 -rotate-1"></div>
+            </h2>
+          </div>
 
-          <div className="relative">
-            {/* Top Row Impacts */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="space-y-12">
+            {/* Top 3 */}
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {impacts.slice(0, 3).map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-[var(--primary)] p-8 rounded-[var(--radius)] text-center shadow-lg transform hover:-translate-y-1 transition-transform"
+                  className="flex flex-col rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100"
                 >
-                  <p className="text-3xl font-black mb-1">{item.value}</p>
-                  <p className="text-xs font-bold uppercase tracking-tight leading-tight">
-                    {item.label}
-                  </p>
+                  <div
+                    className={`flex items-center justify-center h-56 ${item.bgColor}`}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.label}
+                      width={300}
+                      height={200}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+
+                  <div className="bg-primary py-8 px-6 text-center">
+                    <p className="text-4xl font-bold text-black mb-2">
+                      {item.value}
+                    </p>
+                    <p className="text-sm font-medium leading-relaxed text-black/80">
+                      {item.label}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Illustration in Middle */}
-            <div className="flex justify-center mb-12">
-              <div className="relative w-48 h-48 bg-gray-100 rounded-full flex items-center justify-center border-4 border-[var(--primary)] overflow-hidden">
-                <img
-                  src=""
-                  alt="Impact Illustration"
-                  width={200}
-                  height={200}
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Bottom Row Impacts */}
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Bottom 2 (Centered Properly) */}
+            <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
               {impacts.slice(3).map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-[var(--primary)] p-8 rounded-[var(--radius)] text-center shadow-lg transform hover:-translate-y-1 transition-transform"
+                  className="flex flex-col rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100"
                 >
-                  <p className="text-3xl font-black mb-1">{item.value}</p>
-                  <p className="text-xs font-bold uppercase tracking-tight leading-tight">
-                    {item.label}
-                  </p>
+                  <div
+                    className={`flex items-center justify-center h-56 ${item.bgColor}`}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.label}
+                      width={300}
+                      height={200}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+
+                  <div className="bg-primary py-8 px-6 text-center">
+                    <p className="text-4xl font-bold text-black mb-2">
+                      {item.value}
+                    </p>
+                    <p className="text-sm font-medium leading-relaxed text-black/80">
+                      {item.label}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -327,76 +296,79 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Donate Page Component Placeholder Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 ">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="max-w-md">
               <h2 className="text-gray-400 text-sm font-bold uppercase tracking-widest mb-4">
-                Donate To
+                Support Our Mission
               </h2>
               <h3 className="text-4xl font-bold mb-6">
-                Make a <br />
-                <span className="text-[var(--primary)] italic font-semibold">
-                  Difference
+                Help Provide <br />
+                <span className="text-primary italic font-semibold">
+                  Meals & Hope
                 </span>
               </h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                There are many ways you can contribute to a child&apos;s
-                education and ensure they have a safe and joyful childhood.
-                Whether as a one-time donor or a monthly supporter, your
-                contribution can give children the gift of a brighter future.
+                Your contribution helps us provide nutritious meals, emergency
+                ration kits, and long-term food security solutions to
+                underserved families. Whether you give once or become a monthly
+                supporter, your generosity directly impacts lives in communities
+                that need it most.
               </p>
             </div>
 
             <div className="flex-1 grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-[var(--radius)] overflow-hidden shadow-sm border border-gray-100">
+              <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src=""
-                  alt="Help Digital"
+                  src="/support-our-mission-1.jpg"
+                  alt="Community Meals"
                   width={400}
                   height={200}
                   className="w-full aspect-video object-cover"
                 />
                 <div className="p-4 flex flex-col items-center">
                   <h4 className="text-center font-bold text-xs mb-4">
-                    Help establish Digital Support Centers
+                    Sponsor Community Meal Distribution
                   </h4>
-                  <button className="bg-[var(--primary)] px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
+                  <button className="bg-primary text-white px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
                     Donate Now
                   </button>
                 </div>
               </div>
-              <div className="bg-white rounded-[var(--radius)] overflow-hidden shadow-sm border border-gray-100">
+
+              <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
                   src=""
-                  alt="Re-enroll"
+                  alt="Nutrition Support"
                   width={400}
                   height={200}
                   className="w-full aspect-video object-cover"
                 />
                 <div className="p-4 flex flex-col items-center">
                   <h4 className="text-center font-bold text-xs mb-4">
-                    Re-enroll dropout children
+                    Support Child Nutrition Programs
                   </h4>
-                  <button className="bg-[var(--primary)] px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
+                  <button className="bg-primary text-white px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
                     Donate Monthly
                   </button>
                 </div>
               </div>
-              <div className="bg-white rounded-[var(--radius)] overflow-hidden shadow-sm border border-gray-100">
+
+              <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
                   src=""
-                  alt="Protect"
+                  alt="Emergency Relief"
                   width={400}
                   height={200}
                   className="w-full aspect-video object-cover"
                 />
                 <div className="p-4 flex flex-col items-center">
                   <h4 className="text-center font-bold text-xs mb-4">
-                    Protect from early marriage and child labor
+                    Provide Emergency Ration Kits
                   </h4>
-                  <button className="bg-[var(--primary)] px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
-                    Support A Project
+                  <button className="bg-primary text-white px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
+                    Support A Family
                   </button>
                 </div>
               </div>
@@ -405,68 +377,63 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* Stories of Hope */}
+      {/* Stories of Impact */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-6xl font-bold">
               Stories{" "}
-              <span className="text-[var(--primary)] italic font-semibold">
-                of Hope
+              <span className="text-primary italic font-semibold">
+                of Transformation
               </span>
             </h2>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-xl flex flex-col md:flex-row gap-12 items-center">
+          <div className="bg-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+            {/* LEFT CONTENT */}
             <div className="flex-1">
-              <h3 className="text-3xl font-bold mb-6 italic text-gray-800">
-                Leiyarin&apos;s path towards education
+              <h3 className="text-4xl font-bold mb-6 italic text-gray-800">
+                Rebuilding Lives Through Community Support
               </h3>
-              <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
+
+              <div className="space-y-4 text-gray-600 leading-relaxed text-base">
                 <p>
-                  Like many other girls affected by the ethnic unrest in
-                  Manipur, Leiyarin&apos;s life turned upside down. With schools
-                  shut and families displaced, she lost touch with her books and
-                  spent her days with her parents in fear at a relief camp.
+                  In underserved communities, limited access to healthcare,
+                  education, and livelihood opportunities often keeps families
+                  trapped in cycles of hardship. Many struggle daily to meet
+                  basic needs.
                 </p>
+
                 <p>
-                  When CRY America&apos;s Project Needs team identified her as
-                  high-risk during a vulnerability mapping exercise, they
-                  stepped in immediately. They encouraged Leiyarin to join the
-                  CRY-supported learning center.
+                  Through our integrated community initiatives, we provide
+                  essential support — from skill development and educational
+                  assistance to health awareness programs and emergency relief.
+                  Each effort is designed to create sustainable, long-term
+                  change.
                 </p>
+
                 <p>
-                  But returning to studies wasn&apos;t easy. The ongoing
-                  conflict had deeply impacted her mental well-being. She had
-                  lost her confidence and showed little interest in learning, or
-                  even speaking with others.
+                  What begins as support often turns into empowerment. Families
+                  regain stability, individuals build confidence, and
+                  communities grow stronger together.
                 </p>
+
                 <p>
-                  To bring back her confidence, the team engaged her in group
-                  activities, storytelling sessions, and peer discussions.
-                  Slowly, she opened up. She shared that she needed support in
-                  specific subjects. The team responded by arranging
-                  subject-wise guidance sessions and giving her notebooks,
-                  books, and pencils, simple things that brought back her joy in
-                  learning.
-                </p>
-                <p>
-                  To make sure nothing held her back, they also counseled her
-                  hesitant parents and encouraged them to send her back to
-                  school once it reopened.
-                </p>
-                <p>
-                  The school finally reopened, Leiyarin excelled in her 3rd
-                  grade with 1st rank, and has been promoted to 4th grade.
+                  With the continued support of our volunteers and partners, we
+                  are expanding our reach and creating measurable impact across
+                  multiple regions.
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-2/5 aspect-[3/4] relative rounded-2xl overflow-hidden shadow-2xl">
+
+            {/* RIGHT IMAGE */}
+            <div className="w-full md:w-2/5 relative overflow-hidden rounded-2xl">
               <Image
-                src=""
-                alt="Story of Hope"
-                fill
-                className="object-cover"
+                src="/stories-impact-1.jpg"
+                alt="Community Support Initiative"
+                width={500}
+                height={600}
+                className="object-cover w-full h-auto"
               />
               <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 text-[10px] rounded-full backdrop-blur-sm italic">
                 Image used for representational purposes only
@@ -477,11 +444,11 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-[var(--primary)]/5">
+      <section className="py-20 bg-primatext-primary/5">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Testimonials from <br />
-            <span className="text-[var(--primary)] italic font-semibold">
+            <span className="text-primary italic font-semibold">
               Beneficiaries, Educators, And Parents
             </span>
           </h2>
@@ -496,14 +463,14 @@ export default function WhatWeDoPage() {
             </p>
             <div className="flex flex-col items-center">
               <p className="font-bold text-xl mb-1">Usha Rao</p>
-              <p className="text-sm text-[var(--primary)] font-semibold uppercase tracking-wider">
+              <p className="text-sm text-primary font-semibold uppercase tracking-wider">
                 CRY America Donor
               </p>
               <div className="flex gap-2 mt-8">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className={`w-3 h-3 rounded-full ${i === 1 ? "bg-[var(--primary)]" : "bg-gray-200"}`}
+                    className={`w-3 h-3 rounded-full ${i === 1 ? "bg-primatext-primary" : "0"}`}
                   />
                 ))}
               </div>
@@ -518,90 +485,78 @@ export default function WhatWeDoPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">
               Frequently Asked{" "}
-              <span className="text-[var(--primary)] italic font-semibold">
+              <span className="text-primary italic font-semibold">
                 Questions
               </span>
             </h2>
           </div>
 
           <div className="space-y-8">
-            <div className="border-b border-gray-100 pb-6">
+            <div className="-b -gray-100 pb-6">
               <h4 className="text-lg font-bold mb-3">
-                Why is supporting child education important?
+                What causes does your NGO focus on?
               </h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Supporting child education is important because it empowers
-                children to break the cycle of poverty and uplift their
-                communities. Education provides children with the knowledge,
-                skills, and confidence to create a better future for themselves
-                and those around them. It promotes equality, reduces child labor
-                and early marriage, and ensures long-term social and economic
-                growth. Every child deserves the opportunity to learn and
-                fulfill their dreams, regardless of their background or
-                circumstances.
+                Our NGO focuses on food distribution drives, street and river
+                cleaning initiatives, women empowerment programs, skill
+                development, and free health camps. We work to create
+                sustainable impact by addressing both immediate needs and
+                long-term community development.
               </p>
             </div>
 
-            <div className="border-b border-gray-100 pb-6">
+            <div className="-b -gray-100 pb-6">
               <h4 className="text-lg font-bold mb-3">
-                How can I contribute to child education?
+                How can I contribute to your initiatives?
               </h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                You can support children&apos;s education by becoming a monthly
-                or one-time donor for CRY America. Your generous contribution
-                will help children enroll in school, re-enroll those who have
-                dropped out, and protect them from the harmful impacts of child
-                labor and early marriage. Together, we can empower children
-                through education and create a brighter future for all.
+                You can contribute through one-time or monthly donations,
+                volunteering in community drives, sponsoring health camps, or
+                supporting environmental campaigns. Every contribution helps us
+                expand our reach and impact more lives.
               </p>
             </div>
 
-            <div className="border-b border-gray-100 pb-6">
+            <div className="-b -gray-100 pb-6">
               <h4 className="text-lg font-bold mb-3">
-                How is my donation used to support education?
+                How is my donation utilized?
               </h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Donations help provide essential resources such as study
-                materials, support classes, and enrollment efforts for children.
-                CRY America&apos;s projects also focus on raising awareness
-                about the importance of education and the ill effects of child
-                labor and child marriage, creating safe learning environments
-                through community outreach and children&apos;s collectives.
+                Donations are used to fund food distribution programs,
+                sanitation campaigns, river restoration efforts, skill-building
+                workshops, and free medical check-ups. We prioritize
+                transparency and ensure funds are directed toward programs that
+                deliver measurable impact.
               </p>
             </div>
 
-            <div className="border-b border-gray-100 pb-6">
+            <div className="-b -gray-100 pb-6">
               <h4 className="text-lg font-bold mb-3">
-                Are donations for child education tax-deductible?
+                Can I volunteer in your projects?
               </h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                CRY America is a 501(c)3 tax-exempt organization and all
-                donations made to CRY America are tax-deductible. Please note
-                that these tax exemption receipts apply only to U.S. residents
-                and cannot be used for tax deductions outside the United States.
+                Yes. We actively welcome volunteers for food drives,
+                environmental clean-up campaigns, awareness programs, and health
+                camps. Volunteers play a crucial role in strengthening community
+                engagement and outreach.
               </p>
             </div>
 
-            <div className="border-b border-gray-100 pb-6">
+            <div className="-b -gray-100 pb-6">
               <h4 className="text-lg font-bold mb-3">
-                Can I support education for a specific group, like girls or
-                children with disabilities?
+                Do you provide impact reports to donors?
               </h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                No, donations cannot be directed towards supporting the
-                education of a specific individual or group. CRY America&apos;s
-                projects work to empower children in the community by providing
-                much needed opportunities that address barriers such as poverty,
-                lack of access to schools, health services, child labor, and
-                early marriages, ultimately shaping a brighter future for
-                children.
+                Yes. We provide regular updates and impact reports to ensure
+                transparency and accountability. Our goal is to keep supporters
+                informed about how their contributions are transforming
+                communities.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <Awards />
     </main>
   );
 }

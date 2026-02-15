@@ -54,15 +54,15 @@ const cards = [
 
 export default function Impact() {
   return (
-    <section id="impact" className="py-16 md:py-24 bg-white scroll-mt-[130px]">
+    <section id="impact" className="py-16 md:py-24 bg-white scroll-mt-32.5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-gochi text-4xl md:text-5xl text-[#1a1a1a] mb-2">
+          <h2 className="text-4xl md:text-5xl text-[#1a1a1a] mb-2">
             Our Impact
           </h2>
           <div className="w-24 h-1 bg-[#FCDA16] mx-auto mb-6" />
           <p className="max-w-4xl mx-auto text-[15px] md:text-16px] text-gray-700 leading-relaxed font-sans">
-            There is nothing more precious than a child's smile. Since 2004, CRY
+            There is nothing more precious than a child&apos;s smile. Since 2004, CRY
             America has helped create more than 800,000 happy childhoods thanks
             to supporters like YOU!
           </p>

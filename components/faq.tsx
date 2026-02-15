@@ -2,15 +2,15 @@ export default function FAQ() {
   return (
     <section className="w-full bg-white py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl text-center font-gochi mb-2">
+        <h2 className="text-4xl text-center mb-2">
           Frequently Asked{" "}
-          <span className="text-[var(--primary)]">Questions</span>
+          <span className="text-primabg-primary">Questions</span>
         </h2>
-        <div className="mx-auto h-1 w-40 bg-[var(--primary)] rounded-[var(--radius)] mb-12" />
+        <div className="mx-auto h-1 w-40 bg-primary rounded-radius mb-12" />
 
         <div className="max-w-4xl mx-auto space-y-10">
           <div>
-            <h3 className="text-2xl md:text-3xl font-gochi">
+            <h3 className="text-2xl md:text-3xl">
               What does CRY America do as a non-profit organization for
               children?
             </h3>
@@ -26,7 +26,7 @@ export default function FAQ() {
           </div>
 
           <div>
-            <h3 className="text-2xl md:text-3xl font-gochi">
+            <h3 className="text-2xl md:text-3xl">
               How is CRY America different from other NGOs for children?
             </h3>
             <p className="mt-4 text-gray-700 leading-relaxed">
@@ -43,7 +43,7 @@ export default function FAQ() {
           </div>
 
           <div>
-            <h3 className="text-2xl md:text-3xl font-gochi">
+            <h3 className="text-2xl md:text-3xl">
               How can I support CRY America’s work for underprivileged children?
             </h3>
             <p className="mt-4 text-gray-700 leading-relaxed">
@@ -57,7 +57,7 @@ export default function FAQ() {
           </div>
 
           <div>
-            <h3 className="text-2xl md:text-3xl font-gochi">
+            <h3 className="text-2xl md:text-3xl">
               Are donations to CRY America tax-deductible?
             </h3>
             <p className="mt-4 text-gray-700 leading-relaxed">

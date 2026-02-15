@@ -4,11 +4,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 px-4 md:px-8 flex justify-center items-center scroll-mt-[130px]"
+      className="py-20 px-4 md:px-8 flex justify-center items-center scroll-mt-32.5"
     >
       <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
-        {/* Left image circle */}
-        <div className="shrink-0 w-56 h-56 md:w-72 md:h-72 rounded-full bg-[var(--primary)] p-4 flex items-center justify-center">
+        <div className="shrink-0 w-56 h-56 md:w-72 md:h-72 rounded-full bg-primary p-4 flex items-center justify-center">
           <div className="w-full h-full rounded-full overflow-hidden shadow-md">
             <Image
               src="/home-about.webp"
@@ -21,17 +20,16 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right content */}
         <div className="flex-1 max-w-3xl">
-          <h2 id="about-heading" className="font-gochi text-4xl md:text-5xl">
+          <h2 id="about-heading" className="text-4xl md:text-5xl">
             About CRY America
           </h2>
           <h3 id="approach" className="sr-only">
             Our Approach
           </h3>
-          <div className="w-24 h-1 mt-2 mb-6 bg-[var(--primary)] rounded-[var(--radius)]" />
+          <div className="w-24 h-1 mt-2 mb-6 bg-primary rounded-radius" />
 
-          <div className="space-y-4 text-[16px] leading-relaxed text-[var(--foreground)]">
+          <div className="space-y-4 text-[16px] leading-relaxed text-foreground">
             <p>
               CRY America, an NGO in the USA, stands as a powerful advocate for
               underprivileged children, addressing their rights, education,
@@ -54,7 +52,7 @@ export default function About() {
             </p>
 
             <div className="mt-6">
-              <button className="bg-[var(--primary)] hover:opacity-90 text-[var(--primary-foreground)] font-bold py-3 px-6 rounded-[var(--radius)] shadow-md uppercase tracking-widest">
+              <button className="bg-primary hover:opacitradiusr(--primary-foreground)] font-bold py-3 px-6 rounded-radius shadow-md uppercase tracking-widest">
                 About us
               </button>
             </div>

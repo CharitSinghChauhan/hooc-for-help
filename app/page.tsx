@@ -3,10 +3,8 @@ import About from "@/components/about";
 import Impact from "@/components/impact";
 import DonorVoices from "@/components/donorVoices";
 import Focus from "@/components/focus";
-import Awards from "@/components/awards";
 import FAQ from "@/components/faq";
 import Donate from "@/components/donate";
-import Footer from "@/components/footer";
 import Image from "next/image";
 
 export default function Home() {
@@ -28,7 +26,6 @@ export default function Home() {
       <DonorVoices />
       <Donate />
       <FAQ />
-      <Awards />
     </main>
   );
 }

@@ -20,8 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-[600px] md:h-[500px] overflow-hidden bg-white mt-">
-      {/* 1. Carousel Layer (Background) */}
+    <section className="relative w-full h-150 md:h-125 overflow-hidden bg-white mt-">
       <div className="absolute inset-0 w-full h-full z-10">
         {slides.map((slide, index) => (
           <div
@@ -43,10 +42,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/10" />
       </div>
 
-      {/* 2. Cutout Overlay Layer */}
-      {/* This image acts as the mask/shape. Assuming it covers the left side or provides the torn edge. 
-          If it's transparent with a white edge, we might need a white div behind text. 
-          Let's assume it handles the visual transition. */}
       <div className="absolute inset-0 z-20 pointer-events-none">
         <Image
           src="/banner-cutout-new.png"
@@ -59,18 +54,18 @@ export default function Hero() {
       {/* 3. Content Layer */}
       <div className="relative z-30 container mx-auto h-full flex items-center px-4 md:px-8">
         <div className="max-w-xl md:max-w-2xl pt-10 md:pt-0">
-          <div className="text-xl md:text-4xl leading-tight space-y-2 font-gochi ">
-            <p className="text-[var(--foreground)]">
+          <div className="text-xl md:text-4xl leading-tight space-y-2 ">
+            <p className="text-foreground">
               Childhood was never meant for labor.
             </p>
-            <p className="text-[var(--primary)]">Be the bridge between</p>
-            <p className="text-[var(--foreground)]">
+            <p className="text-primary">Be the bridge between</p>
+            <p className="text-foreground">
               lost dreams and new beginnings.
             </p>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <button className="bg-[var(--primary)] hover:opacity-90 text-[var(--primary-foreground)] font-bold py-3 px-8 rounded-[var(--radius)] shadow-md transition-colors text-sm tracking-wider flex items-center justify-center gap-2">
+            <button className="bg-primatext-primary hover:opacity-90 text-primary-foreground font-bold py-3 px-8 rounded-radius shadow-md transition-colors text-sm tracking-wider flex items-center justify-center gap-2">
               DONATE NOW
             </button>
           </div>
@@ -85,7 +80,7 @@ export default function Hero() {
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all ${
               index === currentSlide
-                ? "bg-[var(--primary)] scale-125"
+                ? "bg-primatext-primary scale-125"
                 : "bg-gray-400 hover:bg-white"
             }`}
             aria-label={`Go to slide ${index + 1}`}

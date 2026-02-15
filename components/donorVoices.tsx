@@ -84,10 +84,10 @@ export default function DonorVoices() {
   return (
     <section
       id="donor-voices"
-      className="w-full bg-white pb-20 scroll-mt-[130px]"
+      className="w-full bg-white pb-20 scroll-mt-32.5"
     >
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-gochi mb-2">Donor Voices</h2>
+        <h2 className="text-4xl mb-2">Donor Voices</h2>
         <div className="mx-auto h-1 w-40 bg-[#FCDA16] rounded-sm mb-8" />
 
         <div className="max-w-2xl mx-auto text-center">

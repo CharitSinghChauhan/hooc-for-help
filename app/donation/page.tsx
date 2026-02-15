@@ -3,9 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import Awards from "@/components/awards";
+import Footer from "@/components/footer"
 import { ChevronRight } from "lucide-react";
 
 const amounts = ["$49", "$99", "$159", "$196", "$340", "Other"];
@@ -112,19 +110,17 @@ export default function DonationPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero Section */}
       <section className="pb-16 bg-primary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <h1 className="text-4xl md:text-6xl font-gochi text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-6xl text-gray-900 leading-tight">
                 Your contribution <br />
                 will transform a <br />
                 child&apos;s life
               </h1>
 
-              {/* Donation Form Card */}
-              <div className="bg-white rounded-[var(--radius)] shadow-xl overflow-hidden max-w-lg border border-gray-100">
+              <div className="bg-white rounded-radius shadow-xl overflow-hidden max-w-lg border border-gray-100">
                 <div className="flex bg-gray-50 border-b">
                   {["DONATE NOW", "DONATE MONTHLY", "SUPPORT A PROJECT"].map(
                     (tab) => (
@@ -144,13 +140,13 @@ export default function DonationPage() {
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <label className="flex items-start gap-3 bg-[var(--primary)] p-3 rounded-[var(--radius)] cursor-pointer group">
+                  <label className="flex items-start gap-3 bg-primary p-3 rounded-radius cursor-pointer group">
                     <input
                       type="checkbox"
                       className="mt-1 accent-gray-900"
                       defaultChecked
                     />
-                    <span className="text-[11px] md:text-xs font-semibold text-[var(--primary-foreground)] leading-snug">
+                    <span className="text-[11px] md:text-xs font-semibold text-primary-foreground leading-snug">
                       Yes, I believe every child has the right to a happy &
                       healthy childhood. (Please choose an amount to donate)
                     </span>
@@ -161,9 +157,9 @@ export default function DonationPage() {
                       <button
                         key={amt}
                         onClick={() => setSelectedAmount(amt)}
-                        className={`py-3 rounded-[var(--radius)] text-[13px] md:text-base font-bold transition-all ${
+                        className={`py-3 rounded-radius text-[13px] md:text-base font-bold transition-all ${
                           selectedAmount === amt
-                            ? "bg-[var(--primary)] text-[var(--primary-foreground)] shadow-sm"
+                            ? "bg-primary text-primary-foreground shadow-sm"
                             : "bg-gray-100 text-gray-400 hover:bg-gray-200"
                         }`}
                       >
@@ -178,7 +174,7 @@ export default function DonationPage() {
                       : "Your support makes a difference"}
                   </p>
 
-                  <button className="w-full bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-[var(--primary-foreground)] font-bold py-3 rounded-[var(--radius)] shadow-sm transition-colors text-sm uppercase tracking-wider">
+                  <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 rounded-radius shadow-sm transition-colors text-sm uppercase tracking-wider">
                     Make Donation
                   </button>
 
@@ -216,7 +212,7 @@ export default function DonationPage() {
               </div>
             </div>
 
-            <div className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden">
+            <div className="relative h-100 md:h-150 rounded-2xl overflow-hidden">
               <Image
                 src="/one-time-donation-1.webp"
                 alt="Child smiling"
@@ -229,16 +225,15 @@ export default function DonationPage() {
         </div>
       </section>
 
-      {/* Why Donate Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 space-y-8">
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-gochi text-gray-900">
+                <h2 className="text-4xl md:text-5xl text-gray-900">
                   Why Donate
                 </h2>
-                <div className="w-20 h-1 bg-[var(--primary)]" />
+                <div className="w-20 h-1 bg-primary" />
               </div>
               <div className="space-y-6 text-gray-600 leading-relaxed font-sans text-sm md:text-base">
                 <p>
@@ -253,13 +248,13 @@ export default function DonationPage() {
                 </p>
                 <p>All donations to CRY America are tax-deductible.</p>
               </div>
-              <button className="bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-[var(--primary-foreground)] font-bold px-8 py-3 rounded-[var(--radius)] shadow-sm transition-colors text-sm uppercase">
+              <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-3 rounded-radius shadow-sm transition-colors text-sm uppercase">
                 Donate Now
               </button>
             </div>
             <div className="order-1 lg:order-2 flex justify-center">
-              <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px]">
-                <div className="absolute inset-0 rounded-full border-[15px] border-[var(--primary)]/20 animate-pulse" />
+              <div className="relative w-75 h-75 md:w-112.5 md:h-112.5">
+                <div className="absolute inset-0 rounded-full border-15 border-primarybg-primary/20 animate-pulse" />
                 <div className="absolute inset-2 rounded-full overflow-hidden">
                   <Image
                     src="/home-about.webp"
@@ -274,13 +269,12 @@ export default function DonationPage() {
         </div>
       </section>
 
-      {/* Monthly Giving Circle */}
-      <section className="py-20 bg-[var(--primary)]/5">
+      <section className="py-20 bg-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="flex justify-center">
-              <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
-                <div className="absolute inset-0 rounded-full border-[10px] border-[var(--primary)]" />
+              <div className="relative w-75 h-75 md:w-100 md:h-100">
+                <div className="absolute inset-0 rounded-full border-10 border-primarybg-primary" />
                 <div className="absolute inset-3 rounded-full overflow-hidden">
                   <Image
                     src="/monthly-donation.webp"
@@ -293,7 +287,7 @@ export default function DonationPage() {
             </div>
             <div className="space-y-8">
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-gochi text-gray-900 leading-tight">
+                <h2 className="text-4xl md:text-5xl text-gray-900 leading-tight">
                   Join Our Monthly <br />
                   Giving Circle
                 </h2>
@@ -310,10 +304,10 @@ export default function DonationPage() {
                 through a direct bank transfer.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-[var(--primary-foreground)] font-bold px-6 py-3 rounded-[var(--radius)] shadow-sm transition-colors text-xs uppercase tracking-wider">
+                <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-radius shadow-sm transition-colors text-xs uppercase tracking-wider">
                   Donate by Credit Card
                 </button>
-                <button className="bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-[var(--primary-foreground)] font-bold px-6 py-3 rounded-[var(--radius)] shadow-sm transition-colors text-xs uppercase tracking-wider">
+                <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-radius shadow-sm transition-colors text-xs uppercase tracking-wider">
                   Donate by Bank Transfer
                 </button>
               </div>
@@ -322,10 +316,9 @@ export default function DonationPage() {
         </div>
       </section>
 
-      {/* Support A Project */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl font-gochi text-gray-900 mb-6 font-medium">
+          <h2 className="text-4xl md:text-6xl text-gray-900 mb-6 font-medium">
             Support A Project
           </h2>
           <p className="max-w-4xl mx-auto text-gray-600 mb-12 font-sans text-sm md:text-base leading-relaxed">
@@ -340,9 +333,9 @@ export default function DonationPage() {
             {projects.map((proj, i) => (
               <div
                 key={i}
-                className="group bg-white rounded-[var(--radius)] border border-gray-100 shadow-sm hover:shadow-md transition-all"
+                className="group bg-white rounded-radius border border-gray-100 shadow-sm hover:shadow-md transition-all"
               >
-                <div className="relative h-48 overflow-hidden rounded-t-[var(--radius)]">
+                <div className="relative h-48 overflow-hidden rounded-t-radius">
                   <Image
                     src={proj.img}
                     alt={proj.name}
@@ -375,7 +368,7 @@ export default function DonationPage() {
                     </div>
                   </div>
 
-                  <button className="w-full mt-4 bg-black text-white text-[10px] font-bold py-2 rounded-[var(--radius)] uppercase tracking-wider hover:bg-gray-800 transition-colors">
+                  <button className="w-full mt-4 bg-black text-white text-[10px] font-bold py-2 rounded-radius uppercase tracking-wider hover:bg-gray-800 transition-colors">
                     View Project
                   </button>
                 </div>
@@ -383,20 +376,19 @@ export default function DonationPage() {
             ))}
           </div>
 
-          <button className="mt-12 bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-[var(--primary-foreground)] font-bold px-10 py-3 rounded-[var(--radius)] shadow-sm transition-all text-xs uppercase tracking-widest">
+          <button className="mt-12 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-3 rounded-radius shadow-sm transition-all text-xs uppercase tracking-widest">
             View More
           </button>
         </div>
       </section>
 
-      {/* Other Ways To Donate */}
-      <section className="py-24 bg-[var(--primary)]/5">
+      <section className="py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-gochi text-gray-900 mb-2">
+            <h2 className="text-4xl md:text-6xl text-gray-900 mb-2">
               Other Ways To Donate
             </h2>
-            <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-8" />
+            <div className="w-24 h-1 bg-primary mx-auto mb-8" />
             <p className="text-gray-600 font-sans">
               There are so many ways to create happy childhoods and ensure that
               children have a chance at a brighter future!
@@ -408,7 +400,7 @@ export default function DonationPage() {
               {otherWays.map((way, i) => (
                 <button
                   key={i}
-                  className="w-full flex items-center justify-between bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-[var(--primary-foreground)] px-6 py-5 rounded-[var(--radius)] transition-all text-left group"
+                  className="w-full flex items-center justify-between bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-5 rounded-radius transition-all text-left group"
                 >
                   <span className="text-xs font-bold tracking-wider">
                     {way}
@@ -417,7 +409,7 @@ export default function DonationPage() {
                 </button>
               ))}
             </div>
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-125 rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/other-ways-to-donate.png"
                 alt="Other ways to donate"
@@ -429,10 +421,9 @@ export default function DonationPage() {
         </div>
       </section>
 
-      {/* How Your Donations Are Used */}
       <section className="py-24 bg-white text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-gochi text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl text-gray-900 mb-4">
             How Your Donations Are Used
           </h2>
           <p className="text-gray-600 mb-12 font-sans">
@@ -454,13 +445,12 @@ export default function DonationPage() {
         </div>
       </section>
 
-      {/* Impact Stats */}
       <section className="py-24 bg-white border-t border-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-gochi text-gray-900 mb-2">
+          <h2 className="text-4xl md:text-5xl text-gray-900 mb-2">
             Our Impact
           </h2>
-          <div className="w-20 h-1 bg-[var(--primary)] mx-auto mb-8" />
+          <div className="w-20 h-1 bg-primary mx-auto mb-8" />
           <p className="text-gray-600 max-w-3xl mx-auto mb-16 text-sm md:text-base leading-relaxed">
             There is nothing more precious than a child&apos;s smile. Since
             2004, CRY America has helped create more than 800,000 happy
@@ -471,7 +461,7 @@ export default function DonationPage() {
             {impactCards.map((card, i) => (
               <div
                 key={i}
-                className="flex flex-col rounded-[var(--radius)] overflow-hidden border border-gray-100 shadow-sm transition-transform hover:translate-y-[-4px]"
+                className="flex flex-col rounded-radius overflow-hidden border border-gray-100 shadow-sm transition-transform hover:translate-y-1"
               >
                 <div
                   className={`${card.bg} py-8 px-4 flex justify-center items-center h-40`}
@@ -484,7 +474,7 @@ export default function DonationPage() {
                     className="object-contain"
                   />
                 </div>
-                <div className="bg-[var(--primary)] py-8 text-[var(--primary-foreground)]">
+                <div className="bg-primary py-8 text-primary-foreground">
                   <span className="block text-3xl font-bold mb-1">
                     {card.number}
                   </span>
@@ -496,19 +486,18 @@ export default function DonationPage() {
             ))}
           </div>
 
-          <button className="mt-16 bg-[var(--primary)] hover:bg-[var(--primary)]/90 text-[var(--primary-foreground)] font-bold px-10 py-3 rounded-[var(--radius)] shadow-sm transition-all text-xs uppercase tracking-widest">
+          <button className="mt-16 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-3 rounded-radius shadow-sm transition-all text-xs uppercase tracking-widest">
             View More
           </button>
         </div>
       </section>
 
-      {/* Testimonials */}
       <div className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-gochi text-gray-900 mb-2 text-center">
+          <h2 className="text-4xl md:text-5xl text-gray-900 mb-2 text-center">
             What Our Donors Have To Say
           </h2>
-          <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-16" />
+          <div className="w-24 h-1 bg-primary mx-auto mb-16" />
           <div className="bg-white">
             <div className="max-w-4xl mx-auto p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
               <p className="text-lg text-gray-600 italic leading-relaxed mb-8">
@@ -523,7 +512,7 @@ export default function DonationPage() {
                 emotionally ready to build her own family.&quot;
               </p>
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[var(--primary)] mb-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primarybg-primary mb-4">
                   <Image
                     src="/Vol-61.png"
                     alt="Yogita Maghnani"
@@ -541,8 +530,6 @@ export default function DonationPage() {
           </div>
         </div>
       </div>
-
-      <Awards />
       <Footer />
     </main>
   );
