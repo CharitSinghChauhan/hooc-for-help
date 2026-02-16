@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Footer from "@/components/footer"
+import Footer from "@/components/footer";
 import { ChevronRight } from "lucide-react";
 
 const amounts = ["$49", "$99", "$159", "$196", "$340", "Other"];
@@ -80,26 +80,26 @@ const otherWays = [
 const impactCards = [
   {
     img: "/Children-impacted-overall.png",
-    number: "825,539",
-    label: "Children impacted overall",
+    number: "1,200,000",
+    label: "Individuals empowered overall",
     bg: "bg-[#f7f7fb]",
   },
   {
     img: "/Children-6-18-years-in-schools.png",
-    number: "342,558",
-    label: "6–18 years children in schools",
+    number: "450,000",
+    label: "People educated and skilled",
     bg: "bg-[#fff5f7]",
   },
   {
     img: "/0-1-years-children-fully-immunized.png",
-    number: "239,996",
-    label: "0–1 years children fully immunized",
+    number: "75,000",
+    label: "Families supported through livelihood",
     bg: "bg-[#f0fbff]",
   },
   {
     img: "/Govt.-schools-approved-or-strengthened.png",
-    number: "1,699",
-    label: "Public schools activated",
+    number: "2,500",
+    label: "Health camps conducted",
     bg: "bg-[#fafafa]",
   },
 ];
@@ -117,7 +117,7 @@ export default function DonationPage() {
               <h1 className="text-4xl md:text-6xl text-gray-900 leading-tight">
                 Your contribution <br />
                 will transform a <br />
-                child&apos;s life
+                community&apos;s future
               </h1>
 
               <div className="bg-white rounded-radius shadow-xl overflow-hidden max-w-lg border border-gray-100">
@@ -188,8 +188,8 @@ export default function DonationPage() {
                   </div>
 
                   <p className="text-[10px] text-gray-500 text-center leading-tight">
-                    CRY America is a 501(c)3 exempt organization and all
-                    donations are tax deductible.
+                    Hooc Help is a 501(c)3 exempt organization and all donations
+                    are tax deductible.
                   </p>
 
                   <div className="flex justify-center gap-2 pt-2 grayscale opacity-60">
@@ -237,7 +237,7 @@ export default function DonationPage() {
               </div>
               <div className="space-y-6 text-gray-600 leading-relaxed font-sans text-sm md:text-base">
                 <p>
-                  Your contribution to CRY America will enable children to
+                  Your contribution to Hooc Help will enable communities to
                   complete their education, get proper nutrition and healthcare
                   and stay protected from abuse and exploitation.
                 </p>
@@ -246,7 +246,7 @@ export default function DonationPage() {
                   will need each and every one of us to come together to ensure
                   happier childhoods for children everywhere!
                 </p>
-                <p>All donations to CRY America are tax-deductible.</p>
+                <p>All donations to Hooc Help are tax-deductible.</p>
               </div>
               <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-3 rounded-radius shadow-sm transition-colors text-sm uppercase">
                 Donate Now
@@ -323,8 +323,8 @@ export default function DonationPage() {
           </h2>
           <p className="max-w-4xl mx-auto text-gray-600 mb-12 font-sans text-sm md:text-base leading-relaxed">
             If you wish to donate $2,500 or more, you can support an entire or
-            part of a CRY America Project. Select a Project of your choice and
-            we will send you progress reports and organize a year end zoom call
+            part of a Hooc Help Project. Select a Project of your choice and we
+            will send you progress reports and organize a year end zoom call
             with the Project Partner that will help track the impact you have
             enabled in the lives of children.
           </p>
@@ -452,9 +452,9 @@ export default function DonationPage() {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8" />
           <p className="text-gray-600 max-w-3xl mx-auto mb-16 text-sm md:text-base leading-relaxed">
-            There is nothing more precious than a child&apos;s smile. Since
-            2004, CRY America has helped create more than 800,000 happy
-            childhoods thanks to supporters like YOU!
+            Every community transformed is a step toward global change. Since
+            2004, Hooc Help has helped create more than 1,200,000 empowered
+            communities thanks to supporters like YOU!
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -523,7 +523,7 @@ export default function DonationPage() {
                 </div>
                 <h4 className="font-bold text-gray-900">Yogita Maghnani</h4>
                 <p className="text-xs text-gray-500 uppercase">
-                  CRY America Volunteer
+                  Hooc Help Volunteer
                 </p>
               </div>
             </div>

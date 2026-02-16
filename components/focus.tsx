@@ -7,27 +7,27 @@ const cards = [
   {
     id: "education",
     icon: "/focus-icon-1.svg",
-    title: "EDUCATION",
-    desc: "Quality education and learning opportunities for every child",
+    title: "EDUCATION & SKILL DEVELOPMENT",
+    desc: "Quality education and vocational training for lifelong empowerment",
   },
   {
     id: "health",
     icon: "/focus-icon-2.svg",
-    title: "HEALTH &\nNUTRITION",
-    desc: "Increasing access to proper nutrition and quality healthcare",
+    title: "HEALTH & NUTRITION",
+    desc: "Comprehensive healthcare and nutritional support for communities",
     featured: true,
   },
   {
-    id: "safety",
+    id: "environment",
     icon: "/focus-icon-3.svg",
-    title: "SAFETY & PROTECTION",
-    desc: "Protecting children from abuse, harm and exploitation",
+    title: "ENVIRONMENTAL SUSTAINABILITY",
+    desc: "Tree plantation and conservation initiatives for a greener future",
   },
   {
-    id: "participation",
+    id: "empowerment",
     icon: "/focus-icon-4.svg",
-    title: "CHILD PARTICIPATION",
-    desc: "Giving children a voice in decisions that affect them",
+    title: "COMMUNITY EMPOWERMENT",
+    desc: "Women empowerment and social awareness programs for inclusive growth",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Focus() {
         <h2 className="text-4xl md:text-5xl">Our Focus Areas</h2>
         <div className="w-24 h-1 bg-primary mx-auto mt-3 mb-8 rounded-md" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {cards.map((card, i) => {
             const isActive = i === active;
             return (
@@ -66,7 +66,7 @@ export default function Focus() {
                 onMouseEnter={() => handleEnter(i)}
                 onMouseLeave={() => handleLeave(i)}
                 onClick={() => handleClick(i)}
-                className={`relative cursor-pointer rounded-radius border-2 transition-all duration-200 ease-in-out overflow-hidden flex items-center justify-center h-64 md:h-72 p-6 ${
+                className={`relative cursor-pointer rounded-radius border-2 transition-all duration-200 ease-in-out overflow-hidden flex items-center justify-center h-56 sm:h-64 md:h-72 p-4 sm:p-6 ${
                   isActive
                     ? "bg-primary border-primabg-primary"
                     : "bg-white border-primabg-primary/50"

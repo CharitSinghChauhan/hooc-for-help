@@ -34,7 +34,7 @@ const programs = [
     icon: <Utensils className="w-10 h-10 text-primary" />,
   },
   {
-    title: "Nutrition Support For Children",
+    title: "Nutrition Support For Communities",
     icon: <Heart className="w-10 h-10 text-primary" />,
   },
   {
@@ -173,7 +173,7 @@ export default function WhatWeDoPage() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-black text-white py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-black transition-colors rounded-xl">
+                  <button className="w-full bg-primary py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-black transition-colors rounded-xl">
                     View Project
                   </button>
                 </div>
@@ -245,7 +245,7 @@ export default function WhatWeDoPage() {
                       alt={item.label}
                       width={300}
                       height={200}
-                      className="object-contain w-full h-full"
+                      className="object-cover w-full h-full"
                     />
                   </div>
 
@@ -276,7 +276,7 @@ export default function WhatWeDoPage() {
                       alt={item.label}
                       width={300}
                       height={200}
-                      className="object-contain w-full h-full"
+                      className="object-cover w-full h-full"
                     />
                   </div>
 
@@ -339,7 +339,7 @@ export default function WhatWeDoPage() {
 
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src=""
+                  src="/support-our-mission-2.png"
                   alt="Nutrition Support"
                   width={400}
                   height={200}
@@ -357,7 +357,7 @@ export default function WhatWeDoPage() {
 
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src=""
+                  src="/support-our-mission-3.png"
                   alt="Emergency Relief"
                   width={400}
                   height={200}
@@ -455,16 +455,16 @@ export default function WhatWeDoPage() {
 
           <div className="mt-16">
             <p className="text-lg italic text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              &quot;What makes CRY America special is the drive and the
+              &quot;What makes Hooc Help special is the drive and the
               genuineness of the volunteer team, year after year. By adopting
               projects themselves, some of these volunteers have put their money
-              where their mouth is. Thank you CRY America for making giving so
+              where their mouth is. Thank you Hooc Help for making giving so
               easy and impactful.&quot;
             </p>
             <div className="flex flex-col items-center">
               <p className="font-bold text-xl mb-1">Usha Rao</p>
               <p className="text-sm text-primary font-semibold uppercase tracking-wider">
-                CRY America Donor
+                Hooc Help Donor
               </p>
               <div className="flex gap-2 mt-8">
                 {[1, 2, 3, 4].map((i) => (
@@ -556,7 +556,6 @@ export default function WhatWeDoPage() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }

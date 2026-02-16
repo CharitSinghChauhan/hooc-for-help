@@ -5,11 +5,9 @@ import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-primary text-primary-foreground pt-12 pb-8">
-      {/* Main Footer Content */}
+    <footer className="relative bg-primary text-primary-foreground pt-12 pb-8 ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          {/* Navigation Column */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-4">
               Home
@@ -21,22 +19,6 @@ export default function Footer() {
                   className="text-sm hover:opacity-80 transition-colors"
                 >
                   About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Grants
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Events
                 </Link>
               </li>
               <li>

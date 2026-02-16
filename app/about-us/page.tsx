@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 export default function AboutUs() {
@@ -9,20 +8,17 @@ export default function AboutUs() {
         <div className="absolute top-0 left-0 w-full h-full bg-primary/20" />
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <Image
+          <img
             src="/about-us.png"
             alt="Banner"
-            fill
             className="object-cover object-top opacity-90"
           />
         </div>
 
         <div className="relative z-20 text-center mt-20 md:ml-20 ml-5">
           <h1 className="text-2xl md:text-4xl text-foreground">
-            <span className="text-primary text-2xl md:text-4xl">
-              20 years
-            </span>{" "}
-            of enabling <br /> brighter futures!
+            <span className="text-primary text-2xl md:text-4xl">20 years</span>{" "}
+            of enabling <br /> sustainable development!
           </h1>
         </div>
       </section>
@@ -34,9 +30,8 @@ export default function AboutUs() {
         <h2 className="text-4xl md:text-5xl mb-6">Our Vision</h2>
         <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-radius" />
         <p className="text-lg md:text-xl leading-relaxed text-gray-700">
-          A happy, healthy and creative child whose rights are protected and
-          honored in a society that is built on respect for dignity, justice and
-          equity for all.
+          A thriving, equitable society where every community member has access
+          to opportunities, dignity, and sustainable development.
         </p>
       </section>
 
@@ -46,9 +41,7 @@ export default function AboutUs() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl mb-6">
-              Our Mission
-            </h2>
+            <h2 className="text-4xl md:text-5xl mb-6">Our Mission</h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-radius" />
           </div>
 
@@ -56,15 +49,15 @@ export default function AboutUs() {
             {[
               {
                 img: "/mission-1-uai-516x503-1.jpg",
-                title: "Taking Responsibility",
+                title: "Building Sustainable Communities",
               },
               {
                 img: "/mission-2-uai-516x503-1.jpg",
-                title: "Mobilizing Potential",
+                title: "Empowering Through Education",
               },
               {
                 img: "/mission-3-uai-516x503-1.jpg",
-                title: "Inspiring Collective Action",
+                title: "Fostering Environmental Care",
               },
             ].map((item, idx) => (
               <div
@@ -72,10 +65,9 @@ export default function AboutUs() {
                 className="bg-white rounded-radius shadow-sm hover:shadow-md transition-shadow border-b-2 border-primabg-primary"
               >
                 <div className="relative h-64 w-full">
-                  <Image
+                  <img
                     src={item.img}
                     alt={item.title}
-                    fill
                     className="object-cover"
                   />
                 </div>
@@ -94,9 +86,7 @@ export default function AboutUs() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-4xl mb-6 text-center">
-              Our Newsletters
-            </h2>
+            <h2 className="text-4xl mb-6 text-center">Our Newsletters</h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-radius" />
 
             <div className="space-y-6">
@@ -122,10 +112,9 @@ export default function AboutUs() {
                   className="flex items-center gap-4 border border-primabg-primary/20 bg-primary/10 p-4 rounded-radius hover:shadow-sm transition-shadow"
                 >
                   <div className="shrink-0 w-24 h-24 relative bg-gray-200">
-                    <Image
+                    <img
                       src={item.img}
                       alt={item.title}
-                      fill
                       className="object-cover"
                     />
                   </div>
@@ -153,27 +142,25 @@ export default function AboutUs() {
           </div>
 
           <div>
-            <h2 className="text-4xl mb-6 text-center">
-              In The Media
-            </h2>
+            <h2 className="text-4xl mb-6 text-center">In The Media</h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-radius" />
 
             <div className="space-y-6">
               {[
                 {
                   title:
-                    "CRY Gala celebrates supporters for shaping children's destinies",
+                    "Hooc Help celebrates supporters for shaping sustainable futures",
                   date: "May 2024",
                   img: "/mission-1-uai-516x503-1.jpg",
-                }, // Reuse generic image if specific not found
+                }, // Reuse generic img if specific not found
                 {
-                  title: "CRY Houston Gala raises $400,000",
+                  title: "Hooc Help Gala raises $400,000",
                   date: "May 2024",
                   img: "/mission-2-uai-516x503-1.jpg",
                 },
                 {
                   title:
-                    "CRY Gala to Thank Supporters for Shaping Children's Destinies",
+                    "Hooc Help Gala to Thank Supporters for Shaping Sustainable Futures",
                   date: "April 2024",
                   img: "/mission-3-uai-516x503-1.jpg",
                 },
@@ -183,10 +170,9 @@ export default function AboutUs() {
                   className="flex items-center gap-4 border border-primabg-primary/20 bg-primary/10 p-4 rounded-radius hover:shadow-sm transition-shadow"
                 >
                   <div className="shrink-0 w-24 h-24 relative bg-gray-200">
-                    <Image
+                    <img
                       src={item.img}
                       alt={item.title}
-                      fill
                       className="object-cover"
                     />
                   </div>
@@ -216,10 +202,9 @@ export default function AboutUs() {
       </section>
 
       <section className="w-full relative h-100 md:h-150 my-12">
-        <Image
+        <img
           src="/two-girls-1.jpg"
           alt="Smiling women"
-          fill
           className="object-cover object-top"
         />
       </section>
@@ -230,8 +215,8 @@ export default function AboutUs() {
       >
         <h2 className="text-4xl md:text-5xl mb-4">Honor Roll</h2>
         <p className="text-sm text-gray-500 mb-6">
-          You&apos;ve been our superheroes! Thank YOU for enabling brighter futures
-          for vulnerable children!
+          You&apos;ve been our superheroes! Thank YOU for enabling brighter
+          futures for vulnerable children!
         </p>
         <div className="w-24 h-1 bg-primary mx-auto mb-12 rounded-radius" />
 
@@ -245,10 +230,12 @@ export default function AboutUs() {
               key={i}
               className="bg-white border border-primabg-primary/20 p-8 rounded-radius shadow-sm flex flex-col items-center"
             >
-              <Image
-                className="text-5xl mb-6 text-primabg-primary"
+              <img
+                className="mb-6 text-primabg-primary"
                 src={`${item.icon}`}
                 alt={`${item.title}`}
+                width={64}
+                height={64}
               />
               <h3 className="font-bold text-sm uppercase tracking-wide mb-6">
                 {item.title}
@@ -273,7 +260,7 @@ export default function AboutUs() {
               Advisory Board
             </button>
             <button className="px-8 py-4 text-sm font-bold uppercase tracking-wider text-gray-500 hover:text-black">
-              CRY America Staff
+              Hooc Help Staff
             </button>
           </div>
 
@@ -302,10 +289,9 @@ export default function AboutUs() {
                 className={`flex flex-col items-center ${i >= 3 ? "md:col-span-1 md:col-start-auto" : ""} ${i === 3 ? "md:ml-auto" : ""} ${i === 4 ? "md:mr-auto" : ""}`}
               >
                 <div className="w-48 h-48 rounded-full bg-gray-300 relative overflow-hidden mb-4 border-4 border-white shadow-md group">
-                  <Image
+                  <img
                     src="/home-about.webp"
                     alt={person.name}
-                    fill
                     className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                   />
 
@@ -328,9 +314,7 @@ export default function AboutUs() {
       <section id="our-financials" className="py-16 md:py-24 px-4 scroll-mt-32">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl mb-4">
-              Our Financials
-            </h2>
+            <h2 className="text-4xl md:text-5xl mb-4">Our Financials</h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-6 rounded-radius" />
             <p className="text-xs md:text-sm text-gray-600 max-w-2xl mx-auto">
               As a custodian of public funds, we believe we are accountable to
@@ -358,10 +342,9 @@ export default function AboutUs() {
             </div>
             <div className="shrink-0 w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full p-4 flex items-center justify-center">
               <div className="w-full h-full rounded-full overflow-hidden bg-white relative">
-                <Image
+                <img
                   src="/about-us.png"
                   alt="Smiling Girl"
-                  fill
                   className="object-cover"
                 />
               </div>
@@ -376,18 +359,15 @@ export default function AboutUs() {
       >
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-24">
           <div className="shrink-0 w-64 h-64 md:w-80 md:h-80 bg-black rounded-full p-0 flex items-center justify-center overflow-hidden relative shadow-xl">
-            <Image
+            <img
               src="/0-1-years-children-fully-immunized.png"
               alt="Smiling Child"
-              fill
               className="object-cover opacity-90"
             />
           </div>
 
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-4xl md:text-5xl mb-6">
-              The CRY America Pledge
-            </h2>
+            <h2 className="text-4xl md:text-5xl mb-6">The Hooc Help Pledge</h2>
             <div className="w-24 h-1 bg-[#FCDA16] mx-auto md:mx-0 mb-8 rounded-sm" />
 
             <div className="space-y-4 text-xs md:text-sm font-medium leading-relaxed">

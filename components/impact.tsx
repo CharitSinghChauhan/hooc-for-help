@@ -2,52 +2,51 @@ import Image from "next/image";
 
 const cards = [
   {
-    img: "/Children-impacted-overall.png",
-    number: "860,931",
-    label: "Children impacted overall",
+    img: "/impact-1.png",
+    number: "1,20,000",
+    label: "Individuals empowered overall",
     bg: "bg-[#f7f7fb]",
   },
   {
-    img: "/Children-6-18-years-in-schools.png",
-    number: "365,581",
-    label: "Children 6-18 years in schools",
+    img: "/impact-2.png",
+    number: "450,000",
+    label: "People educated and skilled",
     bg: "bg-[#fff5f7]",
   },
   {
-    img: "/0-1-years-children-fully-immunized.png",
-    number: "243,546",
-    label: "0-1 years children fully immunized",
+    img: "/impact-3.png",
+    number: "75,000",
+    label: "Families supported through livelihood programs",
     bg: "bg-[#f0fbff]",
   },
   {
-    img: "/Govt.-schools-approved-or-strengthened.png",
-    number: "1,851",
-    label: "Govt. schools approved or strengthened",
+    img: "/impact-4.png",
+    number: "2,500",
+    label: "Health camps and medical assistance provided",
     bg: "bg-[#fafafa]",
   },
   {
-    img: "/Villages-freed-from-child-labor.png",
-    number: "2,691",
-    label: "Villages freed from child labor",
+    img: "/impact-5.png",
+    number: "50,000",
+    label: "Trees planted in community drives",
     bg: "bg-[#f2fbf8]",
   },
   {
-    img: "/strengthened.png",
-    number: "4,531",
-    label: "Children's Collectives formed/strengthened",
+    img: "/impact-6.jpg",
+    number: "30,000",
+    label: "Women empowered through initiatives",
     bg: "bg-[#fff7f7]",
   },
   {
-    img: "/Children-mainstreamed-into-schools.png",
-    number: "215,728",
-    label: "Children mainstreamed into schools",
+    img: "/impact-7.png",
+    number: "15,000",
+    label: "Disaster relief efforts conducted",
     bg: "bg-[#fff6f6]",
   },
   {
-    img: "/Rescued-children-(labor-or-rafficked)-mainstreamed-in-formal-education.png",
-    number: "5,434",
-    label:
-      "Rescued children (labor or trafficked) mainstreamed in formal education",
+    img: "/impact-8.png",
+    number: "5,000",
+    label: "Individuals rehabilitated and reintegrated",
     bg: "bg-[#fff7f7]",
   },
 ];
@@ -62,34 +61,31 @@ export default function Impact() {
           </h2>
           <div className="w-24 h-1 bg-[#FCDA16] mx-auto mb-6" />
           <p className="max-w-4xl mx-auto text-[15px] md:text-16px] text-gray-700 leading-relaxed font-sans">
-            There is nothing more precious than a child&apos;s smile. Since 2004, CRY
-            America has helped create more than 800,000 happy childhoods thanks
-            to supporters like YOU!
+            Every community transformed is a step toward global change. Since
+            2020, Hooc Help has empowered over 1,200 individuals through
+            sustainable initiatives, thanks to supporters like YOU!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mx-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mx-2 sm:mx-4 lg:mx-8">
           {cards.map((card, index) => (
             <div
               key={index}
               className="flex flex-col bg-white rounded-md overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
             >
-              {/* Illustration Area */}
               <div
-                className={`${card.bg} aspect-[2/1.2] flex items-center justify-center`}
+                className={`${card.bg} aspect-video flex items-center justify-center`}
               >
                 <div className="relative w-full h-full">
                   <Image
                     src={card.img}
                     alt={card.label}
                     fill
-                    className="object-fill"
+                    className="object-cover"
                   />
                 </div>
               </div>
-
-              {/* Stats Area */}
-              <div className="bg-[#FCDA16] pt-4 pb-8 text-center grow flex flex-col justify-center">
+              <div className="bg-[#FCDA16] pt-2 pb-4 text-center grow flex flex-col justify-center">
                 <span className="block text-3xl md:text-3xl font-bold text-[#1a1a1a] mb-1">
                   {card.number}
                 </span>
@@ -99,12 +95,6 @@ export default function Impact() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <button className="bg-[#FCDA16] hover:bg-[#ebd034] text-black font-bold uppercase tracking-wider px-8 py-3 rounded-sm transition-colors text-sm shadow-sm">
-            View More
-          </button>
         </div>
       </div>
     </section>

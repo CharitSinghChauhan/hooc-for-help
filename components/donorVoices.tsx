@@ -14,15 +14,15 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "CRY is a one of a kind NGO that embraces a holistic approach providing health, education, and nutrition to ensure a safer and better future for children in India.",
+      "Hooc Help embraces a holistic approach providing education, healthcare, and livelihood support to underserved communities. Their environmental initiatives are truly inspiring.",
     name: "Harsh & Rupal Patil",
-    role: "CRY America Donors",
+    role: "Hooc Help Donors",
     initials: "HP",
     color: "#FDE68A",
   },
   {
     quote:
-      "We are touched by the breadth and level of commitment of its volunteers, donors and partners. It is an honor to serve with CRY in our own little way.",
+      "We are touched by the breadth and level of commitment of their volunteers, donors and partners. It is an honor to serve with Hooc Help in our own little way.",
     name: "Anita Sharma",
     role: "Volunteer",
     initials: "AS",
@@ -30,7 +30,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Supporting CRY has been rewarding and impactful — the team truly transforms lives on the ground.",
+      "Supporting Hooc Help has been rewarding and impactful — the team truly transforms lives on the ground through sustainable development.",
     name: "Michael & Priya",
     role: "Donors",
     initials: "MP",
@@ -38,7 +38,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "The programs focus on both education and nutrition, which makes a big difference.",
+      "The programs focus on both education and livelihood, which makes a big difference in building resilient communities.",
     name: "Sanjay Iyer",
     role: "Partner",
     initials: "SI",
@@ -46,7 +46,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "We love the way CRY engages communities — it's sustainable and respectful of local needs.",
+      "We love the way Hooc Help engages communities — it's sustainable and respectful of local needs, from disaster relief to women empowerment.",
     name: "Leela & Arun",
     role: "Supporters",
     initials: "LA",
@@ -82,10 +82,7 @@ export default function DonorVoices() {
   );
 
   return (
-    <section
-      id="donor-voices"
-      className="w-full bg-white pb-20 scroll-mt-32.5"
-    >
+    <section id="donor-voices" className="w-full bg-white pb-20 scroll-mt-32.5">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl mb-2">Donor Voices</h2>
         <div className="mx-auto h-1 w-40 bg-[#FCDA16] rounded-sm mb-8" />
@@ -100,7 +97,7 @@ export default function DonorVoices() {
           )}
         </div>
 
-        <div className="mt-12 flex items-center justify-center gap-6">
+        <div className="mt-8 sm:mt-12 flex items-center justify-center gap-3 sm:gap-6">
           {avatars.map((a, i) => (
             <button
               key={i}
@@ -116,7 +113,7 @@ export default function DonorVoices() {
                 alt={a.name}
                 width={112}
                 height={112}
-                className={`w-24 h-24 md:w-28 md:h-28 object-cover rounded-full`}
+                className={`w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover rounded-full`}
               />
             </button>
           ))}
