@@ -262,12 +262,6 @@ export default function AboutUs() {
             >
               Donate Now
             </Link>
-            <Link
-              href="/volunteer"
-              className="bg-white hover:bg-gray-100 text-black font-bold px-8 py-3 rounded-sm transition-colors"
-            >
-              Become a Volunteer
-            </Link>
           </div>
         </div>
       </section>
