@@ -1,83 +1,144 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 
+const footerContent = {
+  home: {
+    title: "Home",
+    links: [
+      { label: "About Us", href: "/about-us" },
+      { label: "Volunteer", href: "/volunteer" },
+      { label: "What We Do", href: "/what-we-do" },
+      { label: "Donate", href: "/donation" },
+    ],
+    whatWeDoTitle: "What We Do",
+    whatWeDoLinks: [
+      { label: "Community Impact Projects", href: "/what-we-do#education" },
+      { label: "Nutrition & Support Programs", href: "/what-we-do#health" },
+      { label: "Stories of Transformation", href: "/what-we-do#stories" },
+      { label: "FAQ", href: "/what-we-do#faq" },
+    ],
+  },
+  aboutUs: {
+    title: "About Us",
+    links: [
+      { label: "Our Mission", href: "/about-us#our-mission" },
+      { label: "Our Vision", href: "/about-us#our-vision" },
+      { label: "Our Story", href: "/about-us#our-team" },
+    ],
+    whatWeDoTitle: "Our Focus Areas",
+    whatWeDoLinks: [
+      { label: "Education", href: "/what-we-do#education" },
+      { label: "Healthcare", href: "/what-we-do#health" },
+      { label: "Community Development", href: "/what-we-do#community" },
+      { label: "Women Empowerment", href: "/what-we-do#women" },
+    ],
+  },
+  volunteer: {
+    title: "Volunteer",
+    links: [
+      { label: "Join Us", href: "/volunteer#join" },
+      { label: "Volunteer Stories", href: "/volunteer#stories" },
+      { label: "Benefits", href: "/volunteer#benefits" },
+      { label: "FAQ", href: "/volunteer#faq" },
+    ],
+    whatWeDoTitle: "Volunteer Programs",
+    whatWeDoLinks: [
+      { label: "Teaching Volunteers", href: "/volunteer#teaching" },
+      { label: "Healthcare Volunteers", href: "/volunteer#healthcare" },
+      { label: "Event Volunteers", href: "/volunteer#events" },
+      { label: "Fundraising", href: "/volunteer#fundraising" },
+    ],
+  },
+  whatWeDo: {
+    title: "What We Do",
+    links: [
+      { label: "Community Impact Projects", href: "/what-we-do#education" },
+      { label: "Nutrition & Support", href: "/what-we-do#health" },
+      { label: "Stories of Transformation", href: "/what-we-do#stories" },
+      { label: "FAQ", href: "/what-we-do#faq" },
+    ],
+    whatWeDoTitle: "Our Programs",
+    whatWeDoLinks: [
+      { label: "Food Distribution Drive", href: "/what-we-do#education" },
+      { label: "Clean Streets Initiative", href: "/what-we-do#education" },
+      { label: "River Restoration", href: "/what-we-do#education" },
+      { label: "Community Support", href: "/what-we-do#stories" },
+    ],
+  },
+  donation: {
+    title: "Donate",
+    links: [
+      { label: "One-time Donation", href: "/donation" },
+      { label: "Monthly Giving", href: "/donation#monthly" },
+      { label: "Other Ways to Donate", href: "/donation#other" },
+      { label: "FAQ", href: "/donation#faq" },
+    ],
+    whatWeDoTitle: "Your Impact",
+    whatWeDoLinks: [
+      { label: "Where Your Money Goes", href: "/donation#impact" },
+      { label: "Success Stories", href: "/donation#stories" },
+      { label: "Tax Benefits", href: "/donation#tax" },
+      { label: "Monthly Giving Program", href: "/donation#monthly" },
+    ],
+  },
+};
+
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Determine which section's footer to show
+  const getCurrentSection = () => {
+    if (pathname === "/") return "home";
+    if (pathname.startsWith("/about-us")) return "aboutUs";
+    if (pathname.startsWith("/volunteer")) return "volunteer";
+    if (pathname.startsWith("/what-we-do")) return "whatWeDo";
+    if (pathname.startsWith("/donation")) return "donation";
+    return "home"; // Default to home
+  };
+
+  const currentSection = getCurrentSection();
+  const content = footerContent[currentSection as keyof typeof footerContent];
   return (
     <footer className="relative bg-primary text-primary-foreground pt-12 pb-8 ">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div className="space-y-4">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-4">
-              Home
+              {content.title}
             </h3>
             <ul className="space-y-2.5">
-              <li>
-                <Link
-                  href="/about-us"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/volunteer"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Volunteer
-                </Link>
-              </li>
+              {content.links.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-sm hover:opacity-80 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* What We Do Column */}
+          {/* Second Column - Dynamic What We Do Section */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold uppercase tracking-wider mb-4">
-              What We Do?
+              {content.whatWeDoTitle}
             </h3>
             <ul className="space-y-2.5">
-              <li>
-                <Link
-                  href="/what-we-do"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Child Education
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Health and Nutrition
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Child Labor
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Girl Child Education
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm hover:opacity-80 transition-colors"
-                >
-                  Child Marriage
-                </Link>
-              </li>
+              {content.whatWeDoLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-sm hover:opacity-80 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -93,10 +154,10 @@ export default function Footer() {
                   Email Us
                 </p>
                 <Link
-                  href="mailto:support@hooc-help.org"
+                  href="mailto:hoocforhelp@gmail.com"
                   className="text-sm hover:opacity-80 transition-colors block"
                 >
-                  support@hooc-help.org
+                  hoocforhelp@gmail.com
                 </Link>
               </div>
 
@@ -105,27 +166,21 @@ export default function Footer() {
                   Call Us
                 </p>
                 <Link
-                  href="tel:+16179812288"
+                  href="tel:+917983141007"
                   className="text-sm hover:opacity-80 transition-colors block"
                 >
-                  617 981 2288
-                </Link>
-                <Link
-                  href="tel:+16179591273"
-                  className="text-sm hover:opacity-80 transition-colors block"
-                >
-                  617 959 1273
+                  7983141007
                 </Link>
               </div>
 
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wide mb-1">
-                  Write Us
+                  Visit Us
                 </p>
                 <p className="text-sm leading-relaxed">
-                  HOOC Help, P.O. Box 850948, Braintree,
+                  403 Tan Oak Madhuban Bapudham Govindpuram,
                   <br />
-                  MA 02185-0948
+                  Ghaziabad 201013
                 </p>
               </div>
             </div>
@@ -185,7 +240,10 @@ export default function Footer() {
           <Link href="#" className="text-sm hover:opacity-80 transition-colors">
             Privacy Policy
           </Link>
-          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
+          <Link
+            href="mailto:hoocforhelp@gmail.com"
+            className="text-sm hover:opacity-80 transition-colors"
+          >
             Contact Us
           </Link>
           <Link href="#" className="text-sm hover:opacity-80 transition-colors">

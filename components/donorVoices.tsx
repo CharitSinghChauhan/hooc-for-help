@@ -14,15 +14,15 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Hooc Help embraces a holistic approach providing education, healthcare, and livelihood support to underserved communities. Their environmental initiatives are truly inspiring.",
+      "Hooc for Help embraces a holistic approach providing education, healthcare, and livelihood support to underserved communities. Their environmental initiatives are truly inspiring.",
     name: "Harsh & Rupal Patil",
-    role: "Hooc Help Donors",
+    role: "Hooc for Help Donors",
     initials: "HP",
     color: "#FDE68A",
   },
   {
     quote:
-      "We are touched by the breadth and level of commitment of their volunteers, donors and partners. It is an honor to serve with Hooc Help in our own little way.",
+      "We are touched by the breadth and level of commitment of their volunteers, donors and partners. It is an honor to serve with Hooc for Help in our own little way.",
     name: "Anita Sharma",
     role: "Volunteer",
     initials: "AS",
@@ -30,7 +30,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Supporting Hooc Help has been rewarding and impactful — the team truly transforms lives on the ground through sustainable development.",
+      "Supporting Hooc for Help has been rewarding and impactful — the team truly transforms lives on the ground through sustainable development.",
     name: "Michael & Priya",
     role: "Donors",
     initials: "MP",
@@ -46,7 +46,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "We love the way Hooc Help engages communities — it's sustainable and respectful of local needs, from disaster relief to women empowerment.",
+      "We love the way Hooc for Help engages communities — it's sustainable and respectful of local needs, from disaster relief to women empowerment.",
     name: "Leela & Arun",
     role: "Supporters",
     initials: "LA",

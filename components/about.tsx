@@ -10,7 +10,7 @@ export default function About() {
         <div className="shrink-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-primary p-3 sm:p-4 flex items-center justify-center">
           <div className="w-full h-full rounded-full overflow-hidden shadow-md">
             <Image
-              src="/home-about.webp"
+              src="/Donate-1.jpg"
               alt="Children smiling"
               width={400}
               height={400}
@@ -22,7 +22,7 @@ export default function About() {
 
         <div className="flex-1 max-w-3xl">
           <h2 id="about-heading" className="text-3xl sm:text-4xl md:text-5xl">
-            About Hooc Help
+            About Hooc for Help
           </h2>
           <h3 id="approach" className="sr-only">
             Our Approach
@@ -31,7 +31,7 @@ export default function About() {
 
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-[16px] leading-relaxed text-foreground">
             <p>
-              Hooc Help, an NGO in India, stands as a powerful advocate for
+              Hooc for Help, an NGO in India, stands as a powerful advocate for
               underserved communities, addressing their needs in education,
               healthcare, livelihood development, and overall empowerment. Being
               an NGO for community development, our focus lies in promoting

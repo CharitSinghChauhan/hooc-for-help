@@ -53,16 +53,16 @@ const cards = [
 
 export default function Impact() {
   return (
-    <section id="impact" className="py-16 md:py-24 bg-white scroll-mt-32.5">
+    <section id="impact" className="bg-white scroll-mt-32.5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl text-[#1a1a1a] mb-2">
             Our Impact
           </h2>
           <div className="w-24 h-1 bg-[#FCDA16] mx-auto mb-6" />
-          <p className="max-w-4xl mx-auto text-[15px] md:text-16px] text-gray-700 leading-relaxed font-sans">
+          <p className="max-w-4xl mx-auto text-[15px] md:text-16px] text-gray-700 leading-relaxed ">
             Every community transformed is a step toward global change. Since
-            2020, Hooc Help has empowered over 1,200 individuals through
+            2020, Hooc for Help has empowered over 1,20,000 individuals through
             sustainable initiatives, thanks to supporters like YOU!
           </p>
         </div>

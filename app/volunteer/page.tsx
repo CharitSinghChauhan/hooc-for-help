@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const honorRoll = [
   { name: "John Doe", role: "Lorem ipsum", img: "/Vol-61.png" },
@@ -14,33 +13,19 @@ const honorRoll = [
 ];
 
 export default function VolunteerPage() {
-
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative h-150 w-full flex items-center justify-center overflow-hidden pt-32">
+      <section className="relative h-200 w-full flex items-center justify-center overflow-hidden pt-32">
         <Image
-          src="/happy-international-volunteer-day-1.webp"
+          src="/volunter-2-hero.png"
           alt="Volunteers"
           fill
           className="object-cover brightness-75"
           priority
         />
-        <div className="relative z-10 text-center space-y-6 px-4 -left-125">
-          <h1 className="text-2xl md:text-5xl text-primary drop-shadow-lg leading-tight">
-            Everyday heroes <span className="text-black italic ">who</span>{" "}
-            <br />
-            <span className="text-black">
-              make a difference <br />
-              everyday!
-            </span>
-          </h1>
-          <button className="bg-primaryborder-primary text-black px-6 py-2 rounded-radius font-bold uppercase text-xs tracking-widest flex items-center gap-2 mx-auto mt-12 hover:scale-105 transition-transform">
-            SCROLL FOR MORE <ChevronDown className="w-4 h-4" />
-          </button>
-        </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section id="join" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-square rounded-full overflow-hidden border-15p border-primary/10 shadow-2xl">
@@ -55,17 +40,17 @@ export default function VolunteerPage() {
               <div className="space-y-4">
                 <h2 className="text-4xl md:text-6xl text-gray-900 leading-tight">
                   Why Volunteer With <br />
-                  Hooc Help?
+                  Hooc for Help?
                 </h2>
                 <div className="w-32 h-1 bg-primaryborder-primary" />
               </div>
-              <div className="space-y-6 text-gray-600 leading-relaxed font-sans text-lg">
+              <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
                 <p>
                   Volunteering is a simple and rewarding way to support a cause
                   you care about!
                 </p>
                 <p>
-                  The Hooc Help volunteer community is a close-knit group of
+                  The Hooc for Help volunteer community is a close-knit group of
                   dynamic individuals from diverse backgrounds who are deeply
                   dedicated to making the world a better place for communities.
                   We dream together and plan to achieve those dreams together in
@@ -93,12 +78,12 @@ export default function VolunteerPage() {
           }}
         />
 
-        <div className="bg-primaryborder-primary py-24">
+        <div className="bg-primaryborder-primary py-24" id="stories">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl text-primary-foreground mb-4">
               Volunteer Honor Roll
             </h2>
-            <p className="text-primary-foreground/80 mb-16 font-sans italic text-lg">
+            <p className="text-primary-foreground/80 mb-16 italic text-lg">
               Congratulations to the volunteers of the year 2019!
             </p>
 
@@ -132,49 +117,11 @@ export default function VolunteerPage() {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
-
-            <div className="mt-32">
-              <h2 className="text-4xl md:text-6xl text-primary-foreground mb-4">
-                2019 Top Fundraisers Of The Year!
-              </h2>
-              <p className="text-primary-foreground/80 mb-16 font-sans italic text-lg">
-                A big round of applause to the top fundraisers of the year 2019!
-              </p>
-
-              <div className="relative max-w-5xl mx-auto">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 opacity-90">
-                  {honorRoll.map((v, i) => (
-                    <div
-                      key={i}
-                      className="flex flex-col items-center gap-4 group"
-                    >
-                      <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
-                        <Image
-                          src={v.img}
-                          alt={v.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="text-primary-foreground text-center">
-                        <p className="font-bold uppercase tracking-widest text-xs">
-                          {v.name}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-
-        <div
-          className="absolute bottom-0 left-0 w-full h-12 bg-white z-20 pointer-events-none"
-        />
       </div>
 
-      <section className="py-25 bg-white overflow-hidden">
+      <section id="benefits" className="pb-25 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-7xl text-gray-900 mb-8 underline decoration-primaryborder-primary decoration-4 underline-offset-8 italic">
@@ -188,9 +135,9 @@ export default function VolunteerPage() {
             </div>
 
             <div className="text-center space-y-12 relative z-10">
-              <p className="text-xl md:text-3xl text-gray-700 italic leading-relaxed font-sans max-w-4xl mx-auto">
+              <p className="text-xl md:text-3xl text-gray-700 italic leading-relaxed max-w-4xl mx-auto">
                 &quot;Every child is precious and should have a dignified and
-                happy communities. Hooc Help has promoted equal inclusion of
+                happy communities. Hooc for Help has promoted equal inclusion of
                 every child by encouraging communities to provide opportunities
                 to all by preventing violations and fostering empowerment. Hooc
                 Help America has also provided a path to individuals —
@@ -233,7 +180,7 @@ export default function VolunteerPage() {
                     Rajesh Munshi
                   </h4>
                   <p className="text-sm text-gray-500 font-bold uppercase tracking-widest mt-2 flex items-center justify-center gap-2">
-                    <span className="w-8 h-px bg-gray-300" /> Hooc Help
+                    <span className="w-8 h-px bg-gray-300" /> Hooc for Help
                     Volunteer <span className="w-8 h-px bg-gray-300" />
                   </p>
                 </div>

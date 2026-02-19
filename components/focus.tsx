@@ -117,12 +117,6 @@ export default function Focus() {
                         {card.desc}
                       </p>
                     </div>
-
-                    <div className="text-left">
-                      <a href="#" className="underline font-bold">
-                        Know More
-                      </a>
-                    </div>
                   </div>
                 )}
               </article>

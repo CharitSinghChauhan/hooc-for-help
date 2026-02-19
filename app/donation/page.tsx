@@ -3,534 +3,629 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Footer from "@/components/footer";
-import { ChevronRight } from "lucide-react";
+import {
+  ChevronRight,
+  Heart,
+  Sparkles,
+  Users,
+  Shield,
+  ArrowRight,
+  Zap,
+} from "lucide-react";
 
-const amounts = ["$49", "$99", "$159", "$196", "$340", "Other"];
+const amounts = [
+  { amount: "$25", impact: "Provides school supplies for 2 children" },
+  { amount: "$50", impact: "Feeds a family of 4 for a month" },
+  { amount: "$100", impact: "Sponsors one child's education for a year" },
+  { amount: "$250", impact: "Provides healthcare for 5 children" },
+  { amount: "$500", impact: "Supports a community literacy program" },
+  { amount: "Other", impact: "Any amount makes a difference!" },
+];
 
 const projects = [
   {
     name: "Project VSS",
     location: "Madhya Pradesh",
     goal: "$62,193",
-    raised: "$0",
-    img: "/Donate_4.jpg",
+    raised: "$24,500",
+    progress: 39,
+    img: "/donate-support-1.jpg",
+    description: "Education & empowerment for rural communities",
   },
   {
     name: "Project KAS",
     location: "Rajasthan",
     goal: "$29,531",
-    raised: "$0",
-    img: "/Thumbnail-Pragathi.jpg",
+    raised: "$18,200",
+    progress: 62,
+    img: "/donate-support-2.jpg",
+    description: "Skill development for tribal youth",
   },
   {
     name: "Project Pragathi",
     location: "Andhra Pradesh",
     goal: "$53,986",
-    raised: "$0",
-    img: "/Donate.jpg",
+    raised: "$42,100",
+    progress: 78,
+    img: "/impact-2.png",
+    description: "Girls education initiative",
   },
   {
     name: "Project Sikshasandhan",
     location: "Odisha",
     goal: "$26,248",
-    raised: "$0",
-    img: "/Donate-1.jpg",
-  },
-  {
-    name: "Project CHARDS",
-    location: "Bihar",
-    goal: "$31,385",
-    raised: "$0",
-    img: "/mission-1-uai-516x503-1.jpg",
-  },
-  {
-    name: "Project EFFORT",
-    location: "Telangana",
-    goal: "$41,517",
-    raised: "$0",
-    img: "/mission-2-uai-516x503-1.jpg",
-  },
-  {
-    name: "Project VSS",
-    location: "Baran",
-    goal: "$19,274",
-    raised: "$0",
-    img: "/mission-3-uai-516x503-1.jpg",
-  },
-  {
-    name: "Project SWATI",
-    location: "Odisha",
-    goal: "$31,274",
-    raised: "$0",
-    img: "/two-girls-1.jpg",
+    raised: "$8,900",
+    progress: 34,
+    img: "/impact-2.jpg",
+    description: "Early childhood development program",
   },
 ];
 
 const otherWays = [
-  "CHECK DONATION & ACH DONATION",
-  "MONTHLY DONATIONS - BANK TRANSFER/ ACH",
-  "CORPORATE MATCHING GIFTS",
-  "CORPORATES AND FOUNDATIONS",
-  "PLEDGE YOUR SPECIAL DAY TO CHILDREN!",
-  "STOCK DONATIONS",
-  "LEGACY GIVING",
+  {
+    title: "Check Donation & ACH",
+    description: "Send your donation via check or bank transfer",
+  },
+  {
+    title: "Monthly Giving Program",
+    description: "Become a monthly donor for sustained impact",
+  },
+  {
+    title: "Corporate Matching",
+    description: "Double your impact through employer matching",
+  },
+  {
+    title: "Corporate Partnerships",
+    description: "Partner with us for CSR initiatives",
+  },
+  {
+    title: "Donate Your Birthday",
+    description: "Ask friends to donate instead of gifts",
+  },
+  { title: "Stock Donations", description: "Donate appreciated securities" },
+  {
+    title: "Legacy Giving",
+    description: "Include us in your will or estate plan",
+  },
 ];
 
-const impactCards = [
+const impactStats = [
+  { number: "342,558", label: "Individuals Reached", icon: Users },
+  { number: "212,079", label: "Educated & Skilled", icon: Sparkles },
+  { number: "40,479", label: "Families Supported", icon: Heart },
+  { number: "5,311", label: "Rehabilitated", icon: Shield },
+];
+
+const faqs = [
   {
-    img: "/Children-impacted-overall.png",
-    number: "1,200,000",
-    label: "Individuals empowered overall",
-    bg: "bg-[#f7f7fb]",
+    question: "How will my donation be used?",
+    answer:
+      "Your donation directly supports our programs in education, healthcare, and community development. We ensure transparency with detailed fund allocation reports.",
   },
   {
-    img: "/Children-6-18-years-in-schools.png",
-    number: "450,000",
-    label: "People educated and skilled",
-    bg: "bg-[#fff5f7]",
+    question: "Is my donation tax-deductible?",
+    answer:
+      "Yes! HOOC for Help is a 501(c)(3) tax-exempt organization. All donations are tax-deductible to the extent allowed by law.",
   },
   {
-    img: "/0-1-years-children-fully-immunized.png",
-    number: "75,000",
-    label: "Families supported through livelihood",
-    bg: "bg-[#f0fbff]",
+    question: "Can I donate monthly?",
+    answer:
+      "Absolutely! Monthly giving provides steady support that helps us plan long-term programs. You can set up recurring donations easily.",
   },
   {
-    img: "/Govt.-schools-approved-or-strengthened.png",
-    number: "2,500",
-    label: "Health camps conducted",
-    bg: "bg-[#fafafa]",
+    question: "How do I know my donation is making an impact?",
+    answer:
+      "We send quarterly impact reports to all donors and organize annual calls with project partners so you can track the difference you're making.",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Donating to HOOC has been the most fulfilling experience. Seeing the progress in the communities we support keeps me motivated to continue giving.",
+    name: "Priya Sharma",
+    role: "Monthly Donor since 2021",
+    image: "/stories-impact-1.jpg",
+  },
+  {
+    quote:
+      "The transparency and impact reports from HOOC make me confident that every rupee I donate is making a real difference in children's lives.",
+    name: "Rajesh Kumar",
+    role: "Corporate Partner",
+    image: "/two-girls-1.jpg",
   },
 ];
 
 export default function DonationPage() {
-  const [selectedTab, setSelectedTab] = useState("DONATE NOW");
-  const [selectedAmount, setSelectedAmount] = useState("$99");
+  const [selectedTab, setSelectedTab] = useState("one-time");
+  const [selectedAmount, setSelectedAmount] = useState("$100");
+  const [customAmount, setCustomAmount] = useState("");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const currentImpact =
+    amounts.find((a) => a.amount === selectedAmount)?.impact || "";
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="pb-16 bg-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-6xl text-gray-900 leading-tight">
-                Your contribution <br />
-                will transform a <br />
-                community&apos;s future
-              </h1>
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-22.png"
+            alt="Children learning"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+        </div>
 
-              <div className="bg-white rounded-radius shadow-xl overflow-hidden max-w-lg border border-gray-100">
-                <div className="flex bg-gray-50 border-b">
-                  {["DONATE NOW", "DONATE MONTHLY", "SUPPORT A PROJECT"].map(
-                    (tab) => (
-                      <button
-                        key={tab}
-                        onClick={() => setSelectedTab(tab)}
-                        className={`flex-1 py-3 text-[10px] md:text-xs font-bold transition-colors ${
-                          selectedTab === tab
-                            ? "bg-white text-gray-900"
-                            : "text-gray-500 hover:text-gray-700"
-                        }`}
-                      >
-                        {tab}
-                      </button>
-                    ),
-                  )}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white space-y-6">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                <Heart className="w-4 h-4 text-primabg-primary" />
+                <span>Tax-Deductible Donation</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                Give the Gift of{" "}
+                <span className="text-primabg-primary">Hope</span>
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 max-w-xl leading-relaxed">
+                Every contribution transforms lives. Join thousands of donors
+                creating brighter futures for children and communities in need.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("donate-form")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="bg-primary hover:bg-[#e5c714] text-black font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 flex items-center gap-2"
+                >
+                  Donate Now <ArrowRight className="w-5 h-5" />
+                </button>
+                <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/30">
+                  Support a Project
+                </button>
+              </div>
+              <div className="flex items-center gap-6 pt-4 text-white/70 text-sm">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-4 h-4" />
+                  <span>501(c)(3) Verified</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4" />
+                  <span>Quick & Secure</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Donation Form */}
+            <div
+              id="donate-form"
+              className="bg-white rounded-3xl shadow-2xl overflow-hidden"
+            >
+              <div className="bg-gradient-to-r from-primary to-primary/80 p-6">
+                <h3 className="text-2xl font-bold text-white text-center">
+                  Make Your Donation
+                </h3>
+                <p className="text-white/80 text-center text-sm mt-1">
+                  Choose amount and payment method
+                </p>
+              </div>
+
+              <div className="p-6 space-y-6">
+                {/* Donation Type Tabs */}
+                <div className="flex bg-gray-100 rounded-xl p-1">
+                  {[
+                    { id: "one-time", label: "One-Time" },
+                    { id: "monthly", label: "Monthly" },
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setSelectedTab(tab.id)}
+                      className={`flex-1 py-3 rounded-lg font-bold text-sm transition-all ${
+                        selectedTab === tab.id
+                          ? "bg-white text-primary shadow-sm"
+                          : "text-gray-500 hover:text-gray-700"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
                 </div>
 
-                <div className="p-6 space-y-4">
-                  <label className="flex items-start gap-3 bg-primary p-3 rounded-radius cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      className="mt-1 accent-gray-900"
-                      defaultChecked
-                    />
-                    <span className="text-[11px] md:text-xs font-semibold text-primary-foreground leading-snug">
-                      Yes, I believe every child has the right to a happy &
-                      healthy childhood. (Please choose an amount to donate)
-                    </span>
+                {/* Amount Selection */}
+                <div>
+                  <label className="text-sm font-semibold text-gray-700 mb-3 block">
+                    Select Amount
                   </label>
-
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-3 gap-3">
                     {amounts.map((amt) => (
                       <button
-                        key={amt}
-                        onClick={() => setSelectedAmount(amt)}
-                        className={`py-3 rounded-radius text-[13px] md:text-base font-bold transition-all ${
-                          selectedAmount === amt
-                            ? "bg-primary text-primary-foreground shadow-sm"
-                            : "bg-gray-100 text-gray-400 hover:bg-gray-200"
+                        key={amt.amount}
+                        onClick={() => {
+                          setSelectedAmount(amt.amount);
+                          setCustomAmount("");
+                        }}
+                        className={`py-4 rounded-xl text-lg font-bold transition-all ${
+                          selectedAmount === amt.amount
+                            ? "bg-primary text-white shadow-md"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                         }`}
                       >
-                        {amt}
+                        {amt.amount}
                       </button>
                     ))}
                   </div>
+                </div>
 
-                  <p className="text-center text-xs text-gray-600 font-medium py-2">
-                    {selectedAmount === "$99"
-                      ? "Help 9 girls in villages pursue higher education"
-                      : "Your support makes a difference"}
-                  </p>
-
-                  <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-3 rounded-radius shadow-sm transition-colors text-sm uppercase tracking-wider">
-                    Make Donation
-                  </button>
-
-                  <div className="flex justify-center gap-6 text-[10px] md:text-xs font-bold text-gray-900 mt-2">
-                    <Link href="#" className="underline">
-                      Donate by Check
-                    </Link>
-                    <Link href="#" className="underline">
-                      Donate by ACH
-                    </Link>
-                  </div>
-
-                  <p className="text-[10px] text-gray-500 text-center leading-tight">
-                    Hooc Help is a 501(c)3 exempt organization and all donations
-                    are tax deductible.
-                  </p>
-
-                  <div className="flex justify-center gap-2 pt-2 grayscale opacity-60">
-                    <Image
-                      src="/next.svg"
-                      alt="Visa"
-                      width={30}
-                      height={20}
-                      className="w-auto h-4"
-                    />
-                    <Image
-                      src="/vercel.svg"
-                      alt="Mastercard"
-                      width={30}
-                      height={20}
-                      className="w-auto h-4"
+                {/* Custom Amount */}
+                <div>
+                  <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                    Or enter custom amount
+                  </label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold">
+                      $
+                    </span>
+                    <input
+                      type="number"
+                      placeholder="Enter amount"
+                      value={customAmount}
+                      onChange={(e) => {
+                        setCustomAmount(e.target.value);
+                        setSelectedAmount("");
+                      }}
+                      className="w-full pl-8 pr-4 py-4 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     />
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="relative h-100 md:h-150 rounded-2xl overflow-hidden">
-              <Image
-                src="/one-time-donation-1.webp"
-                alt="Child smiling"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl text-gray-900">
-                  Why Donate
-                </h2>
-                <div className="w-20 h-1 bg-primary" />
-              </div>
-              <div className="space-y-6 text-gray-600 leading-relaxed font-sans text-sm md:text-base">
-                <p>
-                  Your contribution to Hooc Help will enable communities to
-                  complete their education, get proper nutrition and healthcare
-                  and stay protected from abuse and exploitation.
-                </p>
-                <p>
-                  We cannot do the work that we do without your support and it
-                  will need each and every one of us to come together to ensure
-                  happier childhoods for children everywhere!
-                </p>
-                <p>All donations to Hooc Help are tax-deductible.</p>
-              </div>
-              <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-3 rounded-radius shadow-sm transition-colors text-sm uppercase">
-                Donate Now
-              </button>
-            </div>
-            <div className="order-1 lg:order-2 flex justify-center">
-              <div className="relative w-75 h-75 md:w-112.5 md:h-112.5">
-                <div className="absolute inset-0 rounded-full border-15 border-primarybg-primary/20 animate-pulse" />
-                <div className="absolute inset-2 rounded-full overflow-hidden">
-                  <Image
-                    src="/home-about.webp"
-                    alt="Child in frame"
-                    fill
-                    className="object-cover"
-                  />
+                {/* Impact Message */}
+                <div className="bg-primary/10 rounded-xl p-4 flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-700">
+                    <span className="font-bold">
+                      {selectedAmount || customAmount || "$100"}
+                    </span>{" "}
+                    {currentImpact || "makes a real difference"}
+                  </p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="py-20 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center">
-              <div className="relative w-75 h-75 md:w-100 md:h-100">
-                <div className="absolute inset-0 rounded-full border-10 border-primarybg-primary" />
-                <div className="absolute inset-3 rounded-full overflow-hidden">
-                  <Image
-                    src="/monthly-donation.webp"
-                    alt="Monthly giving"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl text-gray-900 leading-tight">
-                  Join Our Monthly <br />
-                  Giving Circle
-                </h2>
-                <div className="w-20 h-1 bg-[#FCDA16]" />
-              </div>
-              <p className="text-gray-600 leading-relaxed font-sans text-sm md:text-base">
-                Join our monthly giving community that aims to create a larger
-                impact. Regular monthly contributions not only give
-                underprivileged children the steady support they need but also
-                help us plan for the long term in a more sustainable manner.
-              </p>
-              <p className="text-gray-600 leading-relaxed font-sans text-sm md:text-base">
-                You can choose to donate monthly through credit cards or even
-                through a direct bank transfer.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-radius shadow-sm transition-colors text-xs uppercase tracking-wider">
-                  Donate by Credit Card
+                {/* Donate Button */}
+                <button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg transition-all hover:scale-[1.02] text-lg">
+                  Donate {selectedAmount || customAmount || "$100"}
                 </button>
-                <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-radius shadow-sm transition-colors text-xs uppercase tracking-wider">
-                  Donate by Bank Transfer
-                </button>
+
+                {/* Quick Links */}
+                <div className="flex justify-center gap-4 text-sm">
+                  <Link
+                    href="#"
+                    className="text-gray-500 hover:text-primary underline"
+                  >
+                    Donate by Check
+                  </Link>
+                  <span className="text-gray-300">|</span>
+                  <Link
+                    href="#"
+                    className="text-gray-500 hover:text-primary underline"
+                  >
+                    Bank Transfer
+                  </Link>
+                </div>
+
+                <p className="text-center text-xs text-gray-500">
+                  🔒 Secure payment powered by encrypted connection
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl text-gray-900 mb-6 font-medium">
-            Support A Project
-          </h2>
-          <p className="max-w-4xl mx-auto text-gray-600 mb-12 font-sans text-sm md:text-base leading-relaxed">
-            If you wish to donate $2,500 or more, you can support an entire or
-            part of a Hooc Help Project. Select a Project of your choice and we
-            will send you progress reports and organize a year end zoom call
-            with the Project Partner that will help track the impact you have
-            enabled in the lives of children.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {projects.map((proj, i) => (
-              <div
-                key={i}
-                className="group bg-white rounded-radius border border-gray-100 shadow-sm hover:shadow-md transition-all"
-              >
-                <div className="relative h-48 overflow-hidden rounded-t-radius">
-                  <Image
-                    src={proj.img}
-                    alt={proj.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4 flex flex-col items-center">
-                  <h3 className="font-bold text-sm text-gray-900 uppercase tracking-tight">
-                    {proj.name}
-                  </h3>
-                  <p className="text-xs text-gray-500 mt-1">{proj.location}</p>
-
-                  <div className="grid grid-cols-2 w-full gap-4 mt-4 text-center">
-                    <div>
-                      <p className="text-[10px] font-bold text-gray-900">
-                        {proj.goal}
-                      </p>
-                      <p className="text-[9px] text-gray-400 uppercase">
-                        Funding Goal
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-bold text-gray-900">
-                        {proj.raised}
-                      </p>
-                      <p className="text-[9px] text-gray-400 uppercase">
-                        Funds Raised
-                      </p>
-                    </div>
-                  </div>
-
-                  <button className="w-full mt-4 bg-black text-white text-[10px] font-bold py-2 rounded-radius uppercase tracking-wider hover:bg-gray-800 transition-colors">
-                    View Project
-                  </button>
-                </div>
+      {/* Impact Stats */}
+      <section className="py-16 bg-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {impactStats.map((stat, i) => (
+              <div key={i} className="text-center">
+                <stat.icon className="w-8 h-8 mx-auto mb-3 text-primabg-primary" />
+                <p className="text-3xl md:text-4xl font-bold text-white mb-1">
+                  {stat.number}
+                </p>
+                <p className="text-white/80 text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
-
-          <button className="mt-12 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-3 rounded-radius shadow-sm transition-all text-xs uppercase tracking-widest">
-            View More
-          </button>
         </div>
       </section>
 
-      <section className="py-24 bg-primary/5">
+      {/* Monthly Giving Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl text-gray-900 mb-2">
-              Other Ways To Donate
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full">
+                <Heart className="w-4 h-4 text-primabg-primary" />
+                <span className="font-bold text-sm text-primary">
+                  Monthly Giving
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                Join Our <span className="text-primary">Giving Circle</span>
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Monthly donors provide steady, reliable support that enables us
+                to plan long-term programs and create lasting change. Your
+                recurring gift multiplies its impact over time.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Consistent support for children year-round",
+                  "Quarterly impact reports with progress updates",
+                  "Special recognition in our annual report",
+                  "Cancel or modify anytime",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-gray-700">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                      <ChevronRight className="w-4 h-4 text-primary" />
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105">
+                Become a Monthly Donor
+              </button>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary to-primabg-primary rounded-3xl blur-2xl opacity-20" />
+              <div className="relative bg-white rounded-3xl shadow-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Monthly Giving Benefits
+                </h3>
+                <div className="space-y-4">
+                  {[
+                    {
+                      amount: "$25/month",
+                      impact: "Provides monthly nutrition for 2 children",
+                    },
+                    {
+                      amount: "$50/month",
+                      impact: "Sponsors one child's school supplies",
+                    },
+                    {
+                      amount: "$100/month",
+                      impact: "Funds entire classroom activities",
+                    },
+                  ].map((plan, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-primary/5 transition-colors"
+                    >
+                      <span className="font-bold text-primary">
+                        {plan.amount}
+                      </span>
+                      <span className="text-sm text-gray-600">
+                        {plan.impact}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Support Our <span className="text-primary">Projects</span>
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8" />
-            <p className="text-gray-600 font-sans">
-              There are so many ways to create happy childhoods and ensure that
-              children have a chance at a brighter future!
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Choose a specific project to support. You'll receive regular
+              updates and have the opportunity to connect directly with the
+              project team.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-3">
-              {otherWays.map((way, i) => (
-                <button
-                  key={i}
-                  className="w-full flex items-center justify-between bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-5 rounded-radius transition-all text-left group"
-                >
-                  <span className="text-xs font-bold tracking-wider">
-                    {way}
-                  </span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              ))}
-            </div>
-            <div className="relative h-125 rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/other-ways-to-donate.png"
-                alt="Other ways to donate"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl text-gray-900 mb-4">
-            How Your Donations Are Used
-          </h2>
-          <p className="text-gray-600 mb-12 font-sans">
-            Here is how your contributions are used to create impact for
-            vulnerable children!
-          </p>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-square md:aspect-video rounded-3xl overflow-hidden bg-gray-50 flex items-center justify-center border border-gray-100">
-              <Image
-                src="/donutchart.png"
-                alt="Donation usage chart"
-                width={700}
-                height={400}
-                className="object-contain p-8"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-white border-t border-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl text-gray-900 mb-2">
-            Our Impact
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8" />
-          <p className="text-gray-600 max-w-3xl mx-auto mb-16 text-sm md:text-base leading-relaxed">
-            Every community transformed is a step toward global change. Since
-            2004, Hooc Help has helped create more than 1,200,000 empowered
-            communities thanks to supporters like YOU!
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {impactCards.map((card, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {projects.map((project, i) => (
               <div
                 key={i}
-                className="flex flex-col rounded-radius overflow-hidden border border-gray-100 shadow-sm transition-transform hover:translate-y-1"
+                className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden group"
               >
-                <div
-                  className={`${card.bg} py-8 px-4 flex justify-center items-center h-40`}
-                >
+                <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={card.img}
-                    alt={card.label}
-                    width={120}
-                    height={120}
-                    className="object-contain"
+                    src={project.img}
+                    alt={project.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">
+                    {project.progress}% Funded
+                  </div>
                 </div>
-                <div className="bg-primary py-8 text-primary-foreground">
-                  <span className="block text-3xl font-bold mb-1">
-                    {card.number}
-                  </span>
-                  <p className="text-[11px] font-semibold uppercase tracking-tight px-4 leading-tight">
-                    {card.label}
+                <div className="p-5">
+                  <h3 className="font-bold text-lg text-gray-900">
+                    {project.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {project.location}
                   </p>
+                  <p className="text-xs text-gray-600 mt-2">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-4">
+                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-primary rounded-full transition-all"
+                        style={{ width: `${project.progress}%` }}
+                      />
+                    </div>
+                    <div className="flex justify-between mt-2 text-xs">
+                      <span className="font-bold">
+                        ${project.raised} raised
+                      </span>
+                      <span className="text-gray-500">
+                        Goal: {project.goal}
+                      </span>
+                    </div>
+                  </div>
+
+                  <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white font-bold py-3 rounded-xl transition-all text-sm">
+                    Support This Project
+                  </button>
                 </div>
               </div>
             ))}
           </div>
-
-          <button className="mt-16 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-3 rounded-radius shadow-sm transition-all text-xs uppercase tracking-widest">
-            View More
-          </button>
         </div>
       </section>
 
-      <div className="bg-white py-12">
+      {/* Other Ways to Donate */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl text-gray-900 mb-2 text-center">
-            What Our Donors Have To Say
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-16" />
-          <div className="bg-white">
-            <div className="max-w-4xl mx-auto p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
-              <p className="text-lg text-gray-600 italic leading-relaxed mb-8">
-                &quot;Yogita Maghnani, Seattle Volunteer: Child marriage takes
-                away a girl&apos;s right to a happy childhood. It forces her to
-                give up her education &amp; family to take on the role of a wife
-                at a very young age. The girl child may not be ready to handle
-                pregnancies, leading to complications for both the mom and baby.
-                She deserves to enjoy her childhood, play and go to school just
-                like a male child; contribute to the family and society at her
-                own terms; choose to marry when she is physically and
-                emotionally ready to build her own family.&quot;
-              </p>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primarybg-primary mb-4">
-                  <Image
-                    src="/Vol-61.png"
-                    alt="Yogita Maghnani"
-                    width={64}
-                    height={64}
-                    className="object-cover"
-                  />
-                </div>
-                <h4 className="font-bold text-gray-900">Yogita Maghnani</h4>
-                <p className="text-xs text-gray-500 uppercase">
-                  Hooc Help Volunteer
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Other Ways to <span className="text-primary">Give</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Find the giving method that works best for you. Every way of
+              giving creates impact.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {otherWays.map((way, i) => (
+              <button
+                key={i}
+                className="bg-white hover:bg-primary hover:text-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all text-left group"
+              >
+                <h3 className="font-bold text-lg mb-2 group-hover:text-white">
+                  {way.title}
+                </h3>
+                <p className="text-sm text-gray-500 group-hover:text-white/80">
+                  {way.description}
                 </p>
-              </div>
-            </div>
+              </button>
+            ))}
           </div>
         </div>
-      </div>
-      <Footer />
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              What Our <span className="text-primary">Donors Say</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, i) => (
+              <div key={i} className="bg-white rounded-2xl p-8 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    width={60}
+                    height={60}
+                    className="rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-gray-700 italic mb-4">
+                      &quot;{testimonial.quote}&quot;
+                    </p>
+                    <p className="font-bold text-gray-900">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Frequently Asked <span className="text-primary">Questions</span>
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <div
+                key={i}
+                className="border border-gray-200 rounded-xl overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full p-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                >
+                  <span className="font-bold text-gray-900">
+                    {faq.question}
+                  </span>
+                  <ChevronRight
+                    className={`w-5 h-5 text-gray-500 transition-transform ${
+                      openFaq === i ? "rotate-90" : ""
+                    }`}
+                  />
+                </button>
+                {openFaq === i && (
+                  <div className="px-5 pb-5 text-gray-600">{faq.answer}</div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Still have questions?</p>
+            <Link
+              href="mailto:hoocforhelp@gmail.com"
+              className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-xl transition-all inline-block"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Ready to Make a Difference?
+          </h2>
+          <p className="text-white/90 text-lg mb-8">
+            Join thousands of supporters who are changing lives every day. Your
+            generosity creates hope for children and communities.
+          </p>
+          <button
+            onClick={() =>
+              document
+                .getElementById("donate-form")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bg-primary hover:bg-[#e5c714] text-black font-bold px-10 py-4 rounded-xl shadow-lg transition-all hover:scale-105 text-lg"
+          >
+            Donate Now
+          </button>
+        </div>
+      </section>
     </main>
   );
 }

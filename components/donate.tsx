@@ -20,8 +20,8 @@ export default function Donate() {
                 populations!
               </p>
               <p>
-                Hooc Help is a 5013 exempt organization and all donations are
-                tax deductible.
+                Hooc for Help is a 5013 exempt organization and all donations
+                are tax deductible.
               </p>
             </div>
           </div>

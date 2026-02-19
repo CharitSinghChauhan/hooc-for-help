@@ -6,11 +6,12 @@ import Focus from "@/components/focus";
 import FAQ from "@/components/faq";
 import Donate from "@/components/donate";
 import Image from "next/image";
+import { Hero2 } from "@/components/hero-2";
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
-      <Hero />
+      <Hero2 />
       <About />
       <Impact />
       <div className="w-full my-8">
@@ -23,7 +24,6 @@ export default function Home() {
         />
       </div>
       <Focus />
-      <DonorVoices />
       <Donate />
       <FAQ />
     </main>

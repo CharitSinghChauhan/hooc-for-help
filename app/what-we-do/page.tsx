@@ -114,7 +114,7 @@ export default function WhatWeDoPage() {
       </div>
 
       {/* Statistics Section */}
-      <section className="py-20">
+      <section id="education" className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div className="max-w-xl">
@@ -184,7 +184,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* //TODO : change the images */}
-      <section className="pb-20">
+      <section id="health" className="pb-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-5xl font-bold mb-4 leading-14">
             Strengthening Communities Through <br />
@@ -378,7 +378,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Stories of Impact */}
-      <section className="py-24">
+      <section id="stories" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-6xl font-bold">
@@ -455,16 +455,16 @@ export default function WhatWeDoPage() {
 
           <div className="mt-16">
             <p className="text-lg italic text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-              &quot;What makes Hooc Help special is the drive and the
+              &quot;What makes Hooc for Help special is the drive and the
               genuineness of the volunteer team, year after year. By adopting
               projects themselves, some of these volunteers have put their money
-              where their mouth is. Thank you Hooc Help for making giving so
+              where their mouth is. Thank you Hooc for Help for making giving so
               easy and impactful.&quot;
             </p>
             <div className="flex flex-col items-center">
               <p className="font-bold text-xl mb-1">Usha Rao</p>
               <p className="text-sm text-primary font-semibold uppercase tracking-wider">
-                Hooc Help Donor
+                Hooc for Help Donor
               </p>
               <div className="flex gap-2 mt-8">
                 {[1, 2, 3, 4].map((i) => (
@@ -480,7 +480,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20">
+      <section id="faq" className="py-20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">
