@@ -134,7 +134,7 @@ export default function AboutUs() {
                   "Providing quality education and skill development to underprivileged children and youth",
               },
               {
-                img: "/impact-4.png",
+                img: "/impact-4.webp",
                 title: "Healthcare",
                 description:
                   "Ensuring access to quality healthcare and medical assistance for rural communities",

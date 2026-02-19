@@ -29,7 +29,7 @@ const projects = [
     goal: "₹50,00,000",
     raised: "₹20,00,000",
     progress: 39,
-    img: "/donate-support-1.jpg",
+    img: "/donate-support-1.webp",
     description: "Education & empowerment for rural communities",
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     goal: "₹24,50,000",
     raised: "₹15,00,000",
     progress: 62,
-    img: "/donate-support-2.jpg",
+    img: "/donate-support-2.webp",
     description: "Skill development for tribal youth",
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     goal: "₹22,00,000",
     raised: "₹7,50,000",
     progress: 34,
-    img: "/impact-2.jpg",
+    img: "/impact-2.webp",
     description: "Early childhood development program",
   },
 ];
