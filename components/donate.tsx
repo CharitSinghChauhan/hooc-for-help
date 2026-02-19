@@ -50,7 +50,7 @@ export default function Donate() {
             {/* Monthly Donation */}
             <div className="bg-white rounded-sm shadow-sm hover:shadow-md transition-shadow border-t-4 border-[#FCDA16]">
               <Image
-                src="/impact-3.png"
+                src="/impact-3.webp"
                 alt="Monthly Donation"
                 width={300}
                 height={200}

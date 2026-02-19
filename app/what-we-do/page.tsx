@@ -87,7 +87,7 @@ export default function WhatWeDoPage() {
     <main className="min-h-screen bg-white">
       <section className="relative h-200 w-full flex items-center justify-center overflow-hidden pt-32">
         <Image
-          src="/volunter-2-hero.png"
+          src="/volunter-2-hero.webp"
           alt="Volunteers"
           fill
           className="object-cover brightness-75"
@@ -303,7 +303,7 @@ export default function WhatWeDoPage() {
             <div className="flex-1 grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src="/support-our-mission-1.jpg"
+                  src="/support-our-mission-1.webp"
                   alt="Community Meals"
                   width={400}
                   height={200}
@@ -321,7 +321,7 @@ export default function WhatWeDoPage() {
 
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src="/support-our-mission-2.png"
+                  src="/support-our-mission-2.webp"
                   alt="Nutrition Support"
                   width={400}
                   height={200}
@@ -339,7 +339,7 @@ export default function WhatWeDoPage() {
 
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src="/support-our-mission-3.png"
+                  src="/support-our-mission-3.webp"
                   alt="Emergency Relief"
                   width={400}
                   height={200}
@@ -411,7 +411,7 @@ export default function WhatWeDoPage() {
             {/* RIGHT IMAGE */}
             <div className="w-full md:w-2/5 relative overflow-hidden rounded-2xl">
               <Image
-                src="/stories-impact-1.jpg"
+                src="/stories-impact-1.webp"
                 alt="Community Support Initiative"
                 width={500}
                 height={600}

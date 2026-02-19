@@ -193,7 +193,7 @@ export default function AboutUs() {
           </div>
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
             <Image
-              src="/our-team-image.jpg"
+              src="/our-team-image.webp"
               alt="Our Team"
               fill
               className="object-cover"

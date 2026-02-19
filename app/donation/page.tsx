@@ -47,7 +47,7 @@ const projects = [
     goal: "₹45,00,000",
     raised: "₹35,00,000",
     progress: 78,
-    img: "/impact-2.png",
+    img: "/impact-2.webp",
     description: "Girls education initiative",
   },
   {
@@ -149,7 +149,7 @@ export default function DonationPage() {
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-2.jpg"
+            src="/hero-2.webp"
             alt="Children learning"
             fill
             className="object-cover object-center"

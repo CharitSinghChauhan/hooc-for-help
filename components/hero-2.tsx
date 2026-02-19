@@ -7,23 +7,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
-    url: "/hero2-1.jpg",
+    url: "/hero2-1.webp",
     title: "Ration Distribution",
     subtitle: "Delivering essential ration kits to families in urgent need.",
   },
   {
-    url: "/hero2-2.jpg",
+    url: "/hero2-2.webp",
     title: "Food Distribution",
     subtitle: "Providing hot meals and food parcels to vulnerable communities.",
   },
   {
-    url: "/hero2-3.jpg",
+    url: "/hero2-3.webp",
     title: "Medicine Distribution",
     subtitle:
       "Supplying life‑saving medicines and health kits where they matter most.",
   },
   {
-    url: "/hero2-4.jpg",
+    url: "/hero2-4.webp",
     title: "Helping Children",
     subtitle: "Supporting children’s nutrition, health and education programs.",
   },
