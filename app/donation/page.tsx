@@ -14,11 +14,11 @@ import {
 } from "lucide-react";
 
 const amounts = [
-  { amount: "$25", impact: "Provides school supplies for 2 children" },
-  { amount: "$50", impact: "Feeds a family of 4 for a month" },
-  { amount: "$100", impact: "Sponsors one child's education for a year" },
-  { amount: "$250", impact: "Provides healthcare for 5 children" },
-  { amount: "$500", impact: "Supports a community literacy program" },
+  { amount: "₹2,000", impact: "Provides school supplies for 2 children" },
+  { amount: "₹4,000", impact: "Feeds a family of 4 for a month" },
+  { amount: "₹8,000", impact: "Sponsors one child's education for a year" },
+  { amount: "₹20,000", impact: "Provides healthcare for 5 children" },
+  { amount: "₹40,000", impact: "Supports a community literacy program" },
   { amount: "Other", impact: "Any amount makes a difference!" },
 ];
 
@@ -26,8 +26,8 @@ const projects = [
   {
     name: "Project VSS",
     location: "Madhya Pradesh",
-    goal: "$62,193",
-    raised: "$24,500",
+    goal: "₹50,00,000",
+    raised: "₹20,00,000",
     progress: 39,
     img: "/donate-support-1.jpg",
     description: "Education & empowerment for rural communities",
@@ -35,8 +35,8 @@ const projects = [
   {
     name: "Project KAS",
     location: "Rajasthan",
-    goal: "$29,531",
-    raised: "$18,200",
+    goal: "₹24,50,000",
+    raised: "₹15,00,000",
     progress: 62,
     img: "/donate-support-2.jpg",
     description: "Skill development for tribal youth",
@@ -44,8 +44,8 @@ const projects = [
   {
     name: "Project Pragathi",
     location: "Andhra Pradesh",
-    goal: "$53,986",
-    raised: "$42,100",
+    goal: "₹45,00,000",
+    raised: "₹35,00,000",
     progress: 78,
     img: "/impact-2.png",
     description: "Girls education initiative",
@@ -53,8 +53,8 @@ const projects = [
   {
     name: "Project Sikshasandhan",
     location: "Odisha",
-    goal: "$26,248",
-    raised: "$8,900",
+    goal: "₹22,00,000",
+    raised: "₹7,50,000",
     progress: 34,
     img: "/impact-2.jpg",
     description: "Early childhood development program",
@@ -90,10 +90,10 @@ const otherWays = [
 ];
 
 const impactStats = [
-  { number: "342,558", label: "Individuals Reached", icon: Users },
-  { number: "212,079", label: "Educated & Skilled", icon: Sparkles },
-  { number: "40,479", label: "Families Supported", icon: Heart },
-  { number: "5,311", label: "Rehabilitated", icon: Shield },
+  { number: "342", label: "Individuals Reached", icon: Users },
+  { number: "212", label: "Educated & Skilled", icon: Sparkles },
+  { number: "400", label: "Families Supported", icon: Heart },
+  { number: "531", label: "Rehabilitated", icon: Shield },
 ];
 
 const faqs = [
@@ -125,20 +125,18 @@ const testimonials = [
       "Donating to HOOC has been the most fulfilling experience. Seeing the progress in the communities we support keeps me motivated to continue giving.",
     name: "Priya Sharma",
     role: "Monthly Donor since 2021",
-    image: "/stories-impact-1.jpg",
   },
   {
     quote:
       "The transparency and impact reports from HOOC make me confident that every rupee I donate is making a real difference in children's lives.",
     name: "Rajesh Kumar",
     role: "Corporate Partner",
-    image: "/two-girls-1.jpg",
   },
 ];
 
 export default function DonationPage() {
   const [selectedTab, setSelectedTab] = useState("one-time");
-  const [selectedAmount, setSelectedAmount] = useState("$100");
+  const [selectedAmount, setSelectedAmount] = useState("₹8,000");
   const [customAmount, setCustomAmount] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -151,7 +149,7 @@ export default function DonationPage() {
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-22.png"
+            src="/hero-2.jpg"
             alt="Children learning"
             fill
             className="object-cover object-center"
@@ -289,7 +287,7 @@ export default function DonationPage() {
                   <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-gray-700">
                     <span className="font-bold">
-                      {selectedAmount || customAmount || "$100"}
+                      {selectedAmount || customAmount || "₹8,000"}
                     </span>{" "}
                     {currentImpact || "makes a real difference"}
                   </p>
@@ -297,7 +295,7 @@ export default function DonationPage() {
 
                 {/* Donate Button */}
                 <button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg transition-all hover:scale-[1.02] text-lg">
-                  Donate {selectedAmount || customAmount || "$100"}
+                  Donate {selectedAmount || customAmount || "₹8,000"}
                 </button>
 
                 {/* Quick Links */}
@@ -390,15 +388,15 @@ export default function DonationPage() {
                 <div className="space-y-4">
                   {[
                     {
-                      amount: "$25/month",
+                      amount: "₹2,000/month",
                       impact: "Provides monthly nutrition for 2 children",
                     },
                     {
-                      amount: "$50/month",
+                      amount: "₹4,000/month",
                       impact: "Sponsors one child's school supplies",
                     },
                     {
-                      amount: "$100/month",
+                      amount: "₹8,000/month",
                       impact: "Funds entire classroom activities",
                     },
                   ].map((plan, i) => (
@@ -534,13 +532,6 @@ export default function DonationPage() {
             {testimonials.map((testimonial, i) => (
               <div key={i} className="bg-white rounded-2xl p-8 shadow-sm">
                 <div className="flex items-start gap-4">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={60}
-                    height={60}
-                    className="rounded-full object-cover"
-                  />
                   <div>
                     <p className="text-gray-700 italic mb-4">
                       &quot;{testimonial.quote}&quot;

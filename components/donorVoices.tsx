@@ -9,6 +9,7 @@ type Testimonial = {
   role?: string;
   initials?: string;
   color?: string;
+  image?: string;
 };
 
 const TESTIMONIALS: Testimonial[] = [
@@ -19,6 +20,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Hooc for Help Donors",
     initials: "HP",
     color: "#FDE68A",
+    image: "/Harsh-Rupal-Patil-donor.webp",
   },
   {
     quote:
@@ -27,6 +29,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Volunteer",
     initials: "AS",
     color: "#FBCFE8",
+    image: "/Anita-Agarwal-donor.webp",
   },
   {
     quote:
@@ -35,22 +38,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Donors",
     initials: "MP",
     color: "#C7F9CC",
-  },
-  {
-    quote:
-      "The programs focus on both education and livelihood, which makes a big difference in building resilient communities.",
-    name: "Sanjay Iyer",
-    role: "Partner",
-    initials: "SI",
-    color: "#C7D2FE",
-  },
-  {
-    quote:
-      "We love the way Hooc for Help engages communities — it's sustainable and respectful of local needs, from disaster relief to women empowerment.",
-    name: "Leela & Arun",
-    role: "Supporters",
-    initials: "LA",
-    color: "#FFE4B5",
+    image: "/donor-2.webp",
   },
 ];
 
@@ -75,36 +63,43 @@ export default function DonorVoices() {
   const avatars = useMemo(
     () =>
       TESTIMONIALS.map((t) => ({
-        src: avatarDataUrl(t.initials, t.color),
+        src: t.image || avatarDataUrl(t.initials, t.color),
         name: t.name,
       })),
     [],
   );
 
   return (
-    <section id="donor-voices" className="w-full bg-white pb-20 scroll-mt-32.5">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl mb-2">Donor Voices</h2>
-        <div className="mx-auto h-1 w-40 bg-[#FCDA16] rounded-sm mb-8" />
+    <section
+      id="donor-voices"
+      className="section-padding bg-white scroll-mt-32.5"
+    >
+      <div className="section-container text-center">
+        <h2 className="heading-2 mb-6 md:mb-8">Donor Voices</h2>
+        <div className="divider-center mb-10" />
 
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-gray-600 italic text-lg md:text-xl leading-relaxed">
-            “{active.quote}”
+        <div className="max-w-3xl mx-auto text-center element-spacing-md">
+          <p className="body-lg italic leading-relaxed">
+            &ldquo;{active.quote}&rdquo;
           </p>
-          <p className="mt-6 font-semibold text-lg">{active.name}</p>
+          <p className="mt-8 font-semibold text-lg text-foreground">
+            {active.name}
+          </p>
           {active.role && (
-            <p className="text-sm text-gray-500">{active.role}</p>
+            <p className="mt-2 text-muted-foreground body-base">
+              {active.role}
+            </p>
           )}
         </div>
 
-        <div className="mt-8 sm:mt-12 flex items-center justify-center gap-3 sm:gap-6">
+        <div className="mt-10 md:mt-12 flex items-center justify-center gap-4">
           {avatars.map((a, i) => (
             <button
               key={i}
               onClick={() => setIdx(i)}
-              className={`rounded-full overflow-hidden transition-transform duration-300 focus:outline-none ${{
-                true: "",
-              }} ${i === idx ? "scale-110 ring-4 ring-[#FCDA16]" : "opacity-70 hover:scale-105"}`}
+              className={`rounded-full overflow-hidden transition-transform duration-300 focus:outline-none ${
+                true ? "" : ""
+              } ${i === idx ? "scale-110 ring-4 ring-[#FCDA16]" : "opacity-70 hover:scale-105"}`}
               aria-label={`Show testimonial ${i + 1}`}
             >
               {/* use plain img so it's easy to replace with real photos in /public */}
@@ -119,7 +114,7 @@ export default function DonorVoices() {
           ))}
         </div>
 
-        <div className="mt-6 flex items-center justify-center gap-3">
+        <div className="mt-8 flex items-center justify-center gap-3">
           {TESTIMONIALS.map((_, i) => (
             <button
               key={i}

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { MapPin, Utensils, Heart, Megaphone, Package } from "lucide-react";
+import FAQWhatWeDo from "@/components/faq-what-we-do";
+import Link from "next/link";
 
 const statistics = [
   {
@@ -83,48 +85,28 @@ const impacts = [
 export default function WhatWeDoPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative pt-10 px-6 overflow-hidden">
-        <div className="mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-14">
-            Creating Lasting <br />
-            <span className="text-primary font-medium">
-              Change in Communities
-            </span>
-          </h1>
-          <p className="text-gray-600 max-w-7xl mx-auto leading-relaxed mb-12">
-            We are a nonprofit organization dedicated to empowering underserved
-            communities through sustainable initiatives in education,
-            healthcare, livelihood development, and social awareness. Our work
-            focuses on creating equal opportunities, strengthening local
-            systems, and ensuring long-term impact. By collaborating with
-            communities and partners, we strive to build a more inclusive and
-            resilient future for all.
-          </p>
-        </div>
+      <section className="relative h-200 w-full flex items-center justify-center overflow-hidden pt-32">
+        <Image
+          src="/volunter-2-hero.png"
+          alt="Volunteers"
+          fill
+          className="object-cover brightness-75"
+          priority
+        />
       </section>
 
-      <div className="w-full rounded-radius">
-        <Image
-          src="/home-banner.jpg"
-          alt="Community members smiling together"
-          width={1200}
-          height={600}
-          className="object-cover w-full h-auto"
-        />
-      </div>
-
       {/* Statistics Section */}
-      <section id="education" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+      <section id="education" className="section-padding">
+        <div className="section-container">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-12">
             <div className="max-w-xl">
-              <h2 className="text-5xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 Our Ongoing <br />
                 <span className="text-primary font-semibold">
                   Community Impact Projects
                 </span>
               </h2>
-              <p className="text-gray-600 text-lg">
+              <p className="body-base">
                 We are committed to building healthier communities through food
                 support programs and environmental initiatives. From feeding
                 families in need to restoring clean streets and rivers, every
@@ -133,7 +115,7 @@ export default function WhatWeDoPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {statistics.map((project) => (
               <div
                 key={project.id}
@@ -184,16 +166,16 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* //TODO : change the images */}
-      <section id="health" className="pb-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-4 leading-14">
+      <section id="health" className="pb-16 md:pb-20">
+        <div className="section-container text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Strengthening Communities Through <br />
             <span className="text-primary italic font-semibold">
               Nutrition & Support Programs
             </span>
           </h2>
 
-          <p className="text-gray-600 max-w-4xl mx-auto mb-16">
+          <p className="body-lg max-w-3xl mx-auto mb-12 md:mb-16">
             Our community outreach initiatives focus on providing nutritious
             meals, essential resources, and long-term support to underserved
             families. We work directly with local communities to address food
@@ -201,7 +183,7 @@ export default function WhatWeDoPage() {
             empower people to build healthier futures.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {programs.map((prog, idx) => (
               <div
                 key={idx}
@@ -217,19 +199,19 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 relative">
+      <section className="pb-16 md:pb-20">
+        <div className="section-container">
+          <div className="text-center mb-12 md:mb-16 relative">
             <h2 className="text-4xl md:text-5xl font-bold inline-block">
               Our Impact in Empowering{" "}
               <span className="text-primary italic">
                 Communities Across Sectors
               </span>
-              <div className="h-1.5 w-full bg-primary/30 rounded-full mt-1 -rotate-1"></div>
+              <div className="h-1.5 w-full bg-primary/30 rounded-full mt-2 -rotate-1"></div>
             </h2>
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-10 md:space-y-12">
             {/* Top 3 */}
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {impacts.slice(0, 3).map((item, idx) => (
@@ -296,9 +278,9 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Donate Page Component Placeholder Section */}
-      <section className="py-20 ">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+      <section className="section-padding">
+        <div className="section-container">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-12 items-center">
             <div className="max-w-md">
               <h2 className="text-gray-400 text-sm font-bold uppercase tracking-widest mb-4">
                 Support Our Mission
@@ -332,7 +314,7 @@ export default function WhatWeDoPage() {
                     Sponsor Community Meal Distribution
                   </h4>
                   <button className="bg-primary text-white px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
-                    Donate Now
+                    <Link href="/donation">Donate Now</Link>
                   </button>
                 </div>
               </div>
@@ -349,8 +331,8 @@ export default function WhatWeDoPage() {
                   <h4 className="text-center font-bold text-xs mb-4">
                     Support Child Nutrition Programs
                   </h4>
-                  <button className="bg-primary text-white px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider">
-                    Donate Monthly
+                  <button className="bg-primary text-white px-4 py-2 rounded-md text-[10px] font-bold uppercase tracking-wider ">
+                    <Link href={"/donation"}> Donate Monthly</Link>
                   </button>
                 </div>
               </div>
@@ -378,10 +360,10 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Stories of Impact */}
-      <section id="stories" className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-6xl font-bold">
+      <section id="stories" className="section-padding-lg">
+        <div className="section-container">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold">
               Stories{" "}
               <span className="text-primary italic font-semibold">
                 of Transformation
@@ -389,7 +371,7 @@ export default function WhatWeDoPage() {
             </h2>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+          <div className="bg-white rounded-3xl p-8 md:p-10 lg:p-12 flex flex-col md:flex-row gap-10 md:gap-12 items-center">
             {/* LEFT CONTENT */}
             <div className="flex-1">
               <h3 className="text-4xl font-bold mb-6 italic text-gray-800">
@@ -444,17 +426,17 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-primatext-primary/5">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+      <section className="section-padding bg-primary/5">
+        <div className="section-container text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Testimonials from <br />
             <span className="text-primary italic font-semibold">
               Beneficiaries, Educators, And Parents
             </span>
           </h2>
 
-          <div className="mt-16">
-            <p className="text-lg italic text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
+          <div className="mt-12 md:mt-16">
+            <p className="text-lg italic text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8 body-lg">
               &quot;What makes Hooc for Help special is the drive and the
               genuineness of the volunteer team, year after year. By adopting
               projects themselves, some of these volunteers have put their money
@@ -466,11 +448,11 @@ export default function WhatWeDoPage() {
               <p className="text-sm text-primary font-semibold uppercase tracking-wider">
                 Hooc for Help Donor
               </p>
-              <div className="flex gap-2 mt-8">
+              <div className="flex gap-2 mt-6 md:mt-8">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className={`w-3 h-3 rounded-full ${i === 1 ? "bg-primatext-primary" : "0"}`}
+                    className={`w-3 h-3 rounded-full ${i === 1 ? "bg-primary" : "bg-gray-200"}`}
                   />
                 ))}
               </div>
@@ -480,10 +462,10 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">
+      <section id="faq" className="section-padding">
+        <div className="section-container">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">
               Frequently Asked{" "}
               <span className="text-primary italic font-semibold">
                 Questions
@@ -491,69 +473,7 @@ export default function WhatWeDoPage() {
             </h2>
           </div>
 
-          <div className="space-y-8">
-            <div className="-b -gray-100 pb-6">
-              <h4 className="text-lg font-bold mb-3">
-                What causes does your NGO focus on?
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Our NGO focuses on food distribution drives, street and river
-                cleaning initiatives, women empowerment programs, skill
-                development, and free health camps. We work to create
-                sustainable impact by addressing both immediate needs and
-                long-term community development.
-              </p>
-            </div>
-
-            <div className="-b -gray-100 pb-6">
-              <h4 className="text-lg font-bold mb-3">
-                How can I contribute to your initiatives?
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                You can contribute through one-time or monthly donations,
-                volunteering in community drives, sponsoring health camps, or
-                supporting environmental campaigns. Every contribution helps us
-                expand our reach and impact more lives.
-              </p>
-            </div>
-
-            <div className="-b -gray-100 pb-6">
-              <h4 className="text-lg font-bold mb-3">
-                How is my donation utilized?
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Donations are used to fund food distribution programs,
-                sanitation campaigns, river restoration efforts, skill-building
-                workshops, and free medical check-ups. We prioritize
-                transparency and ensure funds are directed toward programs that
-                deliver measurable impact.
-              </p>
-            </div>
-
-            <div className="-b -gray-100 pb-6">
-              <h4 className="text-lg font-bold mb-3">
-                Can I volunteer in your projects?
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Yes. We actively welcome volunteers for food drives,
-                environmental clean-up campaigns, awareness programs, and health
-                camps. Volunteers play a crucial role in strengthening community
-                engagement and outreach.
-              </p>
-            </div>
-
-            <div className="-b -gray-100 pb-6">
-              <h4 className="text-lg font-bold mb-3">
-                Do you provide impact reports to donors?
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Yes. We provide regular updates and impact reports to ensure
-                transparency and accountability. Our goal is to keep supporters
-                informed about how their contributions are transforming
-                communities.
-              </p>
-            </div>
-          </div>
+          <FAQWhatWeDo />
         </div>
       </section>
     </main>

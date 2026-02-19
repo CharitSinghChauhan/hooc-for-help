@@ -1,4 +1,3 @@
-import Hero from "@/components/hero";
 import About from "@/components/about";
 import Impact from "@/components/impact";
 import DonorVoices from "@/components/donorVoices";
@@ -14,15 +13,17 @@ export default function Home() {
       <Hero2 />
       <About />
       <Impact />
-      <div className="w-full my-8">
+      <div className="w-full section-padding-sm bg-white">
         <Image
           src="/Page-breaker-image.webp"
-          alt=""
+          alt="landing-page"
           width={1440}
           height={160}
           className="w-full h-auto"
+          loading="lazy"
         />
       </div>
+      <DonorVoices />
       <Focus />
       <Donate />
       <FAQ />

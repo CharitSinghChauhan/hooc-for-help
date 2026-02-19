@@ -130,6 +130,137 @@
 }
 
 @layer utilities {
+  /* Section Spacing System - Consistent vertical rhythm */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24 px-4 md:px-8;
+  }
+
+  .section-padding-sm {
+    @apply py-12 md:py-16 px-4 md:px-8;
+  }
+
+  .section-padding-lg {
+    @apply py-20 md:py-24 lg:py-32 px-4 md:px-8;
+  }
+
+  /* Container */
+  .section-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Typography - Enhanced Heading Hierarchy */
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-foreground;
+  }
+
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-foreground;
+  }
+
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight leading-tight text-foreground;
+  }
+
+  .heading-4 {
+    @apply text-xl md:text-2xl font-semibold leading-tight text-foreground;
+  }
+
+  .heading-5 {
+    @apply text-lg md:text-xl font-semibold leading-tight text-foreground;
+  }
+
+  /* Body Text - Improved readability */
+  .body-lg {
+    @apply text-lg md:text-xl leading-relaxed text-muted-foreground;
+  }
+
+  .body-base {
+    @apply text-base md:text-lg leading-relaxed text-muted-foreground;
+  }
+
+  .body-sm {
+    @apply text-sm md:text-base leading-relaxed text-muted-foreground;
+  }
+
+  /* Vertical Rhythm - Spacing between elements */
+  .space-heading-content {
+    @apply mb-6 md:mb-8;
+  }
+
+  .space-content-content {
+    @apply mb-4 md:mb-6;
+  }
+
+  /* Enhanced vertical spacing for paragraphs */
+  .space-paragraph > p + p {
+    @apply mt-4 md:mt-6;
+  }
+
+  /* Section spacing - consistent gaps between sections */
+  .section-gap {
+    @apply gap-12 md:gap-16 lg:gap-20;
+  }
+
+  /* Element spacing */
+  .element-spacing-sm {
+    @apply space-y-3 md:space-y-4;
+  }
+
+  .element-spacing-md {
+    @apply space-y-4 md:space-y-6;
+  }
+
+  .element-spacing-lg {
+    @apply space-y-6 md:space-y-8;
+  }
+
+  /* Divider Lines */
+  .divider {
+    @apply w-16 md:w-24 h-1 bg-primary rounded my-4 md:my-6;
+  }
+
+  .divider-center {
+    @apply w-16 md:w-24 h-1 bg-primary rounded mx-auto my-4 md:my-6;
+  }
+
+  /* Card spacing */
+  .card-padding {
+    @apply p-4 md:p-6 lg:p-8;
+  }
+
+  /* Card spacing consistent */
+  .card-spacing {
+    @apply p-5 md:p-6 lg:p-8;
+  }
+
+  /* Grid gaps - consistent */
+  .grid-gap-sm {
+    @apply gap-4 md:gap-6;
+  }
+
+  .grid-gap-md {
+    @apply gap-6 md:gap-8 lg:gap-10;
+  }
+
+  .grid-gap-lg {
+    @apply gap-8 md:gap-10 lg:gap-12;
+  }
+
+  /* Button sizing */
+  .btn-primary {
+    @apply h-12 md:h-14 px-6 md:px-10 text-sm font-bold tracking-wider uppercase;
+  }
+
+  /* Enhanced button styles */
+  .btn-lg {
+    @apply h-14 md:h-16 px-8 md:px-12 text-base font-bold tracking-wider uppercase;
+  }
+
+  .btn-sm {
+    @apply h-10 md:h-12 px-4 md:px-6 text-sm font-semibold tracking-wider uppercase;
+  }
+
+  /* Height utilities */
   .h-100 {
     height: 25rem;
   }
@@ -149,6 +280,7 @@
     height: 75rem;
   }
 
+  /* Width utilities */
   .w-50 {
     width: 12.5rem;
   }
@@ -165,10 +297,76 @@
     width: 31.25rem;
   }
 
+  /* Border utilities */
   .border-15 {
     border-width: 15px;
   }
   .border-10 {
     border-width: 10px;
+  }
+
+  /* Content alignment */
+  .content-center {
+    @apply text-center items-center;
+  }
+
+  .content-start {
+    @apply text-left items-start;
+  }
+
+  .content-end {
+    @apply text-right items-end;
+  }
+
+  /* Max content widths for readability */
+  .content-width-sm {
+    @apply max-w-2xl;
+  }
+
+  .content-width-md {
+    @apply max-w-3xl;
+  }
+
+  .content-width-lg {
+    @apply max-w-4xl;
+  }
+
+  /* Aspect ratios for images */
+  .aspect-portrait {
+    aspect-ratio: 3/4;
+  }
+
+  .aspect-landscape {
+    aspect-ratio: 4/3;
+  }
+
+  /* Icon sizes consistent */
+  .icon-sm {
+    @apply w-4 h-4;
+  }
+
+  .icon-md {
+    @apply w-5 h-5 md:w-6 md:h-6;
+  }
+
+  .icon-lg {
+    @apply w-6 h-6 md:w-8 md:h-8;
+  }
+
+  /* Rounded corners consistent */
+  .rounded-sm-custom {
+    @apply rounded;
+  }
+
+  .rounded-md-custom {
+    @apply rounded-md;
+  }
+
+  .rounded-lg-custom {
+    @apply rounded-lg;
+  }
+
+  .rounded-xl-custom {
+    @apply rounded-xl;
   }
 }

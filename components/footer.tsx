@@ -9,7 +9,6 @@ const footerContent = {
     title: "Home",
     links: [
       { label: "About Us", href: "/about-us" },
-      { label: "Volunteer", href: "/volunteer" },
       { label: "What We Do", href: "/what-we-do" },
       { label: "Donate", href: "/donation" },
     ],
@@ -93,7 +92,6 @@ export default function Footer() {
   const getCurrentSection = () => {
     if (pathname === "/") return "home";
     if (pathname.startsWith("/about-us")) return "aboutUs";
-    if (pathname.startsWith("/volunteer")) return "volunteer";
     if (pathname.startsWith("/what-we-do")) return "whatWeDo";
     if (pathname.startsWith("/donation")) return "donation";
     return "home"; // Default to home

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -63,8 +64,7 @@ export function Hero2() {
   }, [nextSlide]);
 
   return (
-    <div className="relative h-[85vh] w-full overflow-hidden bg-gray-900 mt-10">
-      {/* Carousel Tracks */}
+    <div className="relative h-[85vh] w-full overflow-hidden">
       <div
         className={`flex h-full w-full ${!isTransitioning && (currentIndex === 1 || currentIndex === images.length) ? "" : "transition-transform duration-1000 ease-in-out"}`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -85,16 +85,22 @@ export function Hero2() {
                   <h1 className="animate-in fade-in slide-in-from-bottom-8 duration-1000 font-hand text-3xl font-bold text-white md:text-7xl lg:text-8xl leading-tight">
                     {image.title}
                   </h1>
-                  <p className="animate-in fade-in slide-in-from-bottom-10 delay-300 duration-1000 mt-6 text-xl text-gray-100 md:text-2xl max-w-2xl font-light leading-relaxed">
+                  <p className="animate-in fade-in slide-in-from-bottom-10 delay-300 duration-1000 mt-6 md:mt-8 text-xl text-gray-100 md:text-2xl max-w-2xl font-light leading-relaxed">
                     {image.subtitle}
                   </p>
-                  <div className="animate-in fade-in slide-in-from-bottom-12 delay-500 duration-1000 mt-10 flex flex-wrap gap-4">
-                    <button className="h-14 rounded-sm bg-primary px-10 text-[14px] font-bold tracking-[0.2em] text-black transition-all hover:bg-primary active:scale-95 uppercase">
+                  <div className="animate-in fade-in slide-in-from-bottom-12 delay-500 duration-1000 mt-8 md:mt-10 flex flex-wrap gap-4">
+                    <Link
+                      href="/donation"
+                      className="h-14 rounded-sm bg-primary px-10 text-[14px] font-bold tracking-[0.2em] text-black transition-all hover:bg-primary active:scale-95 uppercase flex items-center justify-center"
+                    >
                       Donate Now
-                    </button>
-                    <button className="h-14 rounded-sm border-2 border-white px-10 text-[14px] font-bold tracking-[0.2em] text-white transition-all hover:bg-white/10 active:scale-95 uppercase">
+                    </Link>
+                    <Link
+                      href="#impact"
+                      className="h-14 rounded-sm border-2 border-white px-10 text-[14px] font-bold tracking-[0.2em] text-white transition-all hover:bg-white/10 active:scale-95 uppercase flex items-center justify-center"
+                    >
                       Our Impact
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
