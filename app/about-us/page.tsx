@@ -17,7 +17,7 @@ export default function AboutUs() {
       <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh]">
         <div className="absolute inset-0">
           <Image
-            src="/about-us-hero.avif"
+            src="/about-us-hero.webp"
             alt="About Hooc for Help"
             fill
             className="object-cover"
@@ -140,7 +140,7 @@ export default function AboutUs() {
                   "Ensuring access to quality healthcare and medical assistance for rural communities",
               },
               {
-                img: "/about-us-mission-3.avif",
+                img: "/about-us-mission-3.webp",
                 title: "Environmental Sustainability",
                 description:
                   "Promoting eco-friendly practices and sustainable community development",
