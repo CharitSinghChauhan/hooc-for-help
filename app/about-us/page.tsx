@@ -128,7 +128,7 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                img: "/about-us-mission-1.jpeg",
+                img: "/about-us-mission-1.webp",
                 title: "Education",
                 description:
                   "Providing quality education and skill development to underprivileged children and youth",
@@ -208,7 +208,7 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
               <Image
-                src="/pledge.jpeg"
+                src="/pledge.webp"
                 alt="The Hooc for Help Pledge"
                 fill
                 className="object-cover"
