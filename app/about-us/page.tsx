@@ -232,7 +232,7 @@ export default function AboutUs() {
                   And so, I pledge to do whatever I can, in my own way, to fight
                   for their right to have a childhood. With my skills, with my
                   resources, with my heart, I will fight for them because I can
-                  and they can't.
+                  and they can&apos;t.
                 </p>
               </div>
               <div className="mt-8">
