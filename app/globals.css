@@ -130,6 +130,32 @@
 }
 
 @layer utilities {
+  /* Fixed Background - Parallax Effect */
+  .bg-fixed-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Hero Fixed Background - Completely fixed image that stays in place */
+  .hero-fixed-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  /* Section with fixed background container */
+  .hero-section-fixed {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
   /* Section Spacing System - Consistent vertical rhythm */
   .section-padding {
     @apply py-16 md:py-20 lg:py-24 px-4 md:px-8;

@@ -145,18 +145,20 @@ export default function DonationPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      {/* Fixed Background Image */}
+      <div className="h-full">
+        <Image
+          src="/hero-2.webp"
+          alt="Children learning"
+          fill
+          className="object-fill"
+          priority
+        />
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/hero-2.webp"
-            alt="Children learning"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -427,7 +429,7 @@ export default function DonationPage() {
               Support Our <span className="text-primary">Projects</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose a specific project to support. You'll receive regular
+              Choose a specific project to support. You&apos;ll receive regular
               updates and have the opportunity to connect directly with the
               project team.
             </p>

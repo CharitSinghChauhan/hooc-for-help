@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import { motion } from "motion/react";
 
 const footerContent = {
   home: {
@@ -100,19 +108,57 @@ export default function Footer() {
   const currentSection = getCurrentSection();
   const content = footerContent[currentSection as keyof typeof footerContent];
   return (
-    <footer className="relative bg-primary text-primary-foreground pt-12 pb-8 ">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-4">
+    <footer className="relative bg-primary text-primary-foreground pt-20 pb-10 overflow-hidden min-h-[600px] flex flex-col justify-center">
+      <div className="container mx-auto px-4 relative z-10 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16">
+          {/* Left Column */}
+          <div className="md:col-span-4 space-y-8">
+            <h2 className="text-4xl font-bold">HoocForHelp</h2>
+            <p className="text-primary-foreground/80 leading-relaxed max-w-sm">
+              We empower communities by creating opportunities and transforming
+              lives through education, healthcare, and sustainable practices.
+            </p>
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-wider mb-4">
+                Our Social Links
+              </h4>
+              <div className="flex gap-3">
+                <Link
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Middle Columns */}
+          <div className="md:col-span-2 space-y-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider">
               {content.title}
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               {content.links.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:opacity-80 transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -121,17 +167,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Second Column - Dynamic What We Do Section */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-4">
+          <div className="md:col-span-3 space-y-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider">
               {content.whatWeDoTitle}
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-4">
               {content.whatWeDoLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:opacity-80 transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -140,135 +185,65 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Column */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold uppercase tracking-wider mb-4">
+          {/* Right Column */}
+          <div className="md:col-span-3 space-y-6">
+            <h3 className="text-sm font-bold uppercase tracking-wider">
               Contact Us
             </h3>
-
-            <div className="space-y-3">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wide mb-1">
-                  Email Us
-                </p>
+            <ul className="space-y-4">
+              <li>
                 <Link
                   href="mailto:hoocforhelp@gmail.com"
-                  className="text-sm hover:opacity-80 transition-colors block"
+                  className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  hoocforhelp@gmail.com
+                  <Mail className="w-5 h-5" />
+                  <span>hoocforhelp@gmail.com</span>
                 </Link>
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wide mb-1">
-                  Call Us
-                </p>
+              </li>
+              <li>
                 <Link
                   href="tel:+917983141007"
-                  className="text-sm hover:opacity-80 transition-colors block"
+                  className="flex items-center gap-3 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  7983141007
+                  <Phone className="w-5 h-5" />
+                  <span>+91 7983141007</span>
                 </Link>
-              </div>
-
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wide mb-1">
-                  Visit Us
-                </p>
-                <p className="text-sm leading-relaxed">
+              </li>
+              <li className="flex items-start gap-3 text-primary-foreground/80">
+                <MapPin className="w-5 h-5 shrink-0 mt-1" />
+                <span>
                   403 Tan Oak Madhuban Bapudham Govindpuram,
                   <br />
                   Ghaziabad 201013
-                </p>
-              </div>
-            </div>
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
 
-        {/* Social Media Icons */}
-        <div className="flex justify-center items-center gap-4 mb-8">
-          <Link
-            href="#"
-            className="hover:opacity-80 transition-colors"
-            aria-label="Facebook"
-          >
-            <Facebook className="w-5 h-5" />
-          </Link>
-          <Link
-            href="#"
-            className="hover:opacity-80 transition-colors"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-5 h-5" />
-          </Link>
-          <Link
-            href="#"
-            className="hover:opacity-80 transition-colors"
-            aria-label="Instagram"
-          >
-            <Instagram className="w-5 h-5" />
-          </Link>
-          <Link
-            href="#"
-            className="hover:opacity-80 transition-colors"
-            aria-label="YouTube"
-          >
-            <Youtube className="w-5 h-5" />
-          </Link>
-          <Link
-            href="#"
-            className="hover:opacity-80 transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-5 h-5" />
-          </Link>
-        </div>
-
-        {/* Bottom Navigation */}
-        <div className="flex flex-wrap justify-center gap-6 mb-8">
-          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
-            Blog
-          </Link>
-          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
-            Careers
-          </Link>
-          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
-            FAQs
-          </Link>
-          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
-            Privacy Policy
-          </Link>
-          <Link
-            href="mailto:hoocforhelp@gmail.com"
-            className="text-sm hover:opacity-80 transition-colors"
-          >
-            Contact Us
-          </Link>
-          <Link href="#" className="text-sm hover:opacity-80 transition-colors">
-            Sitemap
-          </Link>
-        </div>
-
-        {/* Information Text */}
-        <div className="text-center max-w-4xl mx-auto mb-8">
-          <p className="text-sm leading-relaxed">
-            HOOC Help is the sole representative of the HOOC name & trademarks.
-            HOOC Help is a 501c3 registered organization and all donations to
-            HOOC Help are tax-deductible. You will receive periodic updates, so
-            you can stay informed about HOOC Help’s projects, events &
-            initiatives.
-          </p>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-primatext-primary-foreground/10 my-6" />
-
-        {/* Copyright */}
-        <div className="text-center">
-          <p className="text-sm">
-            Copyright 2023 HOOC, Help Our Own Children Inc. All Rights Reserved.
-          </p>
-        </div>
+      {/* Marquee Animation at the bottom */}
+      <div className="w-full overflow-hidden flex opacity-5 pointer-events-none select-none absolute bottom-20 left-0 translate-y-1/4">
+        <motion.div
+          className="flex whitespace-nowrap"
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+        >
+          <div className="flex gap-8 pr-8">
+            {[...Array(4)].map((_, i) => (
+              <span key={i} className="text-[15vw] font-bold px-8 leading-none">
+                HoocForHelp
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-8 pr-8">
+            {[...Array(4)].map((_, i) => (
+              <span key={i} className="text-[15vw] font-bold leading-none">
+                HoocForHelp
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </footer>
   );

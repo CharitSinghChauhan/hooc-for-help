@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "motion/react";
 
 const cards = [
   {
@@ -38,7 +39,7 @@ export default function Focus() {
   function handleEnter(i: number) {
     if (locked === null) setActive(i);
   }
-  function handleLeave(i: number) {
+  function handleLeave() {
     if (locked === null) setActive(null);
   }
   function handleClick(i: number) {
@@ -57,46 +58,37 @@ export default function Focus() {
         <h2 className="heading-2">Our Focus Areas</h2>
         <div className="divider-center" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-gap-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, i) => {
-            const isActive = i === active;
+            const isActive = active === i;
             return (
-              <article
+              <motion.article
                 key={card.id}
                 onMouseEnter={() => handleEnter(i)}
-                onMouseLeave={() => handleLeave(i)}
+                onMouseLeave={() => handleLeave()}
                 onClick={() => handleClick(i)}
-                className={`relative cursor-pointer rounded-radius border-2 transition-all duration-200 ease-in-out overflow-hidden flex items-center justify-center h-56 sm:h-64 md:h-72 p-4 sm:p-6 ${
-                  isActive
-                    ? "bg-primary border-primabg-primary"
-                    : "bg-white border-primabg-primary/50"
+                className={`relative cursor-pointer rounded-xl border-2 transition-colors duration-300 overflow-hidden h-72 p-6 flex flex-col justify-between ${
+                  isActive ? "border-primary" : "border-gray-200 bg-white"
                 }`}
               >
-                {/* Inactive view: icon centered, title below */}
-                {!isActive && (
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="w-20 h-20 md:w-28 md:h-28 relative">
-                      <Image
-                        src={card.icon}
-                        alt={card.title}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <div className="font-bold text-sm md:text-base">
-                      {card.title}
-                    </div>
-                    <div className="absolute right-3 bottom-3 text-primabg-primary font-bold">
-                      ➤
-                    </div>
-                  </div>
-                )}
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      initial={{ clipPath: "circle(0% at 90% 90%)" }}
+                      animate={{ clipPath: "circle(150% at 90% 90%)" }}
+                      exit={{ clipPath: "circle(0% at 90% 90%)" }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                      className="absolute inset-0 bg-primary z-0"
+                    />
+                  )}
+                </AnimatePresence>
 
-                {/* Active view: show detailed yellow panel */}
-                {isActive && (
-                  <div className="w-full h-full flex flex-col justify-between text-left p-6 text-primary-foreground">
-                    <div className="flex items-start justify-between">
-                      <div className="w-10 h-10 md:w-12 md:h-12 relative">
+                {/* Content Layer */}
+                <div className="relative z-10 w-full h-full">
+                  {!isActive ? (
+                    // Inactive State
+                    <div className="flex flex-col items-center justify-center h-full gap-4">
+                      <div className="relative w-24 h-24">
                         <Image
                           src={card.icon}
                           alt={card.title}
@@ -104,22 +96,42 @@ export default function Focus() {
                           className="object-contain"
                         />
                       </div>
-                      <div className="text-right">
-                        <h3 className="text-base md:text-lg font-bold leading-tight whitespace-pre-line">
-                          {card.title}
-                        </h3>
-                        <div className="w-16 h-0.5 bg-primatext-primary-foreground mt-2 mb-2" />
+                      <h3 className="text-center font-bold text-lg leading-tight">
+                        {card.title}
+                      </h3>
+                      <div className="absolute right-0 bottom-0 text-primary text-xl">
+                        ➤
                       </div>
                     </div>
+                  ) : (
+                    // Active State
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 }}
+                      className="flex flex-col h-full justify-between text-primary-foreground"
+                    >
+                      <div className="flex justify-between items-start">
+                        <div className="relative w-12 h-12 bg-primary-foreground/10 rounded-full p-2">
+                          <Image
+                            src={card.icon}
+                            alt={card.title}
+                            fill
+                            className="object-contain p-1"
+                          />
+                        </div>
+                        <h3 className="text-right font-bold text-lg w-2/3 leading-tight">
+                          {card.title}
+                        </h3>
+                      </div>
 
-                    <div className="flex-1 flex items-center">
-                      <p className="text-sm md:text-base leading-relaxed">
-                        {card.desc}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </article>
+                      <div className="w-12 h-1 bg-primary-foreground/20 my-2" />
+
+                      <p className="text-sm leading-relaxed">{card.desc}</p>
+                    </motion.div>
+                  )}
+                </div>
+              </motion.article>
             );
           })}
         </div>

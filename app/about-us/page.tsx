@@ -12,10 +12,11 @@ export default function AboutUs() {
     threshold: 0.2,
   });
   return (
-    <main className="min-h-screen bg-white text-foreground">
-      {/* Hero Section */}
+    <main className="min-h-screen text-foreground">
+      {/* Hero Section - Fixed Background with Parallax Effect */}
       <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh]">
-        <div className="absolute inset-0">
+        {/* Fixed Background Image */}
+        <div className="fixed top-0 left-0 w-full h-[60vh] md:h-[70vh] lg:h-[80vh] -z-10">
           <Image
             src="/about-us-hero.webp"
             alt="About Hooc for Help"
@@ -28,7 +29,7 @@ export default function AboutUs() {
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
+      <section className="section-padding bg-gradient-to-b from-gray-50 to-white relative z-10">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Vision */}

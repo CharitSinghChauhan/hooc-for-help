@@ -84,19 +84,24 @@ const impacts = [
 
 export default function WhatWeDoPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <section className="relative h-200 w-full flex items-center justify-center overflow-hidden pt-32">
-        <Image
-          src="/volunter-2-hero.webp"
-          alt="Volunteers"
-          fill
-          className="object-cover brightness-75"
-          priority
-        />
+    <main className="min-h-screen">
+      <section className="relative h-[80vh] w-full">
+        <div className="fixed top-0 left-0 w-full h-[80vh] -z-10">
+          <Image
+            src="/volunter-2-hero.webp"
+            alt="Volunteers"
+            fill
+            className="object-cover brightness-75 bg-fixed"
+            priority
+          />
+        </div>
       </section>
 
       {/* Statistics Section */}
-      <section id="education" className="section-padding">
+      <section
+        id="education"
+        className="section-padding relative z-10 bg-white"
+      >
         <div className="section-container">
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-12">
             <div className="max-w-xl">
