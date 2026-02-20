@@ -22,7 +22,7 @@ const faqItems = [
   {
     question: "Are donations to Hooc for Help tax-deductible?",
     answer:
-      "Hooc for Help is a 501c3 tax-exempt organization and all donations made to Hooc for Help are tax-deductible. Please note that these tax exemption receipts apply only to U.S. residents and cannot be used for tax deductions outside the United States.",
+      "Hooc for Help is a registered nonprofit organization in India. Donations made to Hooc for Help are eligible for tax benefits under applicable provisions of the Income Tax Act, 1961 (such as Section 80G), subject to prevailing government rules.Please note that these tax benefits apply only to taxpayers in India and cannot be used for tax deductions outside India.",
   },
 ];
 
