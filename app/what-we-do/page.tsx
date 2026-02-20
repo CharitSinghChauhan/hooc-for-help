@@ -83,10 +83,10 @@ const impacts = [
 ];
 
 export default function WhatWeDoPage() {
-  return (
-    <main className="min-h-screen">
-      <section className="relative h-[80vh] w-full">
-        <div className="fixed top-0 left-0 w-full h-[80vh] -z-10">
+  return ( 
+    <main className="min-h-screen ">
+      <section className="relative h-screen w-full">
+        <div className="fixed top-0 left-0 w-full h-screen -z-10">
           <Image
             src="/volunter-2-hero.webp"
             alt="Volunteers"
@@ -171,7 +171,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* //TODO : change the images */}
-      <section id="health" className="pb-16 md:pb-20">
+      <section id="health" className="pb-16 md:pb-20 bg-white">
         <div className="section-container text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Strengthening Communities Through <br />
@@ -204,7 +204,7 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      <section className="pb-16 md:pb-20">
+      <section className="pb-16 md:pb-20 bg-white">
         <div className="section-container">
           <div className="text-center mb-12 md:mb-16 relative">
             <h2 className="text-4xl md:text-5xl font-bold inline-block">
@@ -283,7 +283,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Donate Page Component Placeholder Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="section-container">
           <div className="flex flex-col md:flex-row gap-10 md:gap-12 items-center">
             <div className="max-w-md">
@@ -365,7 +365,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Stories of Impact */}
-      <section id="stories" className="section-padding-lg">
+      <section id="stories" className="section-padding-lg bg-white">
         <div className="section-container">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-5xl md:text-6xl font-bold">
@@ -431,7 +431,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-primary/5">
+      {/* <section className="section-padding bg-primary ">
         <div className="section-container text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Testimonials from <br />
@@ -464,10 +464,10 @@ export default function WhatWeDoPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
-      <section id="faq" className="section-padding">
+      <section id="faq" className="section-padding bg-white">
         <div className="section-container">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-4xl md:text-5xl font-bold">

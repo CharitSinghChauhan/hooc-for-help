@@ -13,10 +13,9 @@ export default function AboutUs() {
   });
   return (
     <main className="min-h-screen text-foreground">
-      {/* Hero Section - Fixed Background with Parallax Effect */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh]">
+      <section className="relative w-full h-screen">
         {/* Fixed Background Image */}
-        <div className="fixed top-0 left-0 w-full h-[60vh] md:h-[70vh] lg:h-[80vh] -z-10">
+        <div className="fixed top-0 left-0 w-full h-screen -z-10">
           <Image
             src="/about-us-hero.webp"
             alt="About Hooc for Help"

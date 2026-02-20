@@ -64,8 +64,8 @@ export function Hero2() {
   }, [nextSlide]);
 
   return (
-    <div className="relative h-[85vh] w-full">
-      <div className="fixed top-0 left-0 w-full h-[85vh] -z-10">
+    <div className="relative h-screen w-full">
+      <div className="fixed top-0 left-0 w-full h-screen -z-10">
         {extendedImages.map((image, index) => (
           <div 
             key={index} 
