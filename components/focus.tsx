@@ -9,26 +9,26 @@ const cards = [
     id: "education",
     icon: "/focus-icon-1.svg",
     title: "EDUCATION & SKILL DEVELOPMENT",
-    desc: "Quality education and vocational training for lifelong empowerment",
+    desc: "Providing learning resources, awareness workshops, and community education initiatives.",
   },
   {
     id: "health",
     icon: "/focus-icon-2.svg",
     title: "HEALTH & NUTRITION",
-    desc: "Comprehensive healthcare and nutritional support for communities",
+    desc: "Health awareness drives, basic support services, and nutrition outreach programs.",
     featured: true,
   },
   {
     id: "environment",
     icon: "/focus-icon-3.svg",
     title: "ENVIRONMENTAL SUSTAINABILITY",
-    desc: "Tree plantation and conservation initiatives for a greener future",
+    desc: "Health awareness drives, basic support services, and nutrition outreach programs.",
   },
   {
     id: "empowerment",
     icon: "/focus-icon-4.svg",
     title: "COMMUNITY EMPOWERMENT",
-    desc: "Women empowerment and social awareness programs for inclusive growth",
+    desc: "Women empowerment and social awareness programs for inclusive growth.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function Focus() {
   return (
     <section id="focus" className="section-padding bg-white scroll-mt-32.5">
       <div className="section-container text-center">
-        <h2 className="heading-2">Our Focus Areas</h2>
+        <h2 className="heading-2">OUR PROGRAMS</h2>
         <div className="divider-center" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

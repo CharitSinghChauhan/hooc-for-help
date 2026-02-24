@@ -42,10 +42,10 @@ export default function AboutUs() {
                 </h2>
               </div>
               <p className="text-gray-600 leading-relaxed text-lg">
-                A thriving, equitable society where every community member has
-                access to opportunities, dignity, and sustainable development.
-                We envision a world where no one is left behind and every
-                individual can reach their full potential.
+                To build a future where every underserved community has equal
+                access to education, healthcare, livelihood opportunities, and
+                sustainable resources, enabling individuals to live with
+                dignity, independence, and opportunity.
               </p>
             </div>
 
@@ -60,10 +60,10 @@ export default function AboutUs() {
                 </h2>
               </div>
               <p className="text-gray-600 leading-relaxed text-lg">
-                To empower underprivileged communities through comprehensive
-                programs in education, healthcare, livelihood, and environmental
-                sustainability, creating lasting positive change in the lives of
-                those we serve.
+                Our mission is to design and implement community-led programs
+                that strengthen education, improve health outcomes, promote
+                financial independence, and foster sustainable development,
+                ensuring every individual has the opportunity to thrive.
               </p>
             </div>
           </div>
@@ -155,6 +155,7 @@ export default function AboutUs() {
                     src={item.img}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -196,6 +197,7 @@ export default function AboutUs() {
               src="/our-team-image.webp"
               alt="Our Team"
               fill
+              sizes="100vw"
               className="object-cover"
             />
           </div>
@@ -211,6 +213,7 @@ export default function AboutUs() {
                 src="/pledge.webp"
                 alt="The Hooc for Help Pledge"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

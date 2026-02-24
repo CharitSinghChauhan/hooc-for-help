@@ -31,13 +31,13 @@ export default function Navbar() {
     { name: "HOME", href: "/" },
     { name: "ABOUT", href: "/about-us" },
     { name: "WHAT WE DO", href: "/what-we-do" },
-    { name: "wesbite", href: "https://www.hooc.tech" },
+    { name: "website", href: "https://www.hooc.tech" },
   ];
 
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-full z-40 bg-transparent font-gochi"
+        className={`fixed top-0 left-0 w-full z-40 bg-transparent  font-gochi`}
         initial={{ y: 0, opacity: 1 }}
         animate={{
           y: isScrolled ? "30%" : "0%",

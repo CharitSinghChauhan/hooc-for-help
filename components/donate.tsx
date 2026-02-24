@@ -15,9 +15,9 @@ export default function Donate() {
             <div className="space-y-content-content body-base space-paragraph">
               <p>
                 Your smallest contribution makes a big difference to
-                communities&apos; lives. We count on the generosity of people
-                like you to be able to create real change for underserved
-                populations!
+                communitie&apos;s lives. Every contribution directly supports
+                education access, healthcare initiatives, livelihood training,
+                and environmental programs.
               </p>
               <p>
                 Hooc for Help is a 5013 exempt organization and all donations
@@ -38,7 +38,7 @@ export default function Donate() {
               />
               <div className="p-6 text-center">
                 <h3 className="text-lg font-bold uppercase tracking-wide mb-3">
-                  One Time
+                  One Time Donation
                 </h3>
                 <p className="text-gray-700 mb-6">I’d Like To Contribute Now</p>
                 <button className="bg-primary hover:bg-[#e3c314] text-black font-bold py-3 px-6 rounded-sm transition-colors text-sm tracking-wider">
@@ -58,7 +58,7 @@ export default function Donate() {
               />
               <div className="p-6 text-center">
                 <h3 className="text-lg font-bold uppercase tracking-wide mb-3">
-                  Monthly
+                  Monthly Supporter
                 </h3>
                 <p className="text-gray-700 mb-6">
                   I’d Like To Become A<br />
@@ -81,7 +81,7 @@ export default function Donate() {
               />
               <div className="p-6 text-center">
                 <h3 className="text-lg font-bold uppercase tracking-wide mb-3">
-                  Support a Project
+                  Sponsor a Program
                 </h3>
                 <p className="text-gray-700 mb-6">
                   I’d Like To Make A<br />

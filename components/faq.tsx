@@ -4,25 +4,24 @@ import { useState } from "react";
 
 const faqItems = [
   {
-    question: "What does Hooc for Help do as a non-profit organization?",
+    question: "How is my donation used?",
     answer:
-      "Hooc for Help is a non-profit organization dedicated to empowering underserved communities through education, healthcare, livelihood development, and environmental initiatives. It works to provide access to quality education, healthcare, economic opportunities, and sustainable practices. Through partnerships with local organizations, Hooc for Help empowers communities to create lasting change.",
+      "Donations directly support program implementation, community outreach, training materials, healthcare initiatives, environmental drives, and emergency relief efforts. We prioritize transparency and responsible fund utilization.",
   },
   {
-    question:
-      "How is Hooc for Help different from other Nonprofit initiatives?",
+    question: " Do you offer recurring donation options?",
     answer:
-      "Hooc for Help stands out from other Nonprofit initiatives because it goes beyond temporary relief. It works to address the root causes of poverty, lack of education, and environmental degradation that affect communities. Through these efforts, it creates ripples of change that spread and last. It empowers individuals to become advocates of change rather than mere beneficiaries, giving them the voice, confidence, and opportunity to shape a brighter future for themselves and their communities.",
+      "Yes. You can become a monthly supporter to provide consistent funding that helps us plan and sustain long-term initiatives.",
   },
   {
-    question: "How can I support Hooc for Help's work?",
+    question: "Is my donation secure?",
     answer:
-      "You can support Hooc for Help in several ways. Make a one-time contribution to help immediately, or choose a monthly donation to provide consistent support. You can also support a specific project to create a bigger impact. Every contribution helps empower communities and improve lives, giving people hope, opportunity, and a brighter future.",
+      "Yes. We use secure and verified payment systems to ensure that your transaction information remains protected and confidential.",
   },
   {
-    question: "Are donations to Hooc for Help tax-deductible?",
+    question: "How can I track the impact of my contribution?",
     answer:
-      "Hooc for Help is a registered nonprofit organization in India. Donations made to Hooc for Help are eligible for tax benefits under applicable provisions of the Income Tax Act, 1961 (such as Section 80G), subject to prevailing government rules.Please note that these tax benefits apply only to taxpayers in India and cannot be used for tax deductions outside India.",
+      "We share impact reports, program highlights, and success stories through our website and communication channels so you can see how your support creates change.",
   },
 ];
 

@@ -83,7 +83,7 @@ const impacts = [
 ];
 
 export default function WhatWeDoPage() {
-  return ( 
+  return (
     <main className="min-h-screen ">
       <section className="relative h-screen w-full">
         <div className="fixed top-0 left-0 w-full h-screen -z-10">
@@ -91,6 +91,7 @@ export default function WhatWeDoPage() {
             src="/volunter-2-hero.webp"
             alt="Volunteers"
             fill
+            sizes="100vw"
             className="object-cover brightness-75 bg-fixed"
             priority
           />
@@ -112,10 +113,12 @@ export default function WhatWeDoPage() {
                 </span>
               </h2>
               <p className="body-base">
-                We are committed to building healthier communities through food
-                support programs and environmental initiatives. From feeding
-                families in need to restoring clean streets and rivers, every
-                project is designed to create sustainable impact.
+                We are dedicated to building healthier, stronger communities
+                through structured food support programs and environmental
+                initiatives. From providing essential nutrition to families in
+                need to driving clean-up and restoration efforts for public
+                spaces and waterways, each initiative is designed to deliver
+                sustainable, long-term impact.
               </p>
             </div>
           </div>
@@ -131,6 +134,7 @@ export default function WhatWeDoPage() {
                     src={project.image}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     priority={project.id === 1}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -181,11 +185,14 @@ export default function WhatWeDoPage() {
           </h2>
 
           <p className="body-lg max-w-3xl mx-auto mb-12 md:mb-16">
-            Our community outreach initiatives focus on providing nutritious
-            meals, essential resources, and long-term support to underserved
-            families. We work directly with local communities to address food
-            insecurity, improve well-being, and create sustainable systems that
-            empower people to build healthier futures.
+            Our outreach initiatives are designed to address food insecurity and
+            promote long-term well-being in underserved communities. By
+            providing nutritious meals, essential resources, and structured
+            support programs, we help families meet immediate needs while
+            building sustainable pathways toward healthier, more stable futures.
+            We work closely with local communities to understand their
+            challenges, implement practical solutions, and create systems that
+            foster resilience, dignity, and lasting empowerment.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
@@ -297,11 +304,11 @@ export default function WhatWeDoPage() {
                 </span>
               </h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Your contribution helps us provide nutritious meals, emergency
-                ration kits, and long-term food security solutions to
-                underserved families. Whether you give once or become a monthly
-                supporter, your generosity directly impacts lives in communities
-                that need it most.
+                Your contribution enables us to deliver nutritious meals,
+                emergency ration kits, and sustainable food security programs to
+                underserved families. Whether you make a one-time donation or
+                choose to become a monthly supporter, your generosity creates
+                meaningful, measurable impact where it is needed most.
               </p>
             </div>
 
@@ -385,30 +392,33 @@ export default function WhatWeDoPage() {
 
               <div className="space-y-4 text-gray-600 leading-relaxed text-base">
                 <p>
-                  In underserved communities, limited access to healthcare,
-                  education, and livelihood opportunities often keeps families
-                  trapped in cycles of hardship. Many struggle daily to meet
-                  basic needs.
+                  In many underserved communities, limited access to healthcare,
+                  quality education, and livelihood opportunities continues to
+                  restrict growth and stability. Families often face ongoing
+                  challenges in meeting essential needs and building secure
+                  futures.
                 </p>
 
                 <p>
-                  Through our integrated community initiatives, we provide
-                  essential support — from skill development and educational
-                  assistance to health awareness programs and emergency relief.
-                  Each effort is designed to create sustainable, long-term
-                  change.
+                  Through our integrated community programs, we provide
+                  structured support — including skill development training,
+                  educational assistance, health awareness initiatives, and
+                  emergency relief services. Each program is thoughtfully
+                  designed to address immediate concerns while fostering
+                  sustainable, long-term progress.
                 </p>
 
                 <p>
-                  What begins as support often turns into empowerment. Families
-                  regain stability, individuals build confidence, and
-                  communities grow stronger together.
+                  What begins as timely assistance evolves into lasting
+                  empowerment. Individuals gain skills and confidence, families
+                  move toward stability, and communities build stronger
+                  foundations for collective growth.
                 </p>
 
                 <p>
-                  With the continued support of our volunteers and partners, we
-                  are expanding our reach and creating measurable impact across
-                  multiple regions.
+                  With the continued collaboration of our volunteers, partners,
+                  and supporters, we are expanding our reach and delivering
+                  measurable impact across multiple regions.
                 </p>
               </div>
             </div>

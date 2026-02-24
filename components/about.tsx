@@ -31,26 +31,24 @@ export default function About() {
 
           <div className="space-y-content-content body-base space-paragraph">
             <p>
-              Hooc for Help, an Nonprofit initiatives in India, stands as a
-              powerful advocate for underserved communities, addressing their
-              needs in education, healthcare, livelihood development, and
-              overall empowerment. Being an Nonprofit initiatives for community
-              development, our focus lies in promoting sustainable initiatives
-              and extending crucial support.
+              Hooc for Help is a non-profit initiative in India dedicated to
+              empowering underserved communities through sustainable
+              development. We focus on education, healthcare, nutrition,
+              livelihood development, and environmental responsibility to create
+              long-term, meaningful impact.
             </p>
 
             <p>
-              We work tirelessly to ensure that communities have access to
-              quality education, proper nutrition, healthcare, and economic
-              opportunities. Through tree plantation drives, clothes donation
-              campaigns, skill development training, and disaster relief
-              efforts, we create lasting positive change.
+              Through skill development programs, tree plantation drives,
+              donation campaigns, and disaster relief efforts, we work to ensure
+              communities have access to essential resources and opportunities
+              for growth.
             </p>
 
             <p>
-              Since 2020, we have impacted the lives of over 1,200 individuals
-              and, with your support, aim to create thriving communities for
-              many more!
+              Since 2020, we have positively impacted over 1,200 individuals,
+              and with continued support, we aim to build stronger, self-reliant
+              communities across India.
             </p>
 
             <div className="mt-8 md:mt-10">

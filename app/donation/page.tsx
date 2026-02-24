@@ -134,6 +134,127 @@ const testimonials = [
   },
 ];
 
+const DonationForm = ({
+  selectedTab,
+  setSelectedTab,
+  selectedAmount,
+  setSelectedAmount,
+  customAmount,
+  setCustomAmount,
+  currentImpact,
+  className = "",
+  id = "donate-form",
+}: {
+  selectedTab: string;
+  setSelectedTab: (val: string) => void;
+  selectedAmount: string;
+  setSelectedAmount: (val: string) => void;
+  customAmount: string;
+  setCustomAmount: (val: string) => void;
+  currentImpact: string;
+  className?: string;
+  id?: string;
+}) => (
+  <div
+    id={id}
+    className={`bg-white rounded-3xl shadow-2xl overflow-hidden ${className}`}
+  >
+    <div className="bg-gradient-to-r from-primary to-primary/80 p-6">
+      <h3 className="text-2xl font-bold text-white text-center">
+        Make Your Donation
+      </h3>
+      <p className="text-white/80 text-center text-sm mt-1">
+        Choose amount and payment method
+      </p>
+    </div>
+
+    <div className="p-6 space-y-6">
+      {/* Donation Type Tabs */}
+      <div className="flex bg-gray-100 rounded-xl p-1">
+        {[
+          { id: "one-time", label: "One-Time" },
+          { id: "monthly", label: "Monthly" },
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setSelectedTab(tab.id)}
+            className={`flex-1 py-3 rounded-lg font-bold text-sm transition-all ${
+              selectedTab === tab.id
+                ? "bg-white text-primary shadow-sm"
+                : "text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Amount Selection */}
+      <div>
+        <label className="text-sm font-semibold text-gray-700 mb-3 block">
+          Select Amount
+        </label>
+        <div className="grid grid-cols-3 gap-3">
+          {amounts.map((amt) => (
+            <button
+              key={amt.amount}
+              onClick={() => {
+                setSelectedAmount(amt.amount);
+                setCustomAmount("");
+              }}
+              className={`py-4 rounded-xl text-lg font-bold transition-all ${
+                selectedAmount === amt.amount
+                  ? "bg-primary text-white shadow-md"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              {amt.amount}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Custom Amount */}
+      <div>
+        <label className="text-sm font-semibold text-gray-700 mb-2 block">
+          Or enter custom amount
+        </label>
+        <div className="relative">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold">
+            $
+          </span>
+          <input
+            type="number"
+            placeholder="Enter amount"
+            value={customAmount}
+            onChange={(e) => {
+              setCustomAmount(e.target.value);
+              setSelectedAmount("");
+            }}
+            className="w-full pl-8 pr-4 py-4 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+          />
+        </div>
+      </div>
+
+      {/* Impact Message */}
+      <div className="bg-primary/10 rounded-xl p-4 flex items-start gap-3">
+        <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+        <p className="text-sm text-gray-700">
+          <span className="font-bold">
+            {selectedAmount || customAmount || "₹8,000"}
+          </span>{" "}
+          {currentImpact || "makes a real difference"}
+        </p>
+      </div>
+
+      {/* Donate Button */}
+      <button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg transition-all hover:scale-[1.02] text-lg">
+        Donate {selectedAmount || customAmount || "₹8,000"}
+      </button>
+    </div>
+  </div>
+);
+
 export default function DonationPage() {
   const [selectedTab, setSelectedTab] = useState("one-time");
   const [selectedAmount, setSelectedAmount] = useState("₹8,000");
@@ -151,18 +272,19 @@ export default function DonationPage() {
           src="/hero-2.webp"
           alt="Children learning"
           fill
-          className="object-fill"
+          sizes="100vw"
+          className="object-cover"
           priority
         />
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
-        <div className="absolute inset-0 " />
+      <section className="relative min-h-screen flex items-center pt-20 lg:pt-0">
+        <div className="absolute inset-0 bg-black/40 lg:bg-transparent z-0" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white space-y-6">
+            <div className="text-white space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
                 <Heart className="w-4 h-4 text-primabg-primary" />
                 <span>Tax-Deductible Donation</span>
@@ -171,17 +293,21 @@ export default function DonationPage() {
                 Give the Gift of{" "}
                 <span className="text-primabg-primary">Hope</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-xl leading-relaxed">
+              <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Every contribution transforms lives. Join thousands of donors
                 creating brighter futures for children and communities in need.
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
                 <button
-                  onClick={() =>
+                  onClick={() => {
+                    const formId =
+                      window.innerWidth >= 1024
+                        ? "donate-form-desktop"
+                        : "donate-form-mobile";
                     document
-                      .getElementById("donate-form")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                      .getElementById(formId)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                   className="bg-primary hover:bg-[#e5c714] text-black font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 flex items-center gap-2"
                 >
                   Donate Now <ArrowRight className="w-5 h-5" />
@@ -190,7 +316,7 @@ export default function DonationPage() {
                   Support a Project
                 </button>
               </div>
-              <div className="flex items-center gap-6 pt-4 text-white/70 text-sm">
+              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 pt-4 text-white/70 text-sm">
                 <div className="flex items-center gap-2">
                   <Shield className="w-4 h-4" />
                   <span>501(c)(3) Verified</span>
@@ -201,128 +327,37 @@ export default function DonationPage() {
                 </div>
               </div>
             </div>
-
-            {/* Donation Form */}
-            <div
-              id="donate-form"
-              className="bg-white rounded-3xl shadow-2xl overflow-hidden"
-            >
-              <div className="bg-gradient-to-r from-primary to-primary/80 p-6">
-                <h3 className="text-2xl font-bold text-white text-center">
-                  Make Your Donation
-                </h3>
-                <p className="text-white/80 text-center text-sm mt-1">
-                  Choose amount and payment method
-                </p>
-              </div>
-
-              <div className="p-6 space-y-6">
-                {/* Donation Type Tabs */}
-                <div className="flex bg-gray-100 rounded-xl p-1">
-                  {[
-                    { id: "one-time", label: "One-Time" },
-                    { id: "monthly", label: "Monthly" },
-                  ].map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setSelectedTab(tab.id)}
-                      className={`flex-1 py-3 rounded-lg font-bold text-sm transition-all ${
-                        selectedTab === tab.id
-                          ? "bg-white text-primary shadow-sm"
-                          : "text-gray-500 hover:text-gray-700"
-                      }`}
-                    >
-                      {tab.label}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Amount Selection */}
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-3 block">
-                    Select Amount
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
-                    {amounts.map((amt) => (
-                      <button
-                        key={amt.amount}
-                        onClick={() => {
-                          setSelectedAmount(amt.amount);
-                          setCustomAmount("");
-                        }}
-                        className={`py-4 rounded-xl text-lg font-bold transition-all ${
-                          selectedAmount === amt.amount
-                            ? "bg-primary text-white shadow-md"
-                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                        }`}
-                      >
-                        {amt.amount}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Custom Amount */}
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-2 block">
-                    Or enter custom amount
-                  </label>
-                  <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold">
-                      $
-                    </span>
-                    <input
-                      type="number"
-                      placeholder="Enter amount"
-                      value={customAmount}
-                      onChange={(e) => {
-                        setCustomAmount(e.target.value);
-                        setSelectedAmount("");
-                      }}
-                      className="w-full pl-8 pr-4 py-4 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    />
-                  </div>
-                </div>
-
-                {/* Impact Message */}
-                <div className="bg-primary/10 rounded-xl p-4 flex items-start gap-3">
-                  <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-gray-700">
-                    <span className="font-bold">
-                      {selectedAmount || customAmount || "₹8,000"}
-                    </span>{" "}
-                    {currentImpact || "makes a real difference"}
-                  </p>
-                </div>
-
-                {/* Donate Button */}
-                <button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg transition-all hover:scale-[1.02] text-lg">
-                  Donate {selectedAmount || customAmount || "₹8,000"}
-                </button>
-
-                {/* Quick Links */}
-                <div className="flex justify-center gap-4 text-sm">
-                  <Link
-                    href="#"
-                    className="text-gray-500 hover:text-primary underline"
-                  >
-                    Donate by Check
-                  </Link>
-                  <span className="text-gray-300">|</span>
-                  <Link
-                    href="#"
-                    className="text-gray-500 hover:text-primary underline"
-                  >
-                    Bank Transfer
-                  </Link>
-                </div>
-
-                <p className="text-center text-xs text-gray-500">
-                  🔒 Secure payment powered by encrypted connection
-                </p>
-              </div>
-            </div>
+            <DonationForm
+              selectedTab={selectedTab}
+              setSelectedTab={setSelectedTab}
+              selectedAmount={selectedAmount}
+              setSelectedAmount={setSelectedAmount}
+              customAmount={customAmount}
+              setCustomAmount={setCustomAmount}
+              currentImpact={currentImpact}
+              className="hidden lg:block"
+              id="donate-form-desktop"
+            />
           </div>
+        </div>
+      </section>
+
+      {/* Donation Form Section - Mobile Only */}
+      <section
+        className="py-12 bg-gray-50 lg:hidden"
+        id="donate-form-mobile-section"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <DonationForm
+            selectedTab={selectedTab}
+            setSelectedTab={setSelectedTab}
+            selectedAmount={selectedAmount}
+            setSelectedAmount={setSelectedAmount}
+            customAmount={customAmount}
+            setCustomAmount={setCustomAmount}
+            currentImpact={currentImpact}
+            id="donate-form-mobile"
+          />
         </div>
       </section>
 
@@ -446,6 +481,7 @@ export default function DonationPage() {
                     src={project.img}
                     alt={project.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">
@@ -471,9 +507,7 @@ export default function DonationPage() {
                       />
                     </div>
                     <div className="flex justify-between mt-2 text-xs">
-                      <span className="font-bold">
-                        ${project.raised} raised
-                      </span>
+                      <span className="font-bold">{project.raised} raised</span>
                       <span className="text-gray-500">
                         Goal: {project.goal}
                       </span>
@@ -608,11 +642,15 @@ export default function DonationPage() {
             generosity creates hope for children and communities.
           </p>
           <button
-            onClick={() =>
+            onClick={() => {
+              const formId =
+                window.innerWidth >= 1024
+                  ? "donate-form-desktop"
+                  : "donate-form-mobile";
               document
-                .getElementById("donate-form")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+                .getElementById(formId)
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="bg-primary hover:bg-[#e5c714] text-black font-bold px-10 py-4 rounded-xl shadow-lg transition-all hover:scale-105 text-lg"
           >
             Donate Now

@@ -231,14 +231,14 @@ export default function Footer() {
         >
           <div className="flex gap-8 pr-8">
             {[...Array(4)].map((_, i) => (
-              <span key={i} className="text-[15vw] font-bold px-8 leading-none">
+              <span key={i} className="text-[10vw] font-bold px-8 leading-none">
                 HoocForHelp
               </span>
             ))}
           </div>
           <div className="flex gap-8 pr-8">
             {[...Array(4)].map((_, i) => (
-              <span key={i} className="text-[15vw] font-bold leading-none">
+              <span key={i} className="text-[10vw] font-bold leading-none">
                 HoocForHelp
               </span>
             ))}
