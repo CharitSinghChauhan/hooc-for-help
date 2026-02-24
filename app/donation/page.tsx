@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Zap,
 } from "lucide-react";
+import FAQ from "@/components/faq";
 
 const amounts = [
   { amount: "₹2,000", impact: "Provides school supplies for 2 children" },
@@ -48,7 +49,7 @@ const projects = [
     raised: "₹35,00,000",
     progress: 78,
     img: "/impact-2.webp",
-    description: "Girls education initiative",
+    description: "education initiative",
   },
   {
     name: "Project Sikshasandhan",
@@ -56,7 +57,7 @@ const projects = [
     goal: "₹22,00,000",
     raised: "₹7,50,000",
     progress: 34,
-    img: "/impact-2.webp",
+    img: "/support-a-project-1.webp",
     description: "Early childhood development program",
   },
 ];
@@ -94,29 +95,6 @@ const impactStats = [
   { number: "212", label: "Educated & Skilled", icon: Sparkles },
   { number: "400", label: "Families Supported", icon: Heart },
   { number: "531", label: "Rehabilitated", icon: Shield },
-];
-
-const faqs = [
-  {
-    question: "How will my donation be used?",
-    answer:
-      "Your donation directly supports our programs in education, healthcare, and community development. We ensure transparency with detailed fund allocation reports.",
-  },
-  {
-    question: "Is my donation tax-deductible?",
-    answer:
-      "Yes! HOOC for Help is a 501(c)(3) tax-exempt organization. All donations are tax-deductible to the extent allowed by law.",
-  },
-  {
-    question: "Can I donate monthly?",
-    answer:
-      "Absolutely! Monthly giving provides steady support that helps us plan long-term programs. You can set up recurring donations easily.",
-  },
-  {
-    question: "How do I know my donation is making an impact?",
-    answer:
-      "We send quarterly impact reports to all donors and organize annual calls with project partners so you can track the difference you're making.",
-  },
 ];
 
 const testimonials = [
@@ -221,7 +199,7 @@ const DonationForm = ({
         </label>
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold">
-            $
+            ₹
           </span>
           <input
             type="number"
@@ -259,7 +237,6 @@ export default function DonationPage() {
   const [selectedTab, setSelectedTab] = useState("one-time");
   const [selectedAmount, setSelectedAmount] = useState("₹8,000");
   const [customAmount, setCustomAmount] = useState("");
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const currentImpact =
     amounts.find((a) => a.amount === selectedAmount)?.impact || "";
@@ -279,7 +256,7 @@ export default function DonationPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 lg:pt-0">
+      <section className="relative min-h-screen flex items-center pt-24 lg:pt-32 pb-12">
         <div className="absolute inset-0 bg-black/40 lg:bg-transparent z-0" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -484,9 +461,6 @@ export default function DonationPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">
-                    {project.progress}% Funded
-                  </div>
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-lg text-gray-900">
@@ -498,25 +472,6 @@ export default function DonationPage() {
                   <p className="text-xs text-gray-600 mt-2">
                     {project.description}
                   </p>
-
-                  <div className="mt-4">
-                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-primary rounded-full transition-all"
-                        style={{ width: `${project.progress}%` }}
-                      />
-                    </div>
-                    <div className="flex justify-between mt-2 text-xs">
-                      <span className="font-bold">{project.raised} raised</span>
-                      <span className="text-gray-500">
-                        Goal: {project.goal}
-                      </span>
-                    </div>
-                  </div>
-
-                  <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white font-bold py-3 rounded-xl transition-all text-sm">
-                    Support This Project
-                  </button>
                 </div>
               </div>
             ))}
@@ -585,40 +540,9 @@ export default function DonationPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="pb-10 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Frequently Asked <span className="text-primary">Questions</span>
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="border border-gray-200 rounded-xl overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full p-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-bold text-gray-900">
-                    {faq.question}
-                  </span>
-                  <ChevronRight
-                    className={`w-5 h-5 text-gray-500 transition-transform ${
-                      openFaq === i ? "rotate-90" : ""
-                    }`}
-                  />
-                </button>
-                {openFaq === i && (
-                  <div className="px-5 pb-5 text-gray-600">{faq.answer}</div>
-                )}
-              </div>
-            ))}
-          </div>
-
+          <FAQ />
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">Still have questions?</p>
             <Link

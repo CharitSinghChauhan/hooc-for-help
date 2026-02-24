@@ -99,10 +99,9 @@ export default function DonorVoices() {
               onClick={() => setIdx(i)}
               className={`rounded-full overflow-hidden transition-transform duration-300 focus:outline-none ${
                 true ? "" : ""
-              } ${i === idx ? "scale-110 ring-4 ring-[#FCDA16]" : "opacity-70 hover:scale-105"}`}
+              } ${i === idx ? "scale-110 ring-4 ring-primary" : "opacity-70 hover:scale-105"}`}
               aria-label={`Show testimonial ${i + 1}`}
             >
-              {/* use plain img so it's easy to replace with real photos in /public */}
               <Image
                 src={a.src}
                 alt={a.name}
@@ -119,7 +118,7 @@ export default function DonorVoices() {
             <button
               key={i}
               onClick={() => setIdx(i)}
-              className={`w-3 h-3 rounded-full transition-all ${i === idx ? "bg-[#FCDA16] scale-125" : "bg-gray-300"}`}
+              className={`w-3 h-3 rounded-full transition-all ${i === idx ? "bg-primary scale-125" : "bg-gray-300"}`}
               aria-label={`Go to testimonial ${i + 1}`}
             />
           ))}

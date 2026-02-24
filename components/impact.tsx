@@ -72,7 +72,7 @@ export default function Impact() {
           <div className="divider-center" />
           <p className="body-lg max-w-4xl mx-auto">
             Every community transformed is a step toward global change. Since
-            2020, Hooc for Help has empowered over 3000+ individuals through
+            2025, Hooc for Help has empowered over 3000+ individuals through
             sustainable initiatives, thanks to supporters like YOU!
           </p>
         </div>

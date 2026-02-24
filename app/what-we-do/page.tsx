@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { MapPin, Utensils, Heart, Megaphone, Package } from "lucide-react";
-import FAQWhatWeDo from "@/components/faq-what-we-do";
 import Link from "next/link";
+import FAQ from "@/components/faq";
 
 const statistics = [
   {
@@ -147,26 +147,6 @@ export default function WhatWeDoPage() {
                     <MapPin className="w-4 h-4" />
                     {project.location}
                   </p>
-
-                  <div className="flex justify-between items-center mb-6 pt-4 -t -gray-100">
-                    <div>
-                      <p className="text-[10px] uppercase font-bold text-gray-400">
-                        Funding Goal
-                      </p>
-                      <p className="font-bold">{project.goal}</p>
-                    </div>
-
-                    <div className="text-right">
-                      <p className="text-[10px] uppercase font-bold text-gray-400">
-                        Funds Raised
-                      </p>
-                      <p className="font-bold">{project.raised}</p>
-                    </div>
-                  </div>
-
-                  <button className="w-full bg-primary py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-black transition-colors rounded-xl">
-                    View Project
-                  </button>
                 </div>
               </div>
             ))}
@@ -440,57 +420,7 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      {/* <section className="section-padding bg-primary ">
-        <div className="section-container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Testimonials from <br />
-            <span className="text-primary italic font-semibold">
-              Beneficiaries, Educators, And Parents
-            </span>
-          </h2>
-
-          <div className="mt-12 md:mt-16">
-            <p className="text-lg italic text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8 body-lg">
-              &quot;What makes Hooc for Help special is the drive and the
-              genuineness of the volunteer team, year after year. By adopting
-              projects themselves, some of these volunteers have put their money
-              where their mouth is. Thank you Hooc for Help for making giving so
-              easy and impactful.&quot;
-            </p>
-            <div className="flex flex-col items-center">
-              <p className="font-bold text-xl mb-1">Usha Rao</p>
-              <p className="text-sm text-primary font-semibold uppercase tracking-wider">
-                Hooc for Help Donor
-              </p>
-              <div className="flex gap-2 mt-6 md:mt-8">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className={`w-3 h-3 rounded-full ${i === 1 ? "bg-primary" : "bg-gray-200"}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section id="faq" className="section-padding bg-white">
-        <div className="section-container">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Frequently Asked{" "}
-              <span className="text-primary italic font-semibold">
-                Questions
-              </span>
-            </h2>
-          </div>
-
-          <FAQWhatWeDo />
-        </div>
-      </section>
+      <FAQ />
     </main>
   );
 }

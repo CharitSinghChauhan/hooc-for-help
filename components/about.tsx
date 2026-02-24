@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -46,14 +47,14 @@ export default function About() {
             </p>
 
             <p>
-              Since 2020, we have positively impacted over 1,200 individuals,
+              Since 2025, we have positively impacted over 1,200 individuals,
               and with continued support, we aim to build stronger, self-reliant
               communities across India.
             </p>
 
             <div className="mt-8 md:mt-10">
-              <button className="bg-primary font-bold py-3 px-6 sm:py-3.5 sm:px-8 rounded shadow-md uppercase tracking-widest text-sm sm:text-base">
-                About us
+              <button className="bg-primary font-bold py-3 px-6 sm:py-3.5 sm:px-8 rounded shadow-md uppercase tracking-widest text-sm sm:text-base text-white">
+                <Link href={"/about-us"}>About us</Link>
               </button>
             </div>
           </div>

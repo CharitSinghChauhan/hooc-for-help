@@ -98,40 +98,12 @@ export function Hero2() {
                     <p className="animate-in fade-in slide-in-from-bottom-10 delay-300 duration-1000 mt-6 md:mt-8 text-xl text-gray-100 md:text-2xl max-w-2xl font-light leading-relaxed">
                       {image.subtitle}
                     </p>
-                    <div className="animate-in fade-in slide-in-from-bottom-12 delay-500 duration-1000 mt-8 md:mt-10 flex flex-wrap gap-4">
-                      <Link
-                        href="/donation"
-                        className="h-14 rounded-sm bg-primary px-10 text-[14px] font-bold tracking-[0.2em] text-black transition-all hover:bg-primary active:scale-95 uppercase flex items-center justify-center"
-                      >
-                        Donate Now
-                      </Link>
-                      <Link
-                        href="#impact"
-                        className="h-14 rounded-sm border-2 border-white px-10 text-[14px] font-bold tracking-[0.2em] text-white transition-all hover:bg-white/10 active:scale-95 uppercase flex items-center justify-center"
-                      >
-                        Our Impact
-                      </Link>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-black/20 p-3 text-white transition-colors hover:bg-black/40 focus:outline-none"
-        >
-          <ChevronLeft className="h-8 w-8" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 z-30 -translate-y-1/2 rounded-full bg-black/20 p-3 text-white transition-colors hover:bg-black/40 focus:outline-none"
-        >
-          <ChevronRight className="h-8 w-8" />
-        </button>
 
         {/* Indicators */}
         <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 gap-3">
