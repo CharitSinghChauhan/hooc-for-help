@@ -9,6 +9,7 @@ import {
   Mail,
   Phone,
   MapPin,
+  Linkedin,
 } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -31,9 +32,9 @@ const footerContent = {
   aboutUs: {
     title: "About Us",
     links: [
-      { label: "Our Mission", href: "/about-us#our-mission" },
       { label: "Our Vision", href: "/about-us#our-vision" },
-      { label: "Our Story", href: "/about-us#our-team" },
+      { label: "Our Team", href: "/about-us#our-team" },
+      { label: "pledge", href: "/about-us#pledge" },
     ],
     whatWeDoTitle: "Our Focus Areas",
     whatWeDoLinks: [
@@ -43,29 +44,12 @@ const footerContent = {
       { label: "Women Empowerment", href: "/what-we-do#women" },
     ],
   },
-  volunteer: {
-    title: "Volunteer",
-    links: [
-      { label: "Join Us", href: "/volunteer#join" },
-      { label: "Volunteer Stories", href: "/volunteer#stories" },
-      { label: "Benefits", href: "/volunteer#benefits" },
-      { label: "FAQ", href: "/volunteer#faq" },
-    ],
-    whatWeDoTitle: "Volunteer Programs",
-    whatWeDoLinks: [
-      { label: "Teaching Volunteers", href: "/volunteer#teaching" },
-      { label: "Healthcare Volunteers", href: "/volunteer#healthcare" },
-      { label: "Event Volunteers", href: "/volunteer#events" },
-      { label: "Fundraising", href: "/volunteer#fundraising" },
-    ],
-  },
   whatWeDo: {
     title: "What We Do",
     links: [
       { label: "Community Impact Projects", href: "/what-we-do#education" },
       { label: "Nutrition & Support", href: "/what-we-do#health" },
       { label: "Stories of Transformation", href: "/what-we-do#stories" },
-      { label: "FAQ", href: "/what-we-do#faq" },
     ],
     whatWeDoTitle: "Our Programs",
     whatWeDoLinks: [
@@ -124,25 +108,18 @@ export default function Footer() {
               </h4>
               <div className="flex gap-3">
                 <Link
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="#"
+                  href="https://www.instagram.com/hooc.tech/"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/hoocai/"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                  aria-label="Twitter"
+                  aria-label="LinkedIn"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5" />
                 </Link>
               </div>
             </div>

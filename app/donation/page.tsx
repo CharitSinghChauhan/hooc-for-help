@@ -10,7 +10,6 @@ import {
   Users,
   Shield,
   ArrowRight,
-  Zap,
 } from "lucide-react";
 import FAQ from "@/components/faq";
 
@@ -256,75 +255,51 @@ export default function DonationPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-24 lg:pt-32 pb-12">
-        <div className="absolute inset-0 bg-black/40 lg:bg-transparent z-0" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
-                <Heart className="w-4 h-4 text-primabg-primary" />
-                <span>Tax-Deductible Donation</span>
-              </div>
+      <section className="min-h-screen flex items-center pt-20 lg:pt-0">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 -top-45 ">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="text-white space-y-6">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 Give the Gift of{" "}
                 <span className="text-primabg-primary">Hope</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
                 Every contribution transforms lives. Join thousands of donors
                 creating brighter futures for children and communities in need.
               </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+              <div className="flex flex-wrap justify-center gap-4 pt-4">
                 <button
                   onClick={() => {
-                    const formId =
-                      window.innerWidth >= 1024
-                        ? "donate-form-desktop"
-                        : "donate-form-mobile";
                     document
-                      .getElementById(formId)
+                      .getElementById("donate-form-section")
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="bg-primary hover:bg-[#e5c714] text-black font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 flex items-center gap-2"
                 >
                   Donate Now <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/30">
+                <button
+                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/30"
+                  onClick={() => {
+                    document
+                      .getElementById("donate-form-section")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
                   Support a Project
                 </button>
               </div>
-              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 pt-4 text-white/70 text-sm">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-4 h-4" />
-                  <span>501(c)(3) Verified</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4" />
-                  <span>Quick & Secure</span>
-                </div>
-              </div>
             </div>
-            <DonationForm
-              selectedTab={selectedTab}
-              setSelectedTab={setSelectedTab}
-              selectedAmount={selectedAmount}
-              setSelectedAmount={setSelectedAmount}
-              customAmount={customAmount}
-              setCustomAmount={setCustomAmount}
-              currentImpact={currentImpact}
-              className="hidden lg:block"
-              id="donate-form-desktop"
-            />
           </div>
         </div>
       </section>
 
-      {/* Donation Form Section - Mobile Only */}
+      {/* Donation Form Section */}
       <section
-        className="py-12 bg-gray-50 lg:hidden"
-        id="donate-form-mobile-section"
+        className="py-16 bg-gray-50 relative z-20 -mt-20 sm:-mt-32 px-4"
+        id="donate-form-section"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
           <DonationForm
             selectedTab={selectedTab}
             setSelectedTab={setSelectedTab}
@@ -333,7 +308,8 @@ export default function DonationPage() {
             customAmount={customAmount}
             setCustomAmount={setCustomAmount}
             currentImpact={currentImpact}
-            id="donate-form-mobile"
+            id="donate-form"
+            className="shadow-none rounded-none"
           />
         </div>
       </section>
@@ -552,33 +528,6 @@ export default function DonationPage() {
               Contact Us
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Ready to Make a Difference?
-          </h2>
-          <p className="text-white/90 text-lg mb-8">
-            Join thousands of supporters who are changing lives every day. Your
-            generosity creates hope for children and communities.
-          </p>
-          <button
-            onClick={() => {
-              const formId =
-                window.innerWidth >= 1024
-                  ? "donate-form-desktop"
-                  : "donate-form-mobile";
-              document
-                .getElementById(formId)
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="bg-primary hover:bg-[#e5c714] text-black font-bold px-10 py-4 rounded-xl shadow-lg transition-all hover:scale-105 text-lg"
-          >
-            Donate Now
-          </button>
         </div>
       </section>
     </main>

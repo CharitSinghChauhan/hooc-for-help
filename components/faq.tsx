@@ -33,7 +33,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white" id="faq">
       <div className="section-container">
         <h2 className="heading-2 text-center mb-6 md:mb-8">
           Frequently Asked{" "}

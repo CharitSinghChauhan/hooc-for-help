@@ -28,7 +28,10 @@ export default function AboutUs() {
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="section-padding bg-gradient-to-b from-gray-50 to-white relative z-10">
+      <section
+        className="section-padding bg-gradient-to-b from-gray-50 to-white relative z-10"
+        id="our-vision"
+      >
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Vision */}
@@ -184,7 +187,7 @@ export default function AboutUs() {
       </section>
 
       {/* Our Team */}
-      <section className="section-padding bg-white">
+      <section id="our-team" className="section-padding bg-white">
         <div className="section-container">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -205,7 +208,7 @@ export default function AboutUs() {
       </section>
 
       {/* The Pledge */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-50" id="pledge">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
@@ -238,33 +241,7 @@ export default function AboutUs() {
                   and they can&apos;t.
                 </p>
               </div>
-              <div className="mt-8">
-                <button className="bg-primary hover:bg-primary-400 text-black font-bold text-sm uppercase px-8 py-3 rounded-sm shadow-md transition-colors">
-                  Take Pledge
-                </button>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-primary">
-        <div className="section-container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Join Us in Making a Difference
-          </h2>
-          <p className="text-gray-800 max-w-2xl mx-auto mb-8 text-lg">
-            Your support can transform lives. Partner with us to create lasting
-            change in communities across India.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/donation"
-              className="bg-black hover:bg-gray-900 text-white font-bold px-8 py-3 rounded-sm transition-colors"
-            >
-              Donate Now
-            </Link>
           </div>
         </div>
       </section>
