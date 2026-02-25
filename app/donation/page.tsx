@@ -243,7 +243,7 @@ export default function DonationPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Fixed Background Image */}
-      <div className="h-full">
+      <div className="h-screen">
         <Image
           src="/hero-2.webp"
           alt="Children learning"
