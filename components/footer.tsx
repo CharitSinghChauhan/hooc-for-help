@@ -62,16 +62,14 @@ const footerContent = {
   donation: {
     title: "Donate",
     links: [
-      { label: "One-time Donation", href: "/donation" },
-      { label: "Monthly Giving", href: "/donation#monthly" },
+      { label: "Support Our Project", href: "/donation#project" },
       { label: "Other Ways to Donate", href: "/donation#other" },
       { label: "FAQ", href: "/donation#faq" },
     ],
     whatWeDoTitle: "Your Impact",
     whatWeDoLinks: [
       { label: "Where Your Money Goes", href: "/donation#impact" },
-      { label: "Success Stories", href: "/donation#stories" },
-      { label: "Tax Benefits", href: "/donation#tax" },
+      { label: "Other way to donate", href: "/donation#other" },
       { label: "Monthly Giving Program", href: "/donation#monthly" },
     ],
   },

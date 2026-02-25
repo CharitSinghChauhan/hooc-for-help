@@ -35,7 +35,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div>
+    <div className="h-20">
       <motion.div
         className={`fixed top-0 left-0 w-full z-40 bg-transparent  font-gochi`}
         initial={{ y: 0, opacity: 1 }}

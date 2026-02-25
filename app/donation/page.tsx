@@ -255,67 +255,72 @@ export default function DonationPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-20 lg:pt-0">
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 -top-45 ">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="text-white space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Give the Gift of{" "}
-                <span className="text-primabg-primary">Hope</span>
-              </h1>
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Every contribution transforms lives. Join thousands of donors
-                creating brighter futures for children and communities in need.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <button
-                  onClick={() => {
-                    document
-                      .getElementById("donate-form-section")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="bg-primary hover:bg-[#e5c714] text-black font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 flex items-center gap-2"
-                >
-                  Donate Now <ArrowRight className="w-5 h-5" />
-                </button>
-                <button
-                  className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all border border-white/30"
-                  onClick={() => {
-                    document
-                      .getElementById("donate-form-section")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  Support a Project
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="min-h-screen flex items-center lg:pt-0">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 -top- "></div>
       </section>
 
       {/* Donation Form Section */}
       <section
         className="py-16 bg-gray-50 relative z-20 -mt-20 sm:-mt-32 px-4"
-        id="donate-form-section"
+        id="donate-form"
       >
-        <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-          <DonationForm
-            selectedTab={selectedTab}
-            setSelectedTab={setSelectedTab}
-            selectedAmount={selectedAmount}
-            setSelectedAmount={setSelectedAmount}
-            customAmount={customAmount}
-            setCustomAmount={setCustomAmount}
-            currentImpact={currentImpact}
-            id="donate-form"
-            className="shadow-none rounded-none"
-          />
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="text-black space-y-6">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                  Give the Gift of{" "}
+                  <span className="text-primabg-primary">Hope</span>
+                </h1>
+                <p className="text-lg md:text-xl text-black/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                  Every contribution transforms lives. Join thousands of donors
+                  creating brighter futures for children and communities in
+                  need.
+                </p>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                  <button
+                    onClick={() => {
+                      document
+                        .getElementById("donate-form")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="bg-primary hover:bg-[#e5c714] text-black font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 flex items-center gap-2"
+                  >
+                    Donate Now <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <button
+                    className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-black font-bold px-8 py-4 rounded-xl transition-all border border-black/10"
+                    onClick={() => {
+                      // Scroll to same section or specific projects section if needed
+                      document
+                        .getElementById("donate-form-section")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    Support a Project
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="max-w-xl mx-auto w-full bg-white rounded-3xl shadow-xl overflow-hidden mt-8 lg:mt-0">
+              <DonationForm
+                id="donate-form"
+                selectedTab={selectedTab}
+                setSelectedTab={setSelectedTab}
+                selectedAmount={selectedAmount}
+                setSelectedAmount={setSelectedAmount}
+                customAmount={customAmount}
+                setCustomAmount={setCustomAmount}
+                currentImpact={currentImpact}
+                className="shadow-none rounded-none"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Impact Stats */}
-      <section className="py-16 bg-primary">
+      <section id="impact" className="py-16 bg-primary" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {impactStats.map((stat, i) => (
@@ -332,7 +337,10 @@ export default function DonationPage() {
       </section>
 
       {/* Monthly Giving Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10">
+      <section
+        id="monthly"
+        className="py-20 bg-gradient-to-br from-primary/5 via-white to-primary/10"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -410,7 +418,7 @@ export default function DonationPage() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-white">
+      <section id="project" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -456,7 +464,7 @@ export default function DonationPage() {
       </section>
 
       {/* Other Ways to Donate */}
-      <section className="py-20 bg-gray-50">
+      <section id="other" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -487,7 +495,7 @@ export default function DonationPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-primary/5">
+      <section id="stories" className="py-20 bg-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -516,7 +524,7 @@ export default function DonationPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="pb-10 bg-white">
+      <section id="faq" className="pb-10 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <FAQ />
           <div className="mt-12 text-center">
