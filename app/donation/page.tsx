@@ -254,14 +254,9 @@ export default function DonationPage() {
         />
       </div>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center lg:pt-0">
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 -top- "></div>
-      </section>
-
       {/* Donation Form Section */}
       <section
-        className="py-16 bg-gray-50 relative z-20 -mt-20 sm:-mt-32 px-4"
+        className="pb-16 bg-gray-50 relative z-20 px-4"
         id="donate-form"
       >
         <div className="max-w-7xl mx-auto">
