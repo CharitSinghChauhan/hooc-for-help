@@ -26,8 +26,6 @@ const projects = [
   {
     name: "Project VSS",
     location: "Madhya Pradesh",
-    goal: "₹50,00,000",
-    raised: "₹20,00,000",
     progress: 39,
     img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/donate-support-1.webp",
     description: "Education & empowerment for rural communities",
@@ -35,8 +33,6 @@ const projects = [
   {
     name: "Project KAS",
     location: "Rajasthan",
-    goal: "₹24,50,000",
-    raised: "₹15,00,000",
     progress: 62,
     img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/donate-support-2.webp",
     description: "Skill development for tribal youth",
@@ -44,8 +40,6 @@ const projects = [
   {
     name: "Project Pragathi",
     location: "Andhra Pradesh",
-    goal: "₹45,00,000",
-    raised: "₹35,00,000",
     progress: 78,
     img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-2.webp",
     description: "education initiative",
@@ -53,8 +47,6 @@ const projects = [
   {
     name: "Project Sikshasandhan",
     location: "Odisha",
-    goal: "₹22,00,000",
-    raised: "₹7,50,000",
     progress: 34,
     img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/support-a-project-1.webp",
     description: "Early childhood development program",
@@ -255,7 +247,7 @@ export default function DonationPage() {
       </div>
 
       {/* Donation Form Section */}
-      <section className="pb-16 bg-gray-50 relative z-20 px-4" id="donate-form">
+      <section className="pb-16 bg-white relative z-20 px-4" id="donate-form">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
