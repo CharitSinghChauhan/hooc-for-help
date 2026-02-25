@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "pub-c04812680e704832932dbed286b7de2a.r2.dev",
+      },
+    ],
   },
   experimental: {
     optimizeCss: true,

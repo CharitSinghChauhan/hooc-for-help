@@ -8,7 +8,8 @@ const statistics = [
     id: 1,
     title: "Food Distribution Drive",
     location: "Urban & Rural Communities",
-    image: "/food-distribution.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/food-distribution.webp",
     goal: "₹5,00,000",
     raised: "₹34,000",
   },
@@ -16,7 +17,8 @@ const statistics = [
     id: 2,
     title: "Clean Streets Initiative",
     location: "City Public Areas",
-    image: "/street-cleaning.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/street-cleaning.webp",
     goal: "₹3,00,000",
     raised: "₹18,500",
   },
@@ -24,7 +26,8 @@ const statistics = [
     id: 3,
     title: "River Restoration Program",
     location: "Local Rivers & Water Bodies",
-    image: "/river-cleaning.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/river-cleaning.webp",
     goal: "₹7,50,000",
     raised: "₹42,000",
   },
@@ -54,31 +57,36 @@ const impacts = [
     value: "342,558",
     label: "Individuals reached through community programs",
     bgColor: "bg-[#fdf2f2]",
-    image: "/impact-1.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-1.webp",
   },
   {
     value: "212,079",
     label: "People supported through education initiatives",
     bgColor: "bg-[#f1f5f9]",
-    image: "/impact-2.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-2.webp",
   },
   {
     value: "40,479",
     label: "Families benefited from livelihood programs",
     bgColor: "bg-[#fff1f2]",
-    image: "/impact-3.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-3.webp",
   },
   {
     value: "5,311",
     label: "Individuals rehabilitated and reintegrated",
     bgColor: "bg-[#f0fdfa]",
-    image: "/impact-4.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-4.webp",
   },
   {
     value: "50,832",
     label: "Community members engaged in local collectives",
     bgColor: "bg-[#fff7ed]",
-    image: "/impact-5.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-5.webp",
   },
 ];
 
@@ -88,7 +96,7 @@ export default function WhatWeDoPage() {
       <section className="relative h-screen w-full">
         <div className="fixed top-0 left-0 w-full h-screen -z-10">
           <Image
-            src="/volunter-2-hero.webp"
+            src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/volunter-2-hero.webp"
             alt="Volunteers"
             fill
             sizes="100vw"
@@ -295,7 +303,7 @@ export default function WhatWeDoPage() {
             <div className="flex-1 grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src="/support-our-mission-1.webp"
+                  src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/support-our-mission-1.webp"
                   alt="Community Meals"
                   width={400}
                   height={200}
@@ -313,7 +321,7 @@ export default function WhatWeDoPage() {
 
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src="/support-our-mission-2.webp"
+                  src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/support-our-mission-2.webp"
                   alt="Nutrition Support"
                   width={400}
                   height={200}
@@ -331,7 +339,7 @@ export default function WhatWeDoPage() {
 
               <div className="bg-white rounded-radius overflow-hidden shadow-sm border border-gray-100">
                 <Image
-                  src="/support-our-mission-3.webp"
+                  src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/support-our-mission-3.webp"
                   alt="Emergency Relief"
                   width={400}
                   height={200}
@@ -406,7 +414,7 @@ export default function WhatWeDoPage() {
             {/* RIGHT IMAGE */}
             <div className="w-full md:w-2/5 relative overflow-hidden rounded-2xl">
               <Image
-                src="/stories-impact-1.webp"
+                src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/stories-impact-1.webp"
                 alt="Community Support Initiative"
                 width={500}
                 height={600}

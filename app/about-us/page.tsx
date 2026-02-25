@@ -17,7 +17,7 @@ export default function AboutUs() {
         {/* Fixed Background Image */}
         <div className="fixed top-0 left-0 w-full h-screen -z-10">
           <Image
-            src="/about-us-hero.webp"
+            src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/about-us-hero.webp"
             alt="About Hooc for Help"
             fill
             className="object-cover"
@@ -131,19 +131,19 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                img: "/about-us-mission-1.webp",
+                img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/about-us-mission-1.webp",
                 title: "Education",
                 description:
                   "Providing quality education and skill development to underprivileged children and youth",
               },
               {
-                img: "/impact-4.webp",
+                img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-4.webp",
                 title: "Healthcare",
                 description:
                   "Ensuring access to quality healthcare and medical assistance for rural communities",
               },
               {
-                img: "/about-us-mission-3.webp",
+                img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/about-us-mission-3.webp",
                 title: "Environmental Sustainability",
                 description:
                   "Promoting eco-friendly practices and sustainable community development",
@@ -197,7 +197,7 @@ export default function AboutUs() {
           </div>
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
             <Image
-              src="/our-team-image.webp"
+              src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/our-team-image.webp"
               alt="Our Team"
               fill
               sizes="100vw"
@@ -213,7 +213,7 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
               <Image
-                src="/pledge.webp"
+                src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/pledge.webp"
                 alt="The Hooc for Help Pledge"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

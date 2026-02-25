@@ -27,21 +27,24 @@ export default function Donate() {
           <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-gap-sm">
             {[
               {
-                image: "/one-time-donation-1.webp",
+                image:
+                  "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/one-time-donation-1.webp",
                 title: "One Time Donation",
                 description: "I’d Like To Contribute Now",
                 buttonText: "Donate Now",
                 href: "/donation",
               },
               {
-                image: "/impact-3.webp",
+                image:
+                  "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-3.webp",
                 title: "Monthly Supporter",
                 description: "Become A Monthly Donor",
                 buttonText: "Donate Monthly",
                 href: "/donation",
               },
               {
-                image: "/support-a-project-1.webp",
+                image:
+                  "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/support-a-project-1.webp",
                 title: "Sponsor a Program",
                 description: "Bigger Impact",
                 buttonText: "Support a Project",

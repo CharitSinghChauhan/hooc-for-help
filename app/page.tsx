@@ -15,7 +15,7 @@ export default function Home() {
       <Impact />
       <div className="w-full section-padding-sm bg-white">
         <Image
-          src="/Page-breaker-image.webp"
+          src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/Page-breaker-image.webp"
           alt="landing-page"
           width={1440}
           height={160}

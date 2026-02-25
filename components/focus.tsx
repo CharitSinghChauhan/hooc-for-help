@@ -7,26 +7,26 @@ import { motion, AnimatePresence } from "motion/react";
 const cards = [
   {
     id: "education",
-    icon: "/focus-icon-1.svg",
+    icon: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/focus-icon-1.svg",
     title: "EDUCATION & SKILL DEVELOPMENT",
     desc: "Providing learning resources, awareness workshops, and community education initiatives.",
   },
   {
     id: "health",
-    icon: "/focus-icon-2.svg",
+    icon: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/focus-icon-2.svg",
     title: "HEALTH & NUTRITION",
     desc: "Health awareness drives, basic support services, and nutrition outreach programs.",
     featured: true,
   },
   {
     id: "environment",
-    icon: "/focus-icon-3.svg",
+    icon: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/focus-icon-3.svg",
     title: "ENVIRONMENTAL SUSTAINABILITY",
     desc: "Health awareness drives, basic support services, and nutrition outreach programs.",
   },
   {
     id: "empowerment",
-    icon: "/focus-icon-4.svg",
+    icon: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/focus-icon-4.svg",
     title: "COMMUNITY EMPOWERMENT",
     desc: "Women empowerment and social awareness programs for inclusive growth.",
   },

@@ -20,7 +20,8 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Hooc for Help Donors",
     initials: "HP",
     color: "#FDE68A",
-    image: "/Harsh-Rupal-Patil-donor.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/Harsh-Rupal-Patil-donor.webp",
   },
   {
     quote:
@@ -29,7 +30,8 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Volunteer",
     initials: "AS",
     color: "#FBCFE8",
-    image: "/Anita-Agarwal-donor.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/Anita-Agarwal-donor.webp",
   },
   {
     quote:
@@ -38,7 +40,8 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Donors",
     initials: "MP",
     color: "#C7F9CC",
-    image: "/donor-2.webp",
+    image:
+      "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/donor-2.webp",
   },
 ];
 

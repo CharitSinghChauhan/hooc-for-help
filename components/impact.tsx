@@ -6,49 +6,49 @@ import { useInView } from "react-intersection-observer";
 
 const cards = [
   {
-    img: "/river-cleaning.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/river-cleaning.webp",
     number: 120,
     label: "Volunteers in river-cleaning drives",
     bg: "bg-[#f7f7fb]",
   },
   {
-    img: "/impact-2.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-2.webp",
     number: 450,
     label: "People educated and skilled",
     bg: "bg-[#fff5f7]",
   },
   {
-    img: "/impact-3.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-3.webp",
     number: 750,
     label: "Families supported programs",
     bg: "bg-[#f0fbff]",
   },
   {
-    img: "/impact-4.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-4.webp",
     number: 250,
     label: "Health camps and medical assistance provided",
     bg: "bg-[#fafafa]",
   },
   {
-    img: "/impact-5.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-5.webp",
     number: 500,
     label: "Trees planted in community drives",
     bg: "bg-[#f2fbf8]",
   },
   {
-    img: "/impact-6.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-6.webp",
     number: 300,
     label: "Women empowered through initiatives",
     bg: "bg-[#fff7f7]",
   },
   {
-    img: "/clothes-distribution.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/clothes-distribution.webp",
     number: 150,
     label: "Donate Warm Clothes & Blankets To orphans",
     bg: "bg-[#fff6f6]",
   },
   {
-    img: "/impact-8.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-8.webp",
     number: 500,
     label: "Individuals rehabilitated and reintegrated",
     bg: "bg-[#fff7f7]",

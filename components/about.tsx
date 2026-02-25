@@ -11,7 +11,7 @@ export default function About() {
         <div className="shrink-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full bg-primary p-3 sm:p-4 flex items-center justify-center">
           <div className="w-full h-full rounded-full overflow-hidden shadow-md">
             <Image
-              src="/Donate-1.webp"
+              src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/Donate-1.webp"
               alt="Children smiling"
               width={400}
               height={400}

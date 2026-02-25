@@ -29,7 +29,7 @@ const projects = [
     goal: "₹50,00,000",
     raised: "₹20,00,000",
     progress: 39,
-    img: "/donate-support-1.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/donate-support-1.webp",
     description: "Education & empowerment for rural communities",
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     goal: "₹24,50,000",
     raised: "₹15,00,000",
     progress: 62,
-    img: "/donate-support-2.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/donate-support-2.webp",
     description: "Skill development for tribal youth",
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     goal: "₹45,00,000",
     raised: "₹35,00,000",
     progress: 78,
-    img: "/impact-2.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/impact-2.webp",
     description: "education initiative",
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     goal: "₹22,00,000",
     raised: "₹7,50,000",
     progress: 34,
-    img: "/support-a-project-1.webp",
+    img: "https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/support-a-project-1.webp",
     description: "Early childhood development program",
   },
 ];
@@ -245,7 +245,7 @@ export default function DonationPage() {
       {/* Fixed Background Image */}
       <div className="h-screen">
         <Image
-          src="/hero-2.webp"
+          src="https://pub-c04812680e704832932dbed286b7de2a.r2.dev/hooc-help/hero-2.webp"
           alt="Children learning"
           fill
           sizes="100vw"
@@ -255,10 +255,7 @@ export default function DonationPage() {
       </div>
 
       {/* Donation Form Section */}
-      <section
-        className="pb-16 bg-gray-50 relative z-20 px-4"
-        id="donate-form"
-      >
+      <section className="pb-16 bg-gray-50 relative z-20 px-4" id="donate-form">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
@@ -315,7 +312,7 @@ export default function DonationPage() {
       </section>
 
       {/* Impact Stats */}
-      <section id="impact" className="py-16 bg-primary" >
+      <section id="impact" className="py-16 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {impactStats.map((stat, i) => (
